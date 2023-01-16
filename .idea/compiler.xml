@@ -9,5 +9,8 @@
         <module name="JavaCrashCourse" />
       </profile>
     </annotationProcessing>
+    <bytecodeTargetLevel>
+      <module name="API" target="1.5" />
+    </bytecodeTargetLevel>
   </component>
 </project>

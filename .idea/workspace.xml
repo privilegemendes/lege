@@ -1,0 +1,222 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="6d79a399-8924-4f24-b973-cee3210ac519" name="Changes" comment="Added draw/erase functionality">
+      <changelist_data name="PrivilegeMendes" email="mendesprivilege@gmail.com" />
+      <change afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/API/pom.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/API/src/main/java/org/example/Main.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Lege/Lege.iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Lege/app/.env" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Lege/app/assets/artiry.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Lege/app/src/components/app-bar/AppBar.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Lege/app/src/components/app-bar/TopBarAndRestOfAppContainer.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Lege/app/src/components/app-bar/current-user-tray/CurrentUserTray.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Lege/app/src/components/app-bar/current-user-tray/UserAvatar.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Lege/app/src/components/app-bar/current-user-tray/UserTrayMenu.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Lege/app/src/components/app-bar/logo/TopBarLogo.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Lege/app/src/components/app-bar/sign-in-with-google-button/SignInWithGoogleButton.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Lege/app/src/contexts/firestore-auth/firestore-auth-context.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Lege/app/src/lib/auth/UserCredentials.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Lege/app/src/lib/browser/local-storage-keys.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Lege/app/src/lib/browser/session-storage-keys.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Lege/app/src/lib/firebase/ClientSideDocument.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Lege/app/src/lib/firebase/Doc.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Lege/app/src/lib/firebase/DocumentData.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Lege/app/src/lib/firebase/DocumentSnapshot.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Lege/app/src/lib/firebase/firestore.config.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Lege/app/src/lib/firebase/useFirestoreCollection.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Lege/app/src/lib/firebase/useList.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Lege/app/src/lib/firebase/useQuery.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../nonogram/app/src/components/nonogram-create-page/nonogram-creator/drawer.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/.name" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/.name" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Nonogram.iml" beforeDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="package.json" />
+        <option value="TypeScript File" />
+        <option value="TypeScript JSX File" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="PREVIOUS_COMMIT_AUTHORS">
+      <list>
+        <option value="PrivilegeMendes &lt;mendesprivilege@gmail.com&gt;" />
+      </list>
+    </option>
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+    <option name="ROOT_SYNC" value="SYNC" />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="2G2hIwutQjiiSz1B03RVUQCADaf" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "jdk.selected.JAVA_MODULE": "openjdk-19",
+    "last_opened_file_path": "C:/Projects/Lege/Lege/app/src/contexts",
+    "node.js.detected.package.eslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "nodejs_interpreter_path": "node",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.15722656",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
+    "ts.external.directory.path": "C:\\Projects\\Artiry\\Webapp\\node_modules\\typescript\\lib"
+  }
+}]]></component>
+  <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Projects\Lege\Lege\app\src\contexts" />
+      <recent name="C:\Projects\Lege\Lege\app\src" />
+      <recent name="C:\Projects\Lege\Lege\app\src\lib" />
+      <recent name="C:\Projects\Lege\Lege\app\src\components" />
+      <recent name="C:\Projects\Lege\Lege\app\src\hooks" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Projects\Upload" />
+    </key>
+  </component>
+  <component name="RunDashboard">
+    <option name="configurationTypes">
+      <set>
+        <option value="js.build_tools.npm" />
+      </set>
+    </option>
+  </component>
+  <component name="RunManager" selected="npm.start">
+    <configuration name="Debug Application" type="JavascriptDebugType" uri="http://localhost:3000">
+      <method v="2" />
+    </configuration>
+    <configuration name="start" type="js.build_tools.npm" nameIsGenerated="true">
+      <package-json value="$PROJECT_DIR$/Lege/app/package.json" />
+      <command value="start" />
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
+    <list>
+      <item itemvalue="JavaScript Debug.Debug Application" />
+      <item itemvalue="npm.start" />
+    </list>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="SvnConfiguration">
+    <configuration>C:\Users\mende\AppData\Roaming\Subversion</configuration>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="6d79a399-8924-4f24-b973-cee3210ac519" name="Changes" comment="" />
+      <created>1665592511406</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1665592511406</updated>
+      <workItem from="1665592512677" duration="4148000" />
+      <workItem from="1665686210165" duration="12000" />
+      <workItem from="1673211144269" duration="490000" />
+      <workItem from="1673211649616" duration="2209000" />
+      <workItem from="1673215603374" duration="103946000" />
+      <workItem from="1673478064873" duration="183000" />
+      <workItem from="1673478316241" duration="28204000" />
+      <workItem from="1673685207473" duration="1169000" />
+      <workItem from="1673878620876" duration="12899000" />
+    </task>
+    <task id="LOCAL-00001" summary="Initial commit">
+      <created>1673277632598</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1673277632598</updated>
+    </task>
+    <task id="LOCAL-00002" summary="Added missing files">
+      <created>1673278714343</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1673278714343</updated>
+    </task>
+    <task id="LOCAL-00003" summary="created canvas for nonogram creation">
+      <created>1673305132117</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1673305132117</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Added picking tiles functionality - yet to optimise">
+      <created>1673393414268</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1673393414268</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Added draw/erase functionality">
+      <created>1673542265018</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1673542265018</updated>
+    </task>
+    <option name="localTasksCounter" value="6" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="Initial commit" />
+    <MESSAGE value="Added missing files" />
+    <MESSAGE value="created canvas for nonogram creation" />
+    <MESSAGE value="Added picking tiles functionality - yet to optimise" />
+    <MESSAGE value="Added draw/erase functionality" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added draw/erase functionality" />
+    <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/../nonogram/index.html</url>
+          <line>224</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+</project>

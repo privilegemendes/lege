@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/Lege/Lege.iml" filepath="$PROJECT_DIR$/Lege/Lege.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../Artiry/Webapp/Webapp.iml" filepath="$PROJECT_DIR$/../Artiry/Webapp/Webapp.iml" />
+      <module fileurl="file://$PROJECT_DIR$/../Artiry/factloader/factloader.iml" filepath="$PROJECT_DIR$/../Artiry/factloader/factloader.iml" />
+    </modules>
+  </component>
+</project>
