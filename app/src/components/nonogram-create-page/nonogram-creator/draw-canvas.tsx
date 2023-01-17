@@ -1,31 +1,35 @@
 import {FC, useCallback, useEffect, useMemo, useRef} from "react";
 import blankImage from "../layout/blank.png";
 import filledImage from "../layout/filled.png"
-import {makeStyles} from "@material-ui/core";
-import gridImage from "../layout/bg.png";
-import backgroundImage from "../layout/bg.jpg";
-import sideImage from "../layout/side.png";
-import topImage from "../layout/top.png";
+import {makeStyles} from "@mui/styles";
 import {v4 as uuid} from "uuid";
 
 const useStyles = makeStyles(theme => ({
     canvas: {
         borderSpacing: 0,
         margin: 'auto',
-        backgroundImage: `url(${gridImage})`,
+        display: 'grid',
+        //gridTemplateColumns: 'repeat(5, 100px)',
+        //gridTemplateRows: 'repeat(5, 100px)',
+        border: '1px solid #08FFBD',
+        background: 'linear-gradient(180deg,#131321 0,#1f1c2c)'
     },
     empty:{
         width: 200,
         height: 200,
         float: 'left',
-        backgroundImage: `url(${backgroundImage})`,
+        background: 'linear-gradient(180deg,#131321 0,#1f1c2c)',
+        borderRight: '1px solid #08FFBD',
+        borderBottom: '1px solid #08FFBD',
     },
     side:{
         width: 200,
         height: 20,
         float: 'left',
         position: 'relative',
-        backgroundImage: `url(${sideImage})`
+        background: 'linear-gradient(180deg,#131321 0,#1f1c2c)',
+        borderRight: '1px solid #08FFBD',
+        borderBottom: '1px solid #08FFBD',
     },
     sideNums:{
         position: 'absolute',
@@ -42,7 +46,9 @@ const useStyles = makeStyles(theme => ({
         textAlign: 'center',
         textDecoration: 'underline',
         position: 'relative',
-        backgroundImage: `url(${topImage})`
+        background: 'linear-gradient(180deg,#131321 0,#1f1c2c)',
+        borderRight: '1px solid #08FFBD',
+        borderBottom: '1px solid #08FFBD',
     },
     topNums:{
         position: 'absolute',
@@ -57,8 +63,9 @@ const useStyles = makeStyles(theme => ({
         width: 20,
         height: 20,
         float: 'left',
-        backgroundImage: `url(${blankImage})`,
+        backgroundImage: `url("data:image/svg+xml,%3Csvg width='8' height='8' viewBox='0 0 6 6' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%239C92AC' fill-opacity='0.4' fill-rule='evenodd'%3E%3Cpath d='M5 0h1L0 6V5zM6 5v1H5z'/%3E%3C/g%3E%3C/svg%3E")`,
     },
+
 }));
 
 

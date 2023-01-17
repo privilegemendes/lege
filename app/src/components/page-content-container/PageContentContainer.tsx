@@ -32,7 +32,7 @@ const useStyles = makeStyles<Theme>(theme => ({
         marginBottom: 8,
     },
     contentContainer: {
-        backgroundColor: '#202020',
+        background: 'radial-gradient(ellipse at center,#192d38 0,#211f2f 100%)',
         marginLeft: -16,
         marginRight: -16,
         padding: '12px 16px',

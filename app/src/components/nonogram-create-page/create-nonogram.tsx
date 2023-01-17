@@ -1,9 +1,10 @@
 import {FC} from "react";
 
-import StopIcon from '@material-ui/icons/Stop';
-import StopOutlinedIcon from '@material-ui/icons/StopOutlined';
+import StopIcon from '@mui/icons-material/Stop';
+import StopOutlinedIcon from '@mui/icons-material/StopOutlined';
 
-import {Button, makeStyles, Typography} from "@material-ui/core";
+import {Button, Typography} from "@mui/material";
+import {makeStyles} from "@mui/styles";
 import {DrawCanvas} from "./nonogram-creator/draw-canvas";
 
 const useStyles = makeStyles(theme => ({
