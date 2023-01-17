@@ -1,8 +1,9 @@
 import * as React from 'react';
 import {FC, useMemo} from 'react';
-import {makeStyles, Theme} from "@material-ui/core";
 import {GoogleUser, useUser} from "../../../contexts/firestore-auth/firestore-auth-context";
 import classNames from "classnames";
+import {makeStyles} from "@mui/styles";
+import {Theme} from "@mui/material";
 
 interface StylesProps
 {

@@ -1,11 +1,12 @@
 import * as React from 'react';
 import {FC, useCallback, useState} from 'react';
-import {makeStyles, MenuItem, Typography} from "@material-ui/core";
+import {MenuItem, Theme, Typography} from "@mui/material";
+import {makeStyles} from "@mui/styles";
 import {GoogleUser, useSignOutCallback, useUser} from "../../../contexts/firestore-auth/firestore-auth-context";
 import {UserTrayMenu} from "./UserTrayMenu";
 import {UserAvatar} from "./UserAvatar";
 
-const useStyles = makeStyles(theme => ({
+const useStyles = makeStyles<Theme>(theme => ({
     button: {
         margin: 8,
     },

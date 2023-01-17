@@ -1,12 +1,12 @@
 import {FC} from "react";
 import {PageContentContainer} from "../page-content-container/PageContentContainer";
 import {CreateNonogram} from "./create-nonogram";
-import {AppBar} from "../app-bar/AppBar";
+import {Navbar} from "../navbar/Navbar";
 
 
 export const CreateNonogramPage: FC = () => {
     return<>
-        <AppBar/>
+        <Navbar/>
         <PageContentContainer title="Create Nonogram">
             <CreateNonogram/>
         </PageContentContainer>

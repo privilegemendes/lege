@@ -1,8 +1,7 @@
 import * as React from 'react';
 import {FC} from 'react';
 import {makeStyles} from "@mui/styles";
-import {Typography} from "@mui/material";
-import {Theme} from "@mui/system";
+import {Theme, Typography} from "@mui/material";
 import clsx from "clsx";
 
 const useStyles = makeStyles<Theme>(theme => ({
@@ -33,7 +32,7 @@ const useStyles = makeStyles<Theme>(theme => ({
         marginBottom: 8,
     },
     contentContainer: {
-        backgroundColor: '#001E3C',
+        backgroundColor: '#202020',
         marginLeft: -16,
         marginRight: -16,
         padding: '12px 16px',
