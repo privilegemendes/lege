@@ -1,7 +1,7 @@
 import * as React from 'react';
 import {FC, useMemo} from 'react';
-import {createTheme, CssBaseline, MuiThemeProvider, useMediaQuery} from "@material-ui/core";
-import {TypographyStyleOptions} from "@material-ui/core/styles/createTypography";
+import {createTheme, CssBaseline, ThemeProvider as MuiThemeProvider, useMediaQuery} from "@mui/material";
+import {TypographyStyleOptions} from "@mui/material/styles/createTypography";
 
 export const ThemeProvider: FC =
     (
@@ -33,10 +33,10 @@ export const ThemeProvider: FC =
                         subtitle2: textNotSelectable,
                     },
                     palette: {
-                        type: useDark ? 'dark' : 'light',
+                        mode: useDark ? 'dark' : 'light',
                         background: {
-                            default: useDark ? '#202020' : '#fff',
-                            paper: useDark ? '#303030' : '#fff',
+                            default: useDark ? '#303030' : '#fff',
+                            paper: useDark ? '#202020' : '#fff',
                         },
                         // text: {
                         //     primary: '#fff',
