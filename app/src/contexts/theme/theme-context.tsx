@@ -2,7 +2,6 @@ import * as React from 'react';
 import {FC, useMemo} from 'react';
 import {createTheme, CssBaseline, ThemeProvider as MuiThemeProvider, useMediaQuery} from "@mui/material";
 import {TypographyStyleOptions} from "@mui/material/styles/createTypography";
-import {blue, green} from "@mui/material/colors";
 
 export const ThemeProvider: FC =
     (
@@ -39,12 +38,16 @@ export const ThemeProvider: FC =
                             default: useDark ? '#303030' : '#fff',
                             paper: useDark ? '#202020' : '#fff',
                         },
-                        primary: {
-                            main: green[500],
-                        },
-                        secondary: {
-                            main: blue[500],
-                        },
+                        // text: {
+                        //     primary: '#fff',
+                        //     secondary: '#ddd',
+                        // },
+                        // primary: {
+                        //     main: green[500],
+                        // },
+                        // secondary: {
+                        //     main: blue[500],
+                        // },
                     },
                 });
             },
