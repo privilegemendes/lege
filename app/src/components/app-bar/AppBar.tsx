@@ -1,8 +1,8 @@
 import * as React from 'react';
 import {FC} from 'react';
-import {makeStyles, Theme} from "@material-ui/core";
+import {makeStyles} from "@mui/styles";
+import {Theme} from "@mui/system"
 import {TopBarLogo} from "./logo/TopBarLogo";
-
 import {useNavBarHeight} from "../../contexts/navbar-height/navbar-height-context";
 import {MAX_SITE_WIDTH} from "../../env-vars";
 
@@ -50,8 +50,8 @@ const useStyles = makeStyles<Theme, StylesProps>(theme => ({
         alignItems: 'center',
         justifyContent: 'space-between',
         backgroundColor: () => {
-            return theme.palette.type === 'dark'
-                ? '#303030'
+            return theme.palette.mode === 'dark'
+                ? '#0A1929'
                 : '#fff';
         },
         height: '100%',

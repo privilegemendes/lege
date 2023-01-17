@@ -1,9 +1,11 @@
 import * as React from 'react';
 import {FC} from 'react';
-import {makeStyles, Typography} from "@material-ui/core";
+import {makeStyles} from "@mui/styles";
+import {Typography} from "@mui/material";
+import {Theme} from "@mui/system";
 import clsx from "clsx";
 
-const useStyles = makeStyles(theme => ({
+const useStyles = makeStyles<Theme>(theme => ({
     contentCenterer: {
         marginTop: 24,
         marginBottom: 16,
@@ -31,7 +33,7 @@ const useStyles = makeStyles(theme => ({
         marginBottom: 8,
     },
     contentContainer: {
-        backgroundColor: '#333',
+        backgroundColor: '#001E3C',
         marginLeft: -16,
         marginRight: -16,
         padding: '12px 16px',
