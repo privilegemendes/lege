@@ -1,7 +1,9 @@
 import * as React from 'react';
 import {FC} from 'react';
-import {Button, makeStyles} from "@material-ui/core";
-import {useSignInWithGoogleCallback, useUser} from "../../../contexts/firestore-auth/firestore-auth-context";
+import {Button} from "@mui/material";
+import {makeStyles} from "@mui/styles";
+
+import {useSignInWithGoogleCallback, useUser} from "../../contexts/authentication/authentication-context";
 
 const useStyles = makeStyles(theme => ({}));
 

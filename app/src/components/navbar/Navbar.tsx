@@ -3,7 +3,7 @@ import {makeStyles} from "@mui/styles";
 import clsx from "clsx";
 import {CSSProperties, FC} from 'react';
 import {NavLink} from 'react-router-dom';
-import logoSvg from "../../assets/artiry.svg";
+import logoSvg from "../../assets/logo-final.svg";
 import {useNavBarHeight} from "../../contexts/navbar-height/navbar-height-context";
 import {CurrentUserTray} from "../app-bar/current-user-tray/CurrentUserTray";
 
@@ -20,6 +20,7 @@ const useStyles = makeStyles<Theme, StylesProps>(theme => ({
         alignContent: 'center',
         alignItems: 'center',
         backgroundColor: '#202020',
+        borderBottom: '1px solid rgb(98,95,95)',
         height: navBarHeight,
         [theme.breakpoints.up('sm')]: {
             paddingLeft: 20,
@@ -46,7 +47,7 @@ const useStyles = makeStyles<Theme, StylesProps>(theme => ({
     },
     logo: {
         marginLeft: -1,
-        height: 55,
+        height: 50,
     },
     paper: {
         marginRight: theme.spacing(2),
