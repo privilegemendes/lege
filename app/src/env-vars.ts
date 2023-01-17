@@ -7,6 +7,7 @@ export const REACT_APP_MESSAGING_SENDER_ID = requireNonNullish(process.env.REACT
 export const REACT_APP_APP_ID = requireNonNullish(process.env.REACT_APP_APP_ID);
 export const REACT_APP_MEASUREMENT_ID = process.env.REACT_APP_MEASUREMENT_ID;
 export const REACT_APP_AUTH_DOMAIN = requireNonNullish(process.env.REACT_APP_AUTH_DOMAIN);
+export const REACT_APP_DATABASE_URL = requireNonNullish(process.env.REACT_APP_DATABASE_URL);
 
 
 /**
