@@ -5,7 +5,6 @@ import {CSSProperties, FC} from 'react';
 import {NavLink} from 'react-router-dom';
 import logoSvg from "../../assets/logo-final.svg";
 import {useNavBarHeight} from "../../contexts/navbar-height/navbar-height-context";
-import {CurrentUserTray} from "../app-bar/current-user-tray/CurrentUserTray";
 
 type StylesProps = {
     navBarHeight: number
@@ -105,7 +104,7 @@ export const Navbar: FC<Props> =
                     pointerEvents: hideTopRightButtons ? 'none' : undefined,
                 }}
             >
-                <CurrentUserTray/>
+
             </div>
         </div>
     };
