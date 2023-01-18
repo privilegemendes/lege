@@ -1,4 +1,4 @@
-import {FC, useCallback, useEffect, useMemo, useRef} from "react";
+import {FC, useCallback, useEffect, useMemo, useRef, useState} from "react";
 import blankImage from "../layout/blank.png";
 import filledImage from "../layout/filled.png"
 import {makeStyles} from "@mui/styles";
@@ -7,8 +7,8 @@ import {v4 as uuid} from "uuid";
 import {gridBackground} from "../../../assets/gridBackground";
 
 type StylesProps = {
-    gridRows: string
-    gridColumns: string
+    gridRows: number
+    gridColumns: number
 }
 
 const useStyles = makeStyles<Theme, StylesProps>(theme => ({
@@ -29,30 +29,31 @@ const useStyles = makeStyles<Theme, StylesProps>(theme => ({
         position: 'relative',
         display: 'grid',
         gridAutoFlow: 'row dense',
-        gridTemplateColumns: gridColumns,
-        gridTemplateRows: gridRows,
+        gridTemplateColumns: `repeat(${gridColumns}, 1fr)`,
+        gridTemplateRows: `repeat(${gridRows}, 20px)`,
+        gap: 0,
         '& > *':{
             backgroundImage: gridBackground,
-            width: 40,
-            height: 40,
             border: '0.5px dotted white',
             transition: '0.2s all ease',
-            cursor: 'move',
+            cursor: 'pointer',
             position: 'relative',
             zIndex: 1000,
             opacity: 0.5,
         },
     }),
-    gridChild:{
-        '& > div': {
-            position: 'relative',
-            '& ::before': {
-                position: 'absolute',
-                display: 'block',
-                padding: '0 5px',
-            },
+    gridChild:({gridRows,gridColumns}) =>({
+        gridTemplateColumns: `repeat(${gridColumns}, 1fr)`,
+        gridTemplateRows: `repeat(${gridRows}, 20px)`,
+        position: 'relative',
+        background: 'hsla(green, 80%, 30%, 0.7)',
+        border: '0.5px solid white',
+        '& ::before': {
+            position: 'absolute',
+            display: 'block',
+            padding: '0 5px',
         },
-    },
+    }),
     canvas: {
         borderSpacing: 0,
         margin: 'auto',
@@ -145,19 +146,20 @@ export const DrawCanvas2: FC = () => {
 
     let cellLocation = 0;
     let drawing: any = "";
-    let width = 10;
-    let height = 10;
+    let width = 20;
+    let height = 20;
     let oldWidth = -1;
     let oldHeight = -1;
 
-    const classes = useStyles({gridRows: `repeat(${height}, 40px)`, gridColumns: `repeat(${width}, 40px)`});
+    const classes = useStyles({gridRows: height, gridColumns: width});
 
     const currCols = useMemo(() => ['', '#000000', ''],[]);
 
     const tileRef = useRef<HTMLElement | null >(null);
+    //background = 'rgba(31,138,15,.7)';
 
     const flip = useCallback((x: number, y: number) => {
-        const tileId = "tile;" + x + ";" + y;
+        const tileId = "box[" + x + "," + y + "]";
         const tileLoc = x * width + y;
         const tileState = drawing.charAt(tileLoc);
 
@@ -184,55 +186,8 @@ export const DrawCanvas2: FC = () => {
         //let startCol = drawing.charAt(tileLoc);
         
     }, [width, drawing]);
-    
-    const endLine = useCallback((x: number, y: number) => {
-        if (x !== startX || y !== startY) {
-            let tileXs = [];
-            let tileYs = [];
-
-            if (x === startX) {
-                if (y > startY) {
-                    for (let n = startY; n <= y; n++) {
-                        tileXs.push(x);
-                        tileYs.push(n);
-                    }
-                } else {
-                    for (let n = y; n <= startY; n++) {
-                        tileXs.push(x);
-                        tileYs.push(n);
-                    }
-                }
-            } else if (y === startY) {
-                if (x > startX) {
-                    for (let n = startX; n <= x; n++) {
-                        tileXs.push(n);
-                        tileYs.push(y);
-                    }
-                } else {
-                    for (let n = x; n <= startX; n++) {
-                        tileXs.push(n);
-                        tileYs.push(y);
-                    }
-                }
-            }
-
-            for (let n = 0; n < tileXs.length; n++) {
-                let tileId = "tile;" + tileXs[n] + ";" + tileYs[n];
-                const tile = document.getElementById(tileId);
-
-                if (tile) {
-                    tile.style.background = 'rgba(31,138,15,.7)';
-                    tile.style.border = '0.5px solid #ddd';
-                    let tileLoc = tileXs[n] * width + tileYs[n];
-                    drawing = drawing.substr(0, tileLoc) + input + drawing.substr(tileLoc + 1);
-                }
-            }
-        }
-    }, [drawing]);
 
     const puzzle = calculate(drawing);
-
-    console.log(puzzle);
 
     const sideNumberRef = useRef<HTMLElement | null >(null);
     const topNumberRef = useRef<HTMLElement | null >(null);
@@ -321,27 +276,26 @@ export const DrawCanvas2: FC = () => {
 
     const grid: any = [];
     for (let i = 0; i < data.length; i++) {
-        let id = uuid();
-        const gridbox = [];
+        const gridBox = [];
         for (let j = 0; j < data[i].length; j++) {
             let boxYAxis = j - 1;
             let boxXAxis = i - 1;
             let cellData = data[i][j];
             let box;
-            if (cellData.type === 'tile') {
+            if (cellData.type === 'box') {
                 box = (
                     <div
                         key={uuid()}
-                        id={`tile;${boxXAxis};${boxYAxis}`}
+                        id={`box[${boxXAxis},${boxYAxis}]`}
                         onClick={() => flip(boxXAxis, boxYAxis)}
                         onMouseDown={() => startLine(boxXAxis, boxYAxis)}
                         onMouseUp={() => endLine(boxXAxis, boxYAxis)}
                     ></div>
                 );
             }
-            gridbox.push(box);
+            gridBox.push(box);
         }
-        grid.push(gridbox);
+        grid.push(gridBox);
     }
 
     for (let n = 0; n < data.length; n++) {
@@ -396,17 +350,30 @@ export const DrawCanvas2: FC = () => {
         }
     }
 
-    console.log(drawings);
+    const [fillBox, setFillBox] = useState<string>('');
+    const [nonogram, setNonogram] = useState<number[]>([]);
+    const handleClick = (box: string, boxNumber: number) => {
+        setFillBox(box);
+        setNonogram([...nonogram, boxNumber]);
+    }
+
+    console.log(nonogram);
 
     const row = rows.map((item: any) => (<tr key={item.id}>{item.cells}</tr>));
+    return <div id="gridContainer" className={classes.gridContainer}>
+            <div id='grid' className={classes.grid}>
 
-    return<>
-        <div id="gridContainer" className={classes.gridContainer}>
-            <div className={classes.grid}>
-                {grid}
+                {[...Array(height * width)].map((_, i) => (
+                    <div
+                        key={i}
+                        className={`box[${i}] ${fillBox === `box[${i + 1}]` ? 'selected' : ''}`}
+                        onClick={() => handleClick(`box[${i + 1}]`, i)}
+                        //style={{ gridArea: `${i + 1}`}}
+                    >
+                    </div>
+                ))}
             </div>
-        </div>
-    </>;
+        </div>;
 }
 
 
@@ -421,7 +388,7 @@ let startY = -1;
 let input = 1;
 let inputs = ['blank','filled','x','dot'];
 
-
+// let drawing = Array(height).fill(Array(width).fill(0).join('')).join('');
 function generateCanvas(width: number, height: number) {
 
     const data = [];
@@ -432,7 +399,7 @@ function generateCanvas(width: number, height: number) {
             if (i === 0) {
                 row.push({ type: j === 0 ? 'empty' : 'top'});
             } else {
-               row.push({type: j === 0 ? 'side' : 'tile'});
+               row.push({type: j === 0 ? 'side' : 'box'});
             }
         }
         data.push(row);
@@ -441,59 +408,49 @@ function generateCanvas(width: number, height: number) {
     return data;
 }
 
-const fonts: {[key: string]: string} = {
-    red: "#ff0000",
-    darkred: "#990000",
-    orange: "#FF8D24",
-    yellow: "#ffff00",
-    darkyellow: "#999900",
-    green: "#00ff00",
-    darkgreen: "#007F0E",
-    cyan: "#17C7F3",
-    blue: "#0050ff",
-    darkblue: "#000099",
-    purple: "#7c00ff",
-    lightpurple: "#9999ff",
-    pink: "#EF6BDD",
-    brown: "#763000",
-    peach: "#ffccb1",
-    white: "#ffffff",
-    grey: "#848484"
+function endLine(x: number, y: number) {
+    if (x !== startX || y !== startY) {
+        let tileXs = [];
+        let tileYs = [];
+
+        if (x === startX) {
+            if (y > startY) {
+                for (let n = startY; n <= y; n++) {
+                    tileXs.push(x);
+                    tileYs.push(n);
+                }
+            } else {
+                for (let n = y; n <= startY; n++) {
+                    tileXs.push(x);
+                    tileYs.push(n);
+                }
+            }
+        } else if (y === startY) {
+            if (x > startX) {
+                for (let n = startX; n <= x; n++) {
+                    tileXs.push(n);
+                    tileYs.push(y);
+                }
+            } else {
+                for (let n = x; n <= startX; n++) {
+                    tileXs.push(n);
+                    tileYs.push(y);
+                }
+            }
+        }
+
+        for (let n = 0; n < tileXs.length; n++) {
+            let tileId = "tile;" + tileXs[n] + ";" + tileYs[n];
+            const tile = document.getElementById(tileId);
+
+            if (tile) {
+                tile.style.background = 'rgba(31,138,15,.7)';
+                tile.style.border = '0.5px solid #ddd';
+                let tileLoc = tileXs[n] * width + tileYs[n];
+            }
+        }
+    }
 }
-
-// function ImageDisplay() {
-//     width = 0;
-//     height = 0;
-//     document.getElementById('widthI').value = 0;
-//     document.getElementById('heightI').value = 0;
-//     drawing = '';
-//     DrawCanvas()
-// }
-//
-// function ChangeSize() {
-//     oldWidth = width;
-//     oldHeight = height;
-//
-//     width = parseInt(document.getElementById('width').value);
-//     height = parseInt(document.getElementById('height').value);
-//
-//     document.getElementById('widthI').value = width;
-//     document.getElementById('heightI').value = height;
-//     document.getElementById('pwidth').value = width;
-//     document.getElementById('pheight').value = height;
-//
-//     DrawCanvas();
-// };
-
-// function drawGram(drawing: any) {
-//     for (let n = 0; n < drawing.length; n++) {
-//         let x = Math.floor(n / width);
-//         let y = (n % width);
-//         let tileId: any = "tile;" + x + ";" + y;
-//         let tile = document.getElementById(tileId);
-//         tile.style.backgroundImage = "url('../layout/" + inputs[drawing.charAt(n)] + ".png')";
-//     }
-// }
 
 function calculate(drawing: any) {
 
@@ -593,17 +550,4 @@ function invert(drawing: any) {
     }
     calculate(drawing);
 }
-
-// function checkFields() {
-//     let nameFilled = false;
-//
-//     let name = document.getElementById('PuzzleName')!.value;
-//     if (name) {
-//         if (name.length > 2) {
-//             nameFilled = true;
-//         }
-//     }
-//
-//     document.getElementById('submit')!.disabled = !nameFilled;
-//
-//     //setTimeout(checkFields(), 100);
+;
