@@ -2,10 +2,57 @@ import {FC, useCallback, useEffect, useMemo, useRef} from "react";
 import blankImage from "../layout/blank.png";
 import filledImage from "../layout/filled.png"
 import {makeStyles} from "@mui/styles";
+import {Theme} from "@mui/material";
 import {v4 as uuid} from "uuid";
+import {gridBackground} from "../../../assets/gridBackground";
 
+type StylesProps = {
+    gridRows: string
+    gridColumns: string
+}
 
-const useStyles = makeStyles(theme => ({
+const useStyles = makeStyles<Theme, StylesProps>(theme => ({
+    gridContainer:{
+        border: '1px solid #08ffbd',
+        width: '100%',
+        height: '100%',
+        zIndex: 0,
+        position:'relative',
+        //background: '#131321', /* Old browsers */
+        background: 'linear-gradient(to bottom,#131321 0%, #1f1c2c 100%)', /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+        filter: `progid:DXImageTransform.Microsoft.gradient( startColorstr='#131321', endColorstr='#131321',GradientType=0 )`, /* IE6-9 */
+        boxShadow: '0 2px 20px 0 #000000',
+    },
+    grid: ({gridRows,gridColumns}) => ({
+        width: '100%',
+        height: '100%',
+        position: 'relative',
+        display: 'grid',
+        gridAutoFlow: 'row dense',
+        gridTemplateColumns: gridColumns,
+        gridTemplateRows: gridRows,
+        '& > *':{
+            backgroundImage: gridBackground,
+            width: 40,
+            height: 40,
+            border: '0.5px dotted white',
+            transition: '0.2s all ease',
+            cursor: 'move',
+            position: 'relative',
+            zIndex: 1000,
+            opacity: 0.5,
+        },
+    }),
+    gridChild:{
+        '& > div': {
+            position: 'relative',
+            '& ::before': {
+                position: 'absolute',
+                display: 'block',
+                padding: '0 5px',
+            },
+        },
+    },
     canvas: {
         borderSpacing: 0,
         margin: 'auto',
@@ -19,18 +66,19 @@ const useStyles = makeStyles(theme => ({
         width: 200,
         height: 200,
         float: 'left',
-        background: 'linear-gradient(180deg,#131321 0,#1f1c2c)',
-        borderRight: '1px solid #08FFBD',
-        borderBottom: '1px solid #08FFBD',
+
+        //background: 'linear-gradient(180deg,#131321 0,#1f1c2c)',
+        //borderRight: '1px solid #08FFBD',
+        //borderBottom: '1px solid #08FFBD',
     },
     side:{
         width: 200,
         height: 20,
         float: 'left',
         position: 'relative',
-        background: 'linear-gradient(180deg,#131321 0,#1f1c2c)',
-        borderRight: '1px solid #08FFBD',
-        borderBottom: '1px solid #08FFBD',
+        //background: 'linear-gradient(180deg,#131321 0,#1f1c2c)',
+        //borderRight: '1px solid #08FFBD',
+        //borderBottom: '1px solid #08FFBD',
     },
     sideNums:{
         position: 'absolute',
@@ -47,9 +95,9 @@ const useStyles = makeStyles(theme => ({
         textAlign: 'center',
         textDecoration: 'underline',
         position: 'relative',
-        background: 'linear-gradient(180deg,#131321 0,#1f1c2c)',
-        borderRight: '1px solid #08FFBD',
-        borderBottom: '1px solid #08FFBD',
+        //background: 'linear-gradient(180deg,#131321 0,#1f1c2c)',
+        //borderRight: '1px solid #08FFBD',
+        //borderBottom: '1px solid #08FFBD',
     },
     topNums:{
         position: 'absolute',
@@ -64,7 +112,13 @@ const useStyles = makeStyles(theme => ({
         width: 20,
         height: 20,
         float: 'left',
-        backgroundImage: `url("data:image/svg+xml,%3Csvg width='8' height='8' viewBox='0 0 6 6' xmlns='http://www.w3.org/2000/svg'%3E%3Cg fill='%239C92AC' fill-opacity='0.4' fill-rule='evenodd'%3E%3Cpath d='M5 0h1L0 6V5zM6 5v1H5z'/%3E%3C/g%3E%3C/svg%3E")`,
+        backgroundImage: gridBackground,
+        border: '0.5px dotted white',
+        transition: '0.2s all ease',
+        cursor: 'move',
+        position: 'relative',
+        zIndex: 1000,
+        opacity: 0.5,
     },
     'colUnits, rowUnits':{
         display: 'grid',
@@ -85,16 +139,18 @@ const useStyles = makeStyles(theme => ({
 }));
 
 
-export const DrawCanvas: FC = () => {
+export const DrawCanvas2: FC = () => {
 
-    const classes = useStyles();
+
 
     let cellLocation = 0;
     let drawing: any = "";
-    let width = 20;
-    let height = 20;
+    let width = 10;
+    let height = 10;
     let oldWidth = -1;
     let oldHeight = -1;
+
+    const classes = useStyles({gridRows: `repeat(${height}, 40px)`, gridColumns: `repeat(${width}, 40px)`});
 
     const currCols = useMemo(() => ['', '#000000', ''],[]);
 
@@ -111,10 +167,11 @@ export const DrawCanvas: FC = () => {
 
             if (tileState !== input) {
                 //tileRef.current.style.backgroundImage = "url('layout/" + inputs[input] + ".png')";
-                tile.style.backgroundImage = `url(${filledImage})`;
+                tile.style.background = 'rgba(31,138,15,.7)';
+                tile.style.border = '0.5px solid #ddd';
                 drawing = drawing.substr(0, tileLoc) + input + drawing.substr(tileLoc + 1);
             } else {
-                tile.style.backgroundImage = `url(${blankImage})`;
+                tile.style.backgroundImage = gridBackground;
                 drawing = drawing.substr(0, tileLoc) + "0" + drawing.substr(tileLoc + 1);
             }
         }
@@ -164,7 +221,8 @@ export const DrawCanvas: FC = () => {
                 const tile = document.getElementById(tileId);
 
                 if (tile) {
-                    tile.style.backgroundImage = `url(${filledImage})`;
+                    tile.style.background = 'rgba(31,138,15,.7)';
+                    tile.style.border = '0.5px solid #ddd';
                     let tileLoc = tileXs[n] * width + tileYs[n];
                     drawing = drawing.substr(0, tileLoc) + input + drawing.substr(tileLoc + 1);
                 }
@@ -261,6 +319,31 @@ export const DrawCanvas: FC = () => {
 
     let drawings = [...drawing];
 
+    const grid: any = [];
+    for (let i = 0; i < data.length; i++) {
+        let id = uuid();
+        const gridbox = [];
+        for (let j = 0; j < data[i].length; j++) {
+            let boxYAxis = j - 1;
+            let boxXAxis = i - 1;
+            let cellData = data[i][j];
+            let box;
+            if (cellData.type === 'tile') {
+                box = (
+                    <div
+                        key={uuid()}
+                        id={`tile;${boxXAxis};${boxYAxis}`}
+                        onClick={() => flip(boxXAxis, boxYAxis)}
+                        onMouseDown={() => startLine(boxXAxis, boxYAxis)}
+                        onMouseUp={() => endLine(boxXAxis, boxYAxis)}
+                    ></div>
+                );
+            }
+            gridbox.push(box);
+        }
+        grid.push(gridbox);
+    }
+
     for (let n = 0; n < data.length; n++) {
         let id = uuid();
         const cells = [];
@@ -277,14 +360,14 @@ export const DrawCanvas: FC = () => {
                 cell = <td key={uuid()} className={classes.side} id={`side;${nIndex}`}>&nbsp;</td>;
             } else if (cellData.type === 'tile') {
                 cell = (
-                    <td
+                    <div
                         key={uuid()}
                         className={classes.tile}
                         id={`tile;${nIndex};${mIndex}`}
                         onClick={() => flip(nIndex, mIndex)}
                         onMouseDown={() => startLine(nIndex, mIndex)}
                         onMouseUp={() => endLine(nIndex, mIndex)}
-                    ></td>
+                    ></div>
                 );
             }
             cells.push(cell)
@@ -318,12 +401,10 @@ export const DrawCanvas: FC = () => {
     const row = rows.map((item: any) => (<tr key={item.id}>{item.cells}</tr>));
 
     return<>
-        <div id="canvas">
-            <table cellSpacing="0" id="mainTable" className={classes.canvas}>
-                <tbody>
-                    {row}
-                </tbody>
-            </table>
+        <div id="gridContainer" className={classes.gridContainer}>
+            <div className={classes.grid}>
+                {grid}
+            </div>
         </div>
     </>;
 }
@@ -345,9 +426,9 @@ function generateCanvas(width: number, height: number) {
 
     const data = [];
 
-    for(let i = 0; i < height; i++) {
+    for(let i = 0; i < height + 1; i++) {
         const row: any[] = [];
-        for (let j = 0; j < width; j++) {
+        for (let j = 0; j < width + 1; j++) {
             if (i === 0) {
                 row.push({ type: j === 0 ? 'empty' : 'top'});
             } else {
