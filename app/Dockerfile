@@ -14,7 +14,9 @@ RUN npm install && npm install react-scripts@5.0.0 -gz
 ENV PATH /app/node_modules/.bin:$PATH
 
 # Take care of env variables
-ARG apiHost
+
+
+# Stage 2 - Create with Ngix
 
 # Set up build
 COPY . /app
@@ -24,3 +26,9 @@ RUN cat .env
 RUN npm run build \
   && rm -rf node_modules \
   && rmm src
+
+# Stage 3 - Create the production image with Nginx \
+# based on the previous image, where the static files were generated
+
+FROM nginx:1.19.0-alpine
+COPY --from=build /app/build /usr/share/nginx/html
