@@ -1,8 +1,31 @@
 import React, {FC, useRef, useState} from 'react';
 import {makeStyles} from '@mui/styles';
+import {Theme} from "@mui/material";
 import clsx from "clsx";
+import {gridBackground} from "../../../assets/gridBackground";
 
-const useStyles = makeStyles(theme => ({
+
+const useStyles = makeStyles<Theme,StylesProps>(theme => ({
+    grid: ({gridRows,gridColumns}) => ({
+        border: '1px solid #08ffbd',
+        width: 400,
+        height: 400,
+        position: 'relative',
+        display: 'grid',
+        gridAutoFlow: 'row dense',
+        gridTemplateColumns: `repeat(${gridColumns}, 1fr)`,
+        gridTemplateRows: `repeat(${gridRows}, 1fr)`,
+        gap: 0,
+        '& > *':{
+            backgroundImage: gridBackground,
+            border: '0.5px dotted white',
+            transition: '0.2s all ease',
+            cursor: 'move',
+            position: 'relative',
+            zIndex: 1000,
+            opacity: 0.5,
+        },
+    }),
     highlight: {
         background: 'rgba(77,138,15,.7)',
         border: '0.5px dotted white',
@@ -12,6 +35,11 @@ const useStyles = makeStyles(theme => ({
         cursor: 'pointer',
     }
 }));
+
+type StylesProps = {
+    gridRows: number
+    gridColumns: number
+}
 
 interface Props {
     className: string;
@@ -34,10 +62,10 @@ export const GridItem: FC<Props> =
         }
      ) => {
 
-    const classes = useStyles();
+    const classes = useStyles({gridRows: rows, gridColumns: cols});
     const [isMouseDown, setMouseDown] = useState<boolean>(false);
 
-    const handleMouseDown = (gridArea:string) => {
+    const handleMouseDown = (event: React.MouseEvent<HTMLDivElement,MouseEvent> ,gridArea:string) => {
         if(!isRemoving){
             setClickedItems([...clickedItems, gridArea]);
             setMouseDown(true);
@@ -47,7 +75,7 @@ export const GridItem: FC<Props> =
         }
     }
 
-    const handleMouseMove = (gridArea:string) => {
+    const handleMouseMove = (event: React.MouseEvent<HTMLDivElement,MouseEvent>,gridArea:string) => {
 
         if (isMouseDown) {
            if (isRemoving) {
@@ -61,8 +89,6 @@ export const GridItem: FC<Props> =
     const handleMouseUp = () => {
         setMouseDown(false);
     }
-    console.log(clickedItems);
-    console.log(isRemoving);
 
     // the background color of the grid-area locations will change to yellow
     // when the corresponding element is clicked, and will change back when clicked again.
@@ -77,15 +103,15 @@ export const GridItem: FC<Props> =
                 className={clsx(`[${row+1},${col+1}]`,
                     `${clickedItems.includes(gridArea) ? classes.highlight : ''}
                         ${isMouseDown ? classes.highlightDrag : ''}`)}
-                onMouseDown={() => handleMouseDown(gridArea)}
-                onMouseMove={() => handleMouseMove(gridArea)}
+                onMouseDown={(event) => handleMouseDown(event, gridArea)}
+                onMouseMove={(event) => handleMouseMove(event, gridArea)}
                 onMouseUp={handleMouseUp}
             ></div>
         })
     );
 
 
-    return <>
-        {gridItems}
-    </>
+    return <div id='grid' className={classes.grid}>
+            {gridItems}
+        </div>
 };

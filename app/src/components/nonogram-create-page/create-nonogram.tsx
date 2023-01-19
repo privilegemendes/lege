@@ -29,7 +29,6 @@ export const CreateNonogram: FC = () => {
         setRemoving(!isRemoving);
         setAlignment(newAlignment);
     };
-    console.log(alignment);
 
     const handleClear = () => {
         setClickedItems([]);
