@@ -1,10 +1,11 @@
-import {FC, useCallback, useEffect, useMemo, useRef, useState} from "react";
+import React, {FC, useCallback, useEffect, useMemo, useRef} from "react";
 import blankImage from "../layout/blank.png";
 import filledImage from "../layout/filled.png"
 import {makeStyles} from "@mui/styles";
 import {Theme} from "@mui/material";
 import {v4 as uuid} from "uuid";
 import {gridBackground} from "../../../assets/gridBackground";
+import {GridItem} from "./GridItem";
 
 type StylesProps = {
     gridRows: number
@@ -46,8 +47,8 @@ const useStyles = makeStyles<Theme, StylesProps>(theme => ({
         gridTemplateColumns: `repeat(${gridColumns}, 1fr)`,
         gridTemplateRows: `repeat(${gridRows}, 20px)`,
         position: 'relative',
-        background: 'hsla(green, 80%, 30%, 0.7)',
-        border: '0.5px solid white',
+        //background: 'hsla(green, 80%, 30%, 0.7)',
+        //border: '0.5px solid white',
         '& ::before': {
             position: 'absolute',
             display: 'block',
@@ -350,32 +351,14 @@ export const DrawCanvas2: FC = () => {
         }
     }
 
-    const [fillBox, setFillBox] = useState<string>('');
-    const [nonogram, setNonogram] = useState<number[]>([]);
-    const handleClick = (box: string, boxNumber: number) => {
-        setFillBox(box);
-        setNonogram([...nonogram, boxNumber]);
-    }
 
-    console.log(nonogram);
 
-    const row = rows.map((item: any) => (<tr key={item.id}>{item.cells}</tr>));
     return <div id="gridContainer" className={classes.gridContainer}>
             <div id='grid' className={classes.grid}>
-
-                {[...Array(height * width)].map((_, i) => (
-                    <div
-                        key={i}
-                        className={`box[${i}] ${fillBox === `box[${i + 1}]` ? 'selected' : ''}`}
-                        onClick={() => handleClick(`box[${i + 1}]`, i)}
-                        //style={{ gridArea: `${i + 1}`}}
-                    >
-                    </div>
-                ))}
+                <GridItem className={""}/>
             </div>
         </div>;
 }
-
 
 
 
