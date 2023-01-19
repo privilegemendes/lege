@@ -15,6 +15,8 @@ const useStyles = makeStyles<Theme,StylesProps>(theme => ({
         gridAutoFlow: 'row dense',
         gridTemplateColumns: `repeat(${gridColumns}, 1fr)`,
         gridTemplateRows: `repeat(${gridRows}, 1fr)`,
+        background: 'linear-gradient(to bottom,#131321 0%, #1f1c2c 100%)', /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+        boxShadow: '0 2px 20px 0 #000000',
         gap: 0,
         '& > *':{
             backgroundImage: gridBackground,
@@ -67,8 +69,10 @@ export const GridItem: FC<Props> =
 
     const handleMouseDown = (event: React.MouseEvent<HTMLDivElement,MouseEvent> ,gridArea:string) => {
         if(!isRemoving){
-            setClickedItems([...clickedItems, gridArea]);
-            setMouseDown(true);
+            if(!clickedItems.includes(gridArea)){
+                setClickedItems([...clickedItems, gridArea]);
+                setMouseDown(true);
+            }
         } else {
             setClickedItems(clickedItems.filter(item => item !== gridArea));
             setMouseDown(true);

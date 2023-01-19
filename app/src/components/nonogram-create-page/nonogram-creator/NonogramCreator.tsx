@@ -18,8 +18,6 @@ const useStyles = makeStyles<Theme>(theme => ({
         gridColumnGap: 0,
         gridRowGap: 0,
         //background: '#131321', /* Old browsers */
-        background: 'linear-gradient(to bottom,#131321 0%, #1f1c2c 100%)', /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-        boxShadow: '0 2px 20px 0 #000000',
     },
     empty:{
         gridArea: '1/1/2/2',
@@ -67,6 +65,9 @@ export const NonogramCreator: FC<Props> =
             setRowHints(calculateHints(clickedItems).rowHints);
         }, [clickedItems]);
 
+        console.log(clickedItems);
+        console.log({rowHints, colHints});
+
         return <div id="gridContainer" className={classes.gridContainer}>
                 <div className={classes.empty}/>
                 <div className={classes.top}>
@@ -98,44 +99,75 @@ export const NonogramCreator: FC<Props> =
             </div>
 };
 
-//Algorithm
-// 1. Initialize an empty list to store the hints for each row and column.
-// 2. Iterate through the array of grid areas and for each area, check if it represents a row or a column in the nonogram.
-// 3. For a row, scan from left to right and keep track of the consecutive black squares. When a white square is encountered, add the number of consecutive black squares to a list of hints for that row and reset the counter.
-// 4. For a column, scan from top to bottom and keep track of the consecutive black squares. When a white square is encountered, add the number of consecutive black squares to a list of hints for that column and reset the counter.
-// 5. Repeat steps 2-4 for each grid area in the array.
-// 6. Return the lists of hints for each row and column as the solution for the nonogram.
+
+/* Algorithm for calculating hints
+To calculate the hints for a nonogram given a gridArea array with the format "rowStart/colStart/rowEnd/colEnd",
+you can use the following algorithm:
+
+1. Initialize empty rowHints and colHints arrays
+2. Iterate through the gridAreas array:
+    a. For each gridArea, extract the rowStart, colStart, rowEnd, and colEnd values
+    b. Increase the count of the current hint in the rowHints array at the index of rowStart
+    c. Increase the count of the current hint in the colHints array at the index of colStart
+3. Iterate through the rowHints array:
+    a. If the current count is greater than 0 and the previous count is 0, start a new hint
+    b. If the current count is greater than 0, add the current count to the current hint
+    c. If the current count is 0 and the previous count is greater than 0, end the current hint
+4.  Iterate through the colHints array:
+    a. If the current count is greater than 0 and the previous count is 0, start a new hint
+    b. If the current count is greater than 0, add the current count to the current hint
+    c. If the current count is 0 and the previous count is greater than 0, end the current hint
+5. Return the rowHints and colHints arrays
+*/
 
 function calculateHints(gridAreas: string[]) {
-    let rowHints: number[][] = [];
-    let colHints: number[][] = [];
-    let rowCounts = new Array(20).fill(0);
-    let colCounts = new Array(20).fill(0);
+    let rowHints: number[][] = new Array(20).fill(0).map(() => []);
+    let colHints: number[][] = new Array(20).fill(0).map(() => []);
 
-    for (let i = 0; i < gridAreas.length; i++) {
-        let area = gridAreas[i].split("/");
-        let row1 = parseInt(area[0]) - 1;
-        let col1 = parseInt(area[1]) - 1;
-        let row2 = parseInt(area[2]) - 1;
-        let col2 = parseInt(area[3]) - 1;
+    for (let area of gridAreas) {
+        let areaArray = area.split("/");
+        let rowStart = parseInt(areaArray[0]) - 1;
+        let colStart = parseInt(areaArray[1]) - 1;
 
-        for (let row = row1; row <= row2; row++) {
-            for (let col = col1; col <= col2; col++) {
-                rowCounts[row]++;
-                colCounts[col]++;
+        rowHints[rowStart].push(1);
+        colHints[colStart].push(1);
+    }
+
+    rowHints = rowHints.map(row => {
+        let hint = [];
+        let count = 0;
+        for (let i = 0; i < 20; i++) {
+            if (row[i] === 1) {
+                if (count === 0) {
+                    hint.push(1);
+                } else {
+                    hint[hint.length - 1]++;
+                }
+                count++;
+            } else {
+                count = 0;
             }
         }
-    }
+        return hint;
+    });
 
-    for (let i = 0; i < 20; i++) {
-        if (rowCounts[i] > 0) {
-            rowHints.push([rowCounts[i]]);
+    colHints = colHints.map(col => {
+        let hint = [];
+        let count = 0;
+        for (let i = 0; i < 20; i++) {
+            if (col[i] === 1) {
+                if (count === 0) {
+                    hint.push(1);
+                } else {
+                    hint[hint.length - 1]++;
+                }
+                count++;
+            } else {
+                count = 0;
+            }
         }
-
-        if (colCounts[i] > 0) {
-            colHints.push([colCounts[i]]);
-        }
-    }
+        return hint;
+    });
 
     return { rowHints, colHints };
 }

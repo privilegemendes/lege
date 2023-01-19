@@ -10,6 +10,9 @@ const useStyles = makeStyles<Theme, StylesProps>(theme => ({
         gridTemplateColumns: `repeat(${gridColumns}, 20px)`,
         gridTemplateRows: '1fr',
         gap: 0,
+        marginLeft: 4,
+        marginRight: 4,
+
     }),
     hint: {
         position: 'absolute',
@@ -52,17 +55,38 @@ export const ColHints: FC<Props> =
         const gridColsRef = useRef<HTMLDivElement>(null);
         const gridCols = Array.from({length: cols}, (_, col) =>
             Array.from({length: 1}, (_, row) => {
-                return <div
-                    ref={gridColsRef}
-                    key={`[${row+1},${col+1}]`}
-                    style={{gridArea:`${row+1} / ${col+1} / ${row+2} / ${col+2}`}}
-                    className={clsx(`[${row+1},${col+1}]`)}
-                ></div>
+                return (
+                    <>
+                        <div
+                            ref={gridColsRef}
+                            key={`[${row+1},${col+1}]`}
+                            style={{gridArea:`${row+1} / ${col+1} / ${row+2} / ${col+2}`,
+                                background: 'linear-gradient(to bottom,#131321 0%, #1f1c2c 100%)',
+                                width: 10,
+                                height: 100,
+                                alignItems: 'center',
+                            }}
+                            className={clsx(`[${row+1},${col+1}]`)}
+                        ></div>
+                        {colHints[col] &&
+                            colHints[col].map((hint, index) => (
+                                <div
+                                    key={`hint-${col}-${index}`}
+                                    style={{gridArea:`${col+1} / ${index+1} / ${col+2} / ${index+2}`,
+                                        alignItems: 'center',
+                                        fontSize: '10px',
+                                        fontWeight: 'bold',
+                                        color: 'white'
+                                    }}
+                                >
+                                    {hint}
+                                </div>
+                            ))
+                        }
+                    </>
+                )
             })
         );
-
-        console.log('colHints', colHints);
-        console.log('gridAreas', gridAreas);
         return <div className={classes.colHints}>
             {gridCols}
         </div>

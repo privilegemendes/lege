@@ -10,6 +10,9 @@ const useStyles = makeStyles<Theme, StylesProps>(theme => ({
         gridTemplateRows: `repeat(${gridRows}, 20px)`,
         gridTemplateColumns: '1fr',
         gap: 0,
+        marginTop: 7,
+        //marginBottom: 4,
+
     }),
 
 
@@ -45,12 +48,36 @@ export const RowHints: FC<Props> =
         const gridRowsRef = useRef<HTMLDivElement>(null);
         const gridRows = Array.from({length: 1}, (_, col) =>
             Array.from({length: rows}, (_, row) => {
-                return <div
-                    ref={gridRowsRef}
-                    key={`[${row+1},${col+1}]`}
-                    style={{gridArea:`${row+1} / ${col+1} / ${row+2} / ${col+2}`}}
-                    className={clsx(`[${row+1},${col+1}]`)}
-                ></div>
+                return (
+                    <>
+                        <div
+                            ref={gridRowsRef}
+                            key={`[${row+1},${col+1}]`}
+                            style={{gridArea:`${row+1} / ${col+1} / ${row+2} / ${col+2}`,
+                                background: 'linear-gradient(to bottom,#131321 0%, #1f1c2c 100%)',
+                                width: 100,
+                                height: 10,
+                                alignItems: 'center',
+                            }}
+                            className={clsx(`[${row+1},${col+1}]`)}
+                        ></div>
+                        {rowHints[row] &&
+                            rowHints[row].map((hint, index) => (
+                                <div
+                                    key={`hint-${row}-${index}`}
+                                    style={{gridArea:`${row+1} / ${index+1} / ${row+2} / ${index+2}`,
+                                        alignItems: 'center',
+                                        fontSize: '10px',
+                                        fontWeight: 'bold',
+                                        color: 'white'
+                                    }}
+                                >
+                                    {hint}
+                                </div>
+                            ))
+                        }
+                    </>
+                )
             })
         );
 
@@ -60,8 +87,3 @@ export const RowHints: FC<Props> =
 }
 
 
-// {rowHints.map((hint, index) => (
-//     <div key={index}>
-//         {hint}
-//     </div>
-// ))}
