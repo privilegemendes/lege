@@ -7,8 +7,9 @@ import {Navbar} from "../navbar/Navbar";
 export const CreateNonogramPage: FC = () => {
     return<>
         <Navbar/>
-        <PageContentContainer title="Create Nonogram">
+        <PageContentContainer>
             <CreateNonogram/>
         </PageContentContainer>
+
     </>
 }

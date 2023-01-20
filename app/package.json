@@ -2,6 +2,7 @@
   "name": "lege",
   "version": "0.1.0",
   "private": true,
+  "homepage": "https://privilegemendes.github.io/lege",
   "dependencies": {
     "@apollo/client": "^3.5.6",
     "@apollo/link-batch-http": "^2.0.0-beta.3",
@@ -66,7 +67,9 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "test": "react-scripts test",
-    "eject": "react-scripts eject"
+    "eject": "react-scripts eject",
+    "predeploy": "npm run build",
+    "deploy": "gh-pages -d build"
   },
   "eslintConfig": {
     "extends": [
@@ -110,6 +113,7 @@
     "@types/uuid": "^8.3.4",
     "apollo": "^2.22.1",
     "apollo-hooks-codegen": "^1.2.0",
-    "cross-env": "^7.0.3"
+    "cross-env": "^7.0.3",
+    "gh-pages": "^4.0.0"
   }
 }

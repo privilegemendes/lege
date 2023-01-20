@@ -1,32 +1,65 @@
-import {FC} from "react";
-
-import StopIcon from '@material-ui/icons/Stop';
-import StopOutlinedIcon from '@material-ui/icons/StopOutlined';
-
-import {Button, makeStyles, Typography} from "@material-ui/core";
-import {DrawCanvas} from "./nonogram-creator/draw-canvas";
+import React, {FC, useState} from "react";
+import {makeStyles} from "@mui/styles";
+import {NonogramCreator} from "./nonogram-creator/NonogramCreator";
+import {IconButton, ToggleButton, ToggleButtonGroup} from "@mui/material";
+import ClearIcon from '@mui/icons-material/Clear';
 
 const useStyles = makeStyles(theme => ({
     buttons: {
-        align: 'center',
+        display: 'flex',
+        marginTop: 16,
+        gap: 16,
+        alignItems: 'center',
+        // '& > *': {
+        //     border: '1px solid #08ffbd',
+        //     cursor: 'pointer',
+        //     transition: 'all .2s ease-in-out',
+        // }
     }
 }));
 
 export const CreateNonogram: FC = () => {
 
     const classes = useStyles();
-    return <>
-        <DrawCanvas/>
-        <div className={classes.buttons}>
-            <Button>
-                <StopOutlinedIcon/>
-            </Button>
-            <Button>
-                <StopIcon/>
-            </Button>
-        </div>
+    const [isRemoving, setRemoving] = useState<boolean>(false);
+    const [clickedItems, setClickedItems] = useState<string[]>([]);
+    const [alignment, setAlignment] = useState('Draw');
 
-        <Typography>Single click to fill or empty cell</Typography>
-        <p>Single click to fill or empty cell.<br />To Draw a line starting on the desired cell hold your mouse button down,<br />move horizontally or vertically to the desired end point, and release the mouse button.<br /><br /></p>
+    const handleRemove = (event: React.MouseEvent<HTMLElement>, newAlignment:string) => {
+        setRemoving(!isRemoving);
+        setAlignment(newAlignment);
+    };
+
+    const handleClear = () => {
+        setClickedItems([]);
+    };
+
+    return <>
+        <NonogramCreator
+            isRemoving={isRemoving}
+            clickedItems={clickedItems}
+            setClickedItems={setClickedItems}
+        />
+        <div className={classes.buttons}>
+            <ToggleButtonGroup
+                color="primary"
+                value={alignment}
+                exclusive
+                size='small'
+                onChange={handleRemove}
+                fullWidth={true}
+                aria-label="Draw or remove"
+            >
+                <ToggleButton value="Draw">Draw</ToggleButton>
+                <ToggleButton value="Erase">Erase</ToggleButton>
+            </ToggleButtonGroup>
+            <IconButton
+                aria-label={"Clear"}
+                size="large"
+                onClick={handleClear}
+            >
+              <ClearIcon/>
+            </IconButton>
+        </div>
     </>
 }
