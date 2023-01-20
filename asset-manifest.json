@@ -1,0 +1,23 @@
+{
+  "files": {
+    "main.css": "/lege/static/css/main.28cfea49.chunk.css",
+    "main.js": "/lege/static/js/main.e685ab3d.chunk.js",
+    "main.js.map": "/lege/static/js/main.e685ab3d.chunk.js.map",
+    "runtime-main.js": "/lege/static/js/runtime-main.98e9ef10.js",
+    "runtime-main.js.map": "/lege/static/js/runtime-main.98e9ef10.js.map",
+    "static/js/2.eb757fd1.chunk.js": "/lege/static/js/2.eb757fd1.chunk.js",
+    "static/js/2.eb757fd1.chunk.js.map": "/lege/static/js/2.eb757fd1.chunk.js.map",
+    "static/js/3.a3eb959b.chunk.js": "/lege/static/js/3.a3eb959b.chunk.js",
+    "static/js/3.a3eb959b.chunk.js.map": "/lege/static/js/3.a3eb959b.chunk.js.map",
+    "index.html": "/lege/index.html",
+    "static/css/main.28cfea49.chunk.css.map": "/lege/static/css/main.28cfea49.chunk.css.map",
+    "static/js/2.eb757fd1.chunk.js.LICENSE.txt": "/lege/static/js/2.eb757fd1.chunk.js.LICENSE.txt",
+    "static/media/logo-final.815712be.svg": "/lege/static/media/logo-final.815712be.svg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.98e9ef10.js",
+    "static/js/2.eb757fd1.chunk.js",
+    "static/css/main.28cfea49.chunk.css",
+    "static/js/main.e685ab3d.chunk.js"
+  ]
+}
