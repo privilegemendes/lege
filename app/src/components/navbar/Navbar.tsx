@@ -18,7 +18,6 @@ const useStyles = makeStyles<Theme, StylesProps>(theme => ({
         justifyContent: 'space-between',
         alignContent: 'center',
         alignItems: 'center',
-        backgroundColor: '#202020',
         borderBottom: '1px solid rgb(98,95,95)',
         height: navBarHeight,
         [theme.breakpoints.up('sm')]: {

@@ -4,8 +4,9 @@ import {Theme} from "@mui/material";
 import {GridItem} from "./GridItem";
 import {RowHints} from "./RowHints";
 import {ColHints} from "./ColHints";
+import {gridBackground} from "../../../assets/gridBackground";
 
-const useStyles = makeStyles<Theme>(theme => ({
+const useStyles = makeStyles<Theme,StylesProps>(theme => ({
     gridContainer:{
         width: 500,
         height: 500,
@@ -18,23 +19,84 @@ const useStyles = makeStyles<Theme>(theme => ({
         gridColumnGap: 0,
         gridRowGap: 0,
         //background: '#131321', /* Old browsers */
+        [theme.breakpoints.up('md')]: {
+            height: 400,
+            width: 400,
+        },
+        [theme.breakpoints.down('sm')]: {
+            height: 400,
+            width: 400,
+        },
     },
     empty:{
         gridArea: '1/1/2/2',
 
     },
-    top:{
+    colHints: ({gridColumns}) => ({
         gridArea: '1/2/2/3',
+        display: 'grid',
+        height: 100,
+        gridTemplateColumns: `repeat(${gridColumns}, 20px)`,
+        gridTemplateRows: '1fr',
+        gap: 0,
+        marginLeft: 4,
+        marginRight: 4,
+        [theme.breakpoints.down('sm')]: {
+            height: 150,
+            // width: 150,
+        },
 
-    },
-    side:{
+    }),
+    rowHints: ({gridRows}) => ({
         gridArea: '2/1/3/2',
+        display: 'grid',
+        width: 100,
+        gridTemplateRows: `repeat(${gridRows}, 20px)`,
+        gridTemplateColumns: '1fr',
+        gap: 0,
+        marginTop: 5,
+        [theme.breakpoints.down('sm')]: {
+            // height: 250,
+            width: 150,
+        },
 
-    },
-    tile: {
+    }),
+    grid: ({gridRows,gridColumns}) => ({
         gridArea: '2/2/3/3',
-    },
+        border: '1px solid #08ffbd',
+        width: 400,
+        height: 400,
+        position: 'relative',
+        display: 'grid',
+        gridAutoFlow: 'row dense',
+        gridTemplateColumns: `repeat(${gridColumns}, 1fr)`,
+        gridTemplateRows: `repeat(${gridRows}, 1fr)`,
+        background: 'linear-gradient(to bottom,#131321 0%, #1f1c2c 100%)', /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
+        boxShadow: '0 2px 20px 0 #000000',
+        gap: 0,
+        '& > *':{
+            backgroundImage: gridBackground,
+            border: '0.5px dotted white',
+            transition: '0.2s all ease',
+            cursor: 'move',
+            position: 'relative',
+            zIndex: 1000,
+            opacity: 0.5,
+        },
+        [theme.breakpoints.down('sm')]: {
+            height: 250,
+            width: 250,
+            '& > *':{
+                border: '0.1px dotted white',
+            },
+        },
+    }),
 }));
+
+type StylesProps = {
+    gridRows: number
+    gridColumns: number
+}
 
 interface Props {
     isRemoving: boolean;
@@ -55,7 +117,7 @@ export const NonogramCreator: FC<Props> =
         let cols = 20;
         let rows = 20;
 
-        const classes = useStyles();
+        const classes = useStyles({gridRows: rows, gridColumns: cols});
 
         const [rowHints, setRowHints] = useState<number[][]>([]);
         const [colHints, setColHints] = useState<number[][]>([]);
@@ -70,7 +132,7 @@ export const NonogramCreator: FC<Props> =
 
         return <div id="gridContainer" className={classes.gridContainer}>
                 <div className={classes.empty}/>
-                <div className={classes.top}>
+                <div className={classes.colHints}>
                     <ColHints
                         colHints={colHints}
                         rows={rows}
@@ -78,7 +140,7 @@ export const NonogramCreator: FC<Props> =
                         gridAreas={clickedItems}
                     />
                 </div>
-                <div className={classes.side}>
+                <div className={classes.rowHints}>
                     <RowHints
                         rowHints={rowHints}
                         rows={rows}
@@ -86,7 +148,7 @@ export const NonogramCreator: FC<Props> =
                         gridAreas={clickedItems}
                     />
                 </div>
-                <div className={classes.tile}>
+                <div className={classes.grid}>
                     <GridItem
                         className={""}
                         rows={rows}

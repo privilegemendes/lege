@@ -2,32 +2,9 @@ import React, {FC, useRef, useState} from 'react';
 import {makeStyles} from '@mui/styles';
 import {Theme} from "@mui/material";
 import clsx from "clsx";
-import {gridBackground} from "../../../assets/gridBackground";
 
 
-const useStyles = makeStyles<Theme,StylesProps>(theme => ({
-    grid: ({gridRows,gridColumns}) => ({
-        border: '1px solid #08ffbd',
-        width: 400,
-        height: 400,
-        position: 'relative',
-        display: 'grid',
-        gridAutoFlow: 'row dense',
-        gridTemplateColumns: `repeat(${gridColumns}, 1fr)`,
-        gridTemplateRows: `repeat(${gridRows}, 1fr)`,
-        background: 'linear-gradient(to bottom,#131321 0%, #1f1c2c 100%)', /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
-        boxShadow: '0 2px 20px 0 #000000',
-        gap: 0,
-        '& > *':{
-            backgroundImage: gridBackground,
-            border: '0.5px dotted white',
-            transition: '0.2s all ease',
-            cursor: 'move',
-            position: 'relative',
-            zIndex: 1000,
-            opacity: 0.5,
-        },
-    }),
+const useStyles = makeStyles<Theme>(theme => ({
     highlight: {
         background: 'rgba(77,138,15,.7)',
         border: '0.5px dotted white',
@@ -38,10 +15,6 @@ const useStyles = makeStyles<Theme,StylesProps>(theme => ({
     }
 }));
 
-type StylesProps = {
-    gridRows: number
-    gridColumns: number
-}
 
 interface Props {
     className: string;
@@ -64,7 +37,7 @@ export const GridItem: FC<Props> =
         }
      ) => {
 
-    const classes = useStyles({gridRows: rows, gridColumns: cols});
+    const classes = useStyles();
     const [isMouseDown, setMouseDown] = useState<boolean>(false);
 
     const handleMouseDown = (event: React.MouseEvent<HTMLDivElement,MouseEvent> ,gridArea:string) => {
@@ -115,7 +88,7 @@ export const GridItem: FC<Props> =
     );
 
 
-    return <div id='grid' className={classes.grid}>
+    return <>
             {gridItems}
-        </div>
+        </>
 };

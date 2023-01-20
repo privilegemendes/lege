@@ -3,17 +3,7 @@ import {makeStyles} from "@mui/styles";
 import {Theme} from "@mui/material";
 import clsx from "clsx";
 
-const useStyles = makeStyles<Theme, StylesProps>(theme => ({
-    colHints: ({gridColumns}) => ({
-        display: 'grid',
-        height: 100,
-        gridTemplateColumns: `repeat(${gridColumns}, 20px)`,
-        gridTemplateRows: '1fr',
-        gap: 0,
-        marginLeft: 4,
-        marginRight: 4,
-
-    }),
+const useStyles = makeStyles<Theme>(theme => ({
     hint: {
         position: 'absolute',
         width: 20,
@@ -25,10 +15,6 @@ const useStyles = makeStyles<Theme, StylesProps>(theme => ({
 
 
 }));
-
-type StylesProps = {
-    gridColumns: number
-}
 
 interface Props {
     colHints: number[][];
@@ -46,7 +32,7 @@ export const ColHints: FC<Props> =
         }
     ) => {
 
-        const classes = useStyles({gridColumns: cols});
+        const classes = useStyles();
 
         useEffect(() => {
             // Render the component only when the colHints state variable changes
@@ -56,40 +42,39 @@ export const ColHints: FC<Props> =
         const gridCols = Array.from({length: cols}, (_, col) =>
             Array.from({length: 1}, (_, row) => {
                 return (
-                    <>
-                        <div
-                            ref={gridColsRef}
-                            key={`[${row+1},${col+1}]`}
-                            style={{gridArea:`${row+1} / ${col+1} / ${row+2} / ${col+2}`,
-                                background: 'linear-gradient(to bottom,#131321 0%, #1f1c2c 100%)',
-                                width: 10,
-                                height: 100,
-                                alignItems: 'center',
-                            }}
-                            className={clsx(`[${row+1},${col+1}]`)}
-                        ></div>
+                    <div className={clsx(`colHint:[${row+1},${col+1}]`)}
+                         style={{ background: 'linear-gradient(to bottom,#131321 0%, #1f1c2c 100%)',
+                             height: 100,
+                             width: 10,
+                         }}
+                    >
                         {colHints[col] &&
                             colHints[col].map((hint, index) => (
                                 <div
+                                    ref={gridColsRef}
                                     key={`hint-${col}-${index}`}
+                                    className={clsx(`colHintNum:[${row+1},${col+1}]`)}
                                     style={{gridArea:`${col+1} / ${index+1} / ${col+2} / ${index+2}`,
-                                        alignItems: 'center',
-                                        fontSize: '10px',
+                                        fontSize: '8px',
+                                        marginTop: 85,
                                         fontWeight: 'bold',
-                                        color: 'white'
+                                        color: 'white',
+                                        textAlign: 'center',
+
                                     }}
                                 >
                                     {hint}
                                 </div>
                             ))
                         }
-                    </>
+                    </div>
+
                 )
             })
         );
-        return <div className={classes.colHints}>
+        return <>
             {gridCols}
-        </div>
+        </>
     }
 
 

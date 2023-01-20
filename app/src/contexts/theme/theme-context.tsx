@@ -35,8 +35,8 @@ export const ThemeProvider: FC =
                     palette: {
                         mode: useDark ? 'dark' : 'light',
                         background: {
-                            default: useDark ? '#303030' : '#fff',
-                            paper: useDark ? '#202020' : '#fff',
+                            default: useDark ? '#211f2f' : '#fff',
+                            paper: useDark ? '#211f2f' : '#fff',
                         },
                         // text: {
                         //     primary: '#fff',
