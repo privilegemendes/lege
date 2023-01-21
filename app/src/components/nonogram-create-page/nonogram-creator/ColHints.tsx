@@ -43,28 +43,26 @@ export const ColHints: FC<Props> =
             Array.from({length: 1}, (_, row) => {
                 return (
                     <div className={clsx(`colHint:[${row+1},${col+1}]`)}
-                         style={{ background: 'linear-gradient(to bottom,#131321 0%, #1f1c2c 100%)',
-                             height: 100,
-                             width: 10,
-                         }}
+                         style={{ background: 'linear-gradient(to bottom,#131321 0%, #1f1c2c 100%)'}}
+                         key={`colHint-${row}-${col}`}
                     >
                         {colHints[col] &&
                             colHints[col].map((hint, index) => (
-                                <div
+                                <span
                                     ref={gridColsRef}
                                     key={`hint-${col}-${index}`}
                                     className={clsx(`colHintNum:[${row+1},${col+1}]`)}
-                                    style={{gridArea:`${col+1} / ${index+1} / ${col+2} / ${index+2}`,
+                                    style={{
                                         fontSize: '8px',
-                                        marginTop: 85,
                                         fontWeight: 'bold',
                                         color: 'white',
                                         textAlign: 'center',
-
+                                        position: 'relative',
+                                        bottom: 0,
                                     }}
                                 >
                                     {hint}
-                                </div>
+                                </span>
                             ))
                         }
                     </div>
