@@ -76,12 +76,13 @@ export const GridItem: FC<Props> =
             return <div
                 ref={gridRef}
                 key={`[${row+1},${col+1}]`}
-                style={{gridArea:`${row+1} / ${col+1} / ${row+2} / ${col+2}`}}
+                style={{gridArea:`${row+1} / ${col+1} / ${row+2} / ${col+2}`,
+                        height: '1fr', width: '1fr'}}
                 className={clsx(`[${row+1},${col+1}]`,
                     `${clickedItems.includes(gridArea) ? classes.highlight : ''}
                         ${isMouseDown ? classes.highlightDrag : ''}`)}
                 onMouseDown={(event) => handleMouseDown(event, gridArea)}
-                onMouseMove={(event) => handleMouseMove(event, gridArea)}
+                //onMouseMove={(event) => handleMouseMove(event, gridArea)}
                 onMouseUp={handleMouseUp}
             ></div>
         })

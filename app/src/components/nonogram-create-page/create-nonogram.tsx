@@ -10,6 +10,7 @@ const useStyles = makeStyles(theme => ({
         marginTop: 16,
         gap: 16,
         alignItems: 'center',
+        padding: 12,
         // '& > *': {
         //     border: '1px solid #08ffbd',
         //     cursor: 'pointer',

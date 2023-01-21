@@ -8,24 +8,25 @@ import {gridBackground} from "../../../assets/gridBackground";
 
 const useStyles = makeStyles<Theme,StylesProps>(theme => ({
     gridContainer:{
-        width: 500,
-        height: 500,
         zIndex: 0,
         margin: 'auto',
         position:'relative',
+        padding: 8,
         display: 'grid',
         gridTemplateColumns: '1fr 3fr',
         gridTemplateRows: '1fr 3fr',
-        gridColumnGap: 0,
-        gridRowGap: 0,
+        gridColumnGap: 4,
+        gridRowGap: 4,
+        width: '80vw',
+        height: '80vw',
         //background: '#131321', /* Old browsers */
         [theme.breakpoints.up('md')]: {
-            height: 400,
-            width: 400,
+            width: '80vw',
+            height: '80vw',
         },
         [theme.breakpoints.down('sm')]: {
-            height: 400,
-            width: 400,
+            width: '100vw',
+            height: '100vw',
         },
     },
     empty:{
@@ -35,37 +36,24 @@ const useStyles = makeStyles<Theme,StylesProps>(theme => ({
     colHints: ({gridColumns}) => ({
         gridArea: '1/2/2/3',
         display: 'grid',
-        height: 100,
-        gridTemplateColumns: `repeat(${gridColumns}, 20px)`,
+        gridTemplateColumns: `repeat(${gridColumns}, 1fr)`,
         gridTemplateRows: '1fr',
-        gap: 0,
+        gap: 4,
         marginLeft: 4,
         marginRight: 4,
-        [theme.breakpoints.down('sm')]: {
-            height: 150,
-            // width: 150,
-        },
-
     }),
     rowHints: ({gridRows}) => ({
         gridArea: '2/1/3/2',
         display: 'grid',
-        width: 100,
-        gridTemplateRows: `repeat(${gridRows}, 20px)`,
+        gridTemplateRows: `repeat(${gridRows}, 1fr)`,
         gridTemplateColumns: '1fr',
-        gap: 0,
-        marginTop: 5,
-        [theme.breakpoints.down('sm')]: {
-            // height: 250,
-            width: 150,
-        },
-
+        gap: 4,
+        marginTop: 4,
+        marginBottom: 4,
     }),
     grid: ({gridRows,gridColumns}) => ({
         gridArea: '2/2/3/3',
         border: '1px solid #08ffbd',
-        width: 400,
-        height: 400,
         position: 'relative',
         display: 'grid',
         gridAutoFlow: 'row dense',
@@ -84,8 +72,6 @@ const useStyles = makeStyles<Theme,StylesProps>(theme => ({
             opacity: 0.5,
         },
         [theme.breakpoints.down('sm')]: {
-            height: 250,
-            width: 250,
             '& > *':{
                 border: '0.1px dotted white',
             },
@@ -127,7 +113,7 @@ export const NonogramCreator: FC<Props> =
             setRowHints(calculateHints(clickedItems).rowHints);
         }, [clickedItems]);
 
-        console.log(clickedItems);
+        //console.log(clickedItems);
         console.log({rowHints, colHints});
 
         return <div id="gridContainer" className={classes.gridContainer}>
@@ -169,8 +155,9 @@ you can use the following algorithm:
 1. Initialize empty rowHints and colHints arrays
 2. Iterate through the gridAreas array:
     a. For each gridArea, extract the rowStart, colStart, rowEnd, and colEnd values
-    b. Increase the count of the current hint in the rowHints array at the index of rowStart
-    c. Increase the count of the current hint in the colHints array at the index of colStart
+    b. Add empty value "0" if there is an uncolored cell between the current gridArea and the previous gridArea
+    c. Increase the count of the current hint in the rowHints array at the index of rowStart
+    d. Increase the count of the current hint in the colHints array at the index of colStart
 3. Iterate through the rowHints array:
     a. If the current count is greater than 0 and the previous count is 0, start a new hint
     b. If the current count is greater than 0, add the current count to the current hint
@@ -191,9 +178,19 @@ function calculateHints(gridAreas: string[]) {
         let rowStart = parseInt(areaArray[0]) - 1;
         let colStart = parseInt(areaArray[1]) - 1;
 
+        // Add empty value if there is an uncolored cell
+        if (rowHints[rowStart].length > 0 && rowHints[rowStart][rowHints[rowStart].length - 1] !== 0) {
+            rowHints[rowStart].push(0);
+        }
+        if (colHints[colStart].length > 0 && colHints[colStart][colHints[colStart].length - 1] !== 0) {
+            colHints[colStart].push(0);
+        }
+
         rowHints[rowStart].push(1);
         colHints[colStart].push(1);
     }
+
+
 
     rowHints = rowHints.map(row => {
         let hint = [];
