@@ -1,28 +1,24 @@
 import {FC} from "react";
 
-import Board from "../../types/board/board";
-import Builder from "../../types/builder/builder";
-import Solver from "../../types/solver/solver";
-
 export const Console: FC = () => {
 
-    let board = Board.makeRandomBoard(10, 10, 1);
-    console.log('Randomly created board: (spaces are blank)');
-    board.printBoard(' ', '?');
-    console.log('');
-
-    let res = Builder.buildPuzzleFromData(board, 4) as { board: Board, stats: { [key: string]: number } };
-    console.log('Created puzzle: (Xs are known blanks, spaces are unknowns)');
-    res.board.printBoard('X', ' ');
-    console.log('Solution stats:');
-    console.log(res.stats);
-    console.log('');
-
-    let solutions = Solver.findPossibleSolutions(res.board);
-    console.log('Solution from solver:');
-    for (let sol of solutions) {
-        sol.printBoard(' ', '?');
-    }
+    // let board = Board.makeRandomBoard(10, 10, 1);
+    // console.log('Randomly created board: (spaces are blank)');
+    // board.printBoard(' ', '?');
+    // console.log('');
+    //
+    // let res = Builder.buildPuzzleFromData(board, 4) as { board: Board, stats: { [key: string]: number } };
+    // console.log('Created puzzle: (Xs are known blanks, spaces are unknowns)');
+    // res.board.printBoard('X', ' ');
+    // console.log('Solution stats:');
+    // console.log(res.stats);
+    // console.log('');
+    //
+    // let solutions = Solver.findPossibleSolutions(res.board);
+    // console.log('Solution from solver:');
+    // for (let sol of solutions) {
+    //     sol.printBoard(' ', '?');
+    // }
 
 
     return <>

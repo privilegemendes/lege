@@ -1,17 +1,27 @@
 import React, {FC, useEffect, useRef} from "react";
 import {makeStyles} from "@mui/styles";
 import {Theme} from "@mui/material";
-import clsx from "clsx";
 
-const useStyles = makeStyles<Theme>(theme => ({
-
-}));
+const useStyles = makeStyles<Theme>({
+    rowHint: {
+        background: 'linear-gradient(to bottom,#131321 0%, #1f1c2c 100%)',
+        position: 'relative',
+    },
+    rowHintNumber: {
+        fontSize: '1fr',
+        fontWeight: 'bold',
+        color: 'white',
+        textAlign: 'center',
+        position: 'absolute',
+        top: 2,
+        right: 0,
+    }
+});
 
 
 interface Props {
-    rowHints: number[][];
+    rowHints: {value: number, run: number}[][];
     rows: number;
-    cols: number;
     gridAreas: string[];
 }
 
@@ -20,7 +30,6 @@ export const RowHints: FC<Props> =
         {
             rowHints,
             rows,
-            cols,
             gridAreas,
         }
     ) => {
@@ -29,39 +38,23 @@ export const RowHints: FC<Props> =
 
         useEffect(() => {
             // Render the component only when the colHints state variable changes
-        },[rowHints]);
+        },[rowHints, gridAreas]);
+
+        const runValue = rowHints.map(obj => obj.map(item => item.run));
 
         const gridRowsRef = useRef<HTMLDivElement>(null);
         const gridRows = Array.from({length: 1}, (_, col) =>
             Array.from({length: rows}, (_, row) => {
                 return (
-                    <div className={clsx(`rowHint:[${row+1},${col+1}]`)}
+                    <div className={classes.rowHint}
                          key={`rowHint-${row}-${col}`}
-                         style={{
-                             background: 'linear-gradient(to bottom,#131321 0%, #1f1c2c 100%)',
-                             position: 'relative',
-                         }}
                     >
-                        <div ref={gridRowsRef}
-                             key={`rowHintNum:[${row+1},${col+1}]`}
-                             className={clsx(`rowHintNum:[${row+1},${col+1}]`)}
-                             style={{
-                                 fontSize: '1fr',
-                                 fontWeight: 'bold',
-                                 color: 'white',
-                                 textAlign: 'center',
-                                 position: 'absolute',
-                                 top: 2,
-                                 right: 0,
-                             }}>
-                            {rowHints[row] &&
-                                rowHints[row].map((hint, index) => (
-                                    <span key={index}>
-                                        {hint}
-                                    </span>
-                                ))
-                            }
-                        </div>
+                            <div ref={gridRowsRef}
+                                key={`rowHintNum:[${row+1},${col+1}]`}
+                                className={classes.rowHintNumber}
+                            >
+                                {runValue[row]}
+                            </div>
                     </div>
                 )
             })

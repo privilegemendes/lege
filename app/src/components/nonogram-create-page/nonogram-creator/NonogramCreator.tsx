@@ -5,6 +5,7 @@ import {GridItem} from "./GridItem";
 import {RowHints} from "./RowHints";
 import {ColHints} from "./ColHints";
 import {gridBackground} from "../../../assets/gridBackground";
+import Board from "../../../types/board/board";
 
 const useStyles = makeStyles<Theme,StylesProps>(theme => ({
     gridContainer:{
@@ -107,23 +108,20 @@ export const NonogramCreator: FC<Props> =
 
         const classes = useStyles({gridRows: rows, gridColumns: cols});
 
-        const [rowHints, setRowHints] = useState<number[][]>([]);
-        const [colHints, setColHints] = useState<number[][]>([]);
+        const [rowHints, setRowHints] = useState<{value: number, run: number}[][]>([]);
+        const [colHints, setColHints] = useState<{value: number, run: number}[][]>([]);
 
         useEffect(() => {
-            setColHints(calculateHints(clickedItems, rows, cols).colHints);
-            setRowHints(calculateHints(clickedItems, rows, cols).rowHints);
-        }, [clickedItems]);
+            setColHints(puzzle(clickedItems, rows, cols).colHints);
+            setRowHints(puzzle(clickedItems, rows, cols).rowHints);
 
-        console.log(clickedItems);
-        console.log({rowHints, colHints});
+        }, [clickedItems]);
 
         return <div id="gridContainer" className={classes.gridContainer}>
                 <div className={classes.empty}/>
                 <div className={classes.colHints}>
                     <ColHints
                         colHints={colHints}
-                        rows={rows}
                         cols={cols}
                         gridAreas={clickedItems}
                     />
@@ -132,7 +130,6 @@ export const NonogramCreator: FC<Props> =
                     <RowHints
                         rowHints={rowHints}
                         rows={rows}
-                        cols={cols}
                         gridAreas={clickedItems}
                     />
                 </div>
@@ -150,86 +147,25 @@ export const NonogramCreator: FC<Props> =
 };
 
 
-/* Algorithm for calculating hints
-To calculate the hints for a nonogram given a gridArea array with the format "rowStart/colStart/rowEnd/colEnd",
-you can use the following algorithm:
-
-1. Initialize empty rowHints and colHints arrays
-2. Iterate through the gridAreas array:
-    a. For each gridArea, extract the rowStart, colStart, rowEnd, and colEnd values
-    b. Add empty value "0" if there is an uncolored cell between the current gridArea and the previous gridArea
-    c. Increase the count of the current hint in the rowHints array at the index of rowStart
-    d. Increase the count of the current hint in the colHints array at the index of colStart
-3. Iterate through the rowHints array:
-    a. If the current count is greater than 0 and the previous count is 0, start a new hint
-    b. If the current count is greater than 0, add the current count to the current hint
-    c. If the current count is 0 and the previous count is greater than 0, end the current hint
-4.  Iterate through the colHints array:
-    a. If the current count is greater than 0 and the previous count is 0, start a new hint
-    b. If the current count is greater than 0, add the current count to the current hint
-    c. If the current count is 0 and the previous count is greater than 0, end the current hint
-5. Return the rowHints and colHints arrays
-*/
-
-function calculateHints(gridAreas: string[], rows: number, cols: number) {
-    let rowHints: number[][] = new Array(rows).fill(0).map(() => []);
-    let colHints: number[][] = new Array(cols).fill(0).map(() => []);
-    let rowCount = 0, colCount = 0;
+function puzzle (gridAreas: string[], rows: number, cols: number) {
+    const board = new Board(rows, cols);
+    let data: number[] | null = new Array(rows * cols).fill(0);
+    let rowHints: {value: number, run: number}[][]
+    let colHints: {value: number, run: number}[][]
 
     for (let area of gridAreas) {
         let areaArray = area.split("/");
-        let rowStart = parseInt(areaArray[0]) - 1;
-        let colStart = parseInt(areaArray[1]) - 1;
-        let rowEnd = parseInt(areaArray[2]) - 1;
-        let colEnd = parseInt(areaArray[3]) - 1;
+        let row = parseInt(areaArray[0]) - 1;
+        let col = parseInt(areaArray[1]) - 1;
 
-        // Check if there is an uncolored block on the left
-        if (colStart !== 0 && !gridAreas.some(
-            a => a === `${rowStart}/${colStart-1}/${rowEnd}/${colStart}`)) {
-            //if there is an uncolored block on the left, push the count to the hints array for that row
-            if (rowCount > 0) {
-                rowHints[rowStart].push(rowCount);
-                rowCount = 1;
-            }
-        } else {
-            rowCount++;
-        }
-
-        // Check if there is an uncolored block on the right
-        if (colEnd !== cols-1 && !gridAreas.some(
-            a => a === `${rowStart}/${colEnd}/${rowEnd}/${colEnd+1}`)) {
-            //if there is an uncolored block on the right, push the count to the hints array for that row
-            if (rowCount > 0) {
-                rowHints[rowStart].push(rowCount);
-                rowCount = 1;
-            }
-        } else {
-            rowCount++;
-        }
-
-        // Check if there is an uncolored block on the top
-        if (rowStart !== 0 && !gridAreas.some(
-            a => a === `${rowStart-1}/${colStart}/${rowStart}/${colEnd}`)) {
-            //if there is an uncolored block on the top, push the count to the hints array for that column
-            if (colCount > 0) {
-                colHints[colStart].push(colCount);
-                colCount = 1;
-            }
-        }else {
-            colCount++;
-        }
-
-        // Check if there is an uncolored block on the bottom
-        if (rowEnd !== rows-1 && !gridAreas.some(
-            a => a === `${rowEnd}/${colStart}/${rowEnd+1}/${colEnd}`)) {
-            //if there is an uncolored block on the bottom, push the count to the hints array for that column
-            if (colCount > 0) {
-                colHints[colStart].push(colCount);
-                colCount = 1;
-            }
-        }else{
-            colCount++;
-        }
+        data[row * cols + col] = 1;
     }
+
+    board.data = data;
+    board.buildCluesFromData();
+
+    rowHints = board.rowClues;
+    colHints = board.colClues;
+
     return {rowHints, colHints};
 }
