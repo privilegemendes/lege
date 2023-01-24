@@ -43,7 +43,6 @@
     "mobx-react-lite": "^2.2.2",
     "mobx-react-router": "^4.1.0",
     "mobx-utils": "^5.0.0",
-    "objtools": "^4.0.0",
     "queue-ts": "^0.1.0",
     "react": "^17.0.2",
     "react-device-detect": "^2.0.1",
