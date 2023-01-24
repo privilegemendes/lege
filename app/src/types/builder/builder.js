@@ -167,7 +167,7 @@ export default class Builder {
         for (let i = 0; i <= maxValue; i++) {
             allPossibleValues.push(i);
         }
-        
+
         let numBranches = 0;
         let curTotalSteps = 0;
 
