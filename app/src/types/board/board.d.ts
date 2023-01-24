@@ -28,8 +28,8 @@ declare class Board {
     constructor(rows: number, cols: number);
     rows: number;
     cols: number;
-    rowClues: number[][];
-    colClues: number[][];
+    rowClues: {value: number, run: number}[][];
+    colClues: {value: number, run: number}[][];
 
     /**
      * Method to generate random board data.

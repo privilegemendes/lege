@@ -1,24 +1,28 @@
 import React, {FC, useEffect, useRef} from "react";
 import {makeStyles} from "@mui/styles";
 import {Theme} from "@mui/material";
-import clsx from "clsx";
 
-const useStyles = makeStyles<Theme>(theme => ({
-    hint: {
-        position: 'absolute',
-        width: 20,
-        height: 20,
-        display: 'grid',
-        alignItems: 'center',
-        justifyContent: 'center',
+const useStyles = makeStyles<Theme>( {
+    colHint: {
+        background: 'linear-gradient(to bottom,#131321 0%, #1f1c2c 100%)',
+        position: 'relative',
     },
+    colHintNumber: {
+        fontSize: '1fr',
+        fontWeight: 'bold',
+        color: 'white',
+        textAlign: 'center',
+        position: 'absolute',
+        bottom: 0,
+        textOrientation: 'upright',
+        writingMode: 'vertical-rl',
+    }
 
 
-}));
+});
 
 interface Props {
-    colHints: number[][];
-    rows: number;
+    colHints: {value: number, run: number}[][];
     cols: number;
     gridAreas: string[];
 }
@@ -38,37 +42,20 @@ export const ColHints: FC<Props> =
             // Render the component only when the colHints state variable changes
         },[colHints, gridAreas]);
 
+
+        const runValue = colHints.map(obj => obj.map(item => item.run));
+
         const gridColsRef = useRef<HTMLDivElement>(null);
         const gridCols = Array.from({length: cols}, (_, col) =>
             Array.from({length: 1}, (_, row) => {
                 return (
-                    <div className={clsx(`colHint:[${row+1},${col+1}]`)}
-                         style={{
-                             background: 'linear-gradient(to bottom,#131321 0%, #1f1c2c 100%)',
-                             position: 'relative',
-                         }}
+                    <div className={classes.colHint}
                          key={`colHint-${row}-${col}`}
                     >
                         <div ref={gridColsRef}
-                            // key={`hint-${col}-${index}`}
-                             className={clsx(`colHintNum:[${row+1},${col+1}]`)}
-                             style={{
-                                 fontSize: '1fr',
-                                 fontWeight: 'bold',
-                                 color: 'white',
-                                 textAlign: 'center',
-                                 position: 'absolute',
-                                 bottom: 0,
-                                 textOrientation: 'upright',
-                                 writingMode: 'vertical-rl',
-                             }}>
-                            {colHints[col] &&
-                                colHints[col].map((hint, index) => (
-                                    <span key={index}>
-                                        {hint}
-                                    </span>
-                                ))
-                            }
+                             className={classes.colHintNumber}
+                        >
+                            {runValue[col]}
                         </div>
                     </div>
                 )
@@ -78,27 +65,3 @@ export const ColHints: FC<Props> =
             {gridCols}
         </>
     }
-
-
-        // {colHints.map((hint, index) => {
-        //     if(gridAreas[index]) {
-        //         let area = gridAreas[index];
-        //         let areaArray = area.split("/");
-        //         let row1 = parseInt(areaArray[0]) - 1;
-        //         let col1 = parseInt(areaArray[1]) - 1;
-        //         let row2 = parseInt(areaArray[2]) - 1;
-        //         let col2 = parseInt(areaArray[3]) - 1;
-        //         let width = (col2 - col1 + 1);
-        //         let height = (row2 - row1 + 1);
-        //         let left = col1;
-        //         let top = row1;
-        //         return (
-        //             <div key={index}
-        //                  className={classes.hint}
-        //                  style={{ width: width, height: height, left: left, top: top}}
-        //             >
-        //                 {hint}
-        //             </div>
-        //         );
-        //     }
-        // })}

@@ -1,7 +1,7 @@
 import React, {FC, useState} from "react";
 import {makeStyles} from "@mui/styles";
 import {NonogramCreator} from "./nonogram-creator/NonogramCreator";
-import {IconButton, ToggleButton, ToggleButtonGroup} from "@mui/material";
+import {IconButton, Slider, ToggleButton, ToggleButtonGroup, Typography} from "@mui/material";
 import ClearIcon from '@mui/icons-material/Clear';
 
 const useStyles = makeStyles(theme => ({
@@ -11,12 +11,19 @@ const useStyles = makeStyles(theme => ({
         gap: 16,
         alignItems: 'center',
         padding: 12,
-        // '& > *': {
-        //     border: '1px solid #08ffbd',
-        //     cursor: 'pointer',
-        //     transition: 'all .2s ease-in-out',
-        // }
+        width: '50vw',
+        marginLeft: 'auto',
+        marginRight: 'auto',
+    },
+    settings: {
+        display: 'flex',
+        flexDirection: 'column',
+        width: '50vw',
+        marginLeft: 'auto',
+        marginRight: 'auto',
     }
+
+
 }));
 
 export const CreateNonogram: FC = () => {
@@ -25,6 +32,12 @@ export const CreateNonogram: FC = () => {
     const [isRemoving, setRemoving] = useState<boolean>(false);
     const [clickedItems, setClickedItems] = useState<string[]>([]);
     const [alignment, setAlignment] = useState('Draw');
+    const [size, setSize] = useState<number>(5);
+
+    const handleGridSize = (event: any, value: number | number []) => {
+       setSize(value as number);
+    };
+
 
     const handleRemove = (event: React.MouseEvent<HTMLElement>, newAlignment:string) => {
         setRemoving(!isRemoving);
@@ -40,6 +53,7 @@ export const CreateNonogram: FC = () => {
             isRemoving={isRemoving}
             clickedItems={clickedItems}
             setClickedItems={setClickedItems}
+            gridSize={size}
         />
         <div className={classes.buttons}>
             <ToggleButtonGroup
@@ -62,5 +76,21 @@ export const CreateNonogram: FC = () => {
               <ClearIcon/>
             </IconButton>
         </div>
+        <div className={classes.settings}>
+            <Typography id="discrete-slider" gutterBottom>
+                Nonogram size
+            </Typography>
+            <Slider
+                defaultValue={5}
+                aria-labelledby="discrete-slider"
+                valueLabelDisplay="auto"
+                onChange={handleGridSize}
+                step={5}
+                marks
+                min={5}
+                max={20}
+            />
+        </div>
+
     </>
 }
