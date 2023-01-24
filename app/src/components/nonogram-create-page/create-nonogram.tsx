@@ -11,14 +11,16 @@ const useStyles = makeStyles(theme => ({
         gap: 16,
         alignItems: 'center',
         padding: 12,
-        width: '50vw',
+        width: '1fr',
         marginLeft: 'auto',
         marginRight: 'auto',
     },
     settings: {
         display: 'flex',
         flexDirection: 'column',
-        width: '50vw',
+        width: '1fr',
+        paddingLeft: 64,
+        paddingRight: 64,
         marginLeft: 'auto',
         marginRight: 'auto',
     }
@@ -32,7 +34,7 @@ export const CreateNonogram: FC = () => {
     const [isRemoving, setRemoving] = useState<boolean>(false);
     const [clickedItems, setClickedItems] = useState<string[]>([]);
     const [alignment, setAlignment] = useState('Draw');
-    const [size, setSize] = useState<number>(5);
+    const [size, setSize] = useState<number>(10);
 
     const handleGridSize = (event: any, value: number | number []) => {
        setSize(value as number);
@@ -81,12 +83,13 @@ export const CreateNonogram: FC = () => {
                 Nonogram size
             </Typography>
             <Slider
-                defaultValue={5}
+                defaultValue={10}
+                color="primary"
                 aria-labelledby="discrete-slider"
                 valueLabelDisplay="auto"
                 onChange={handleGridSize}
                 step={5}
-                marks
+                //marks
                 min={5}
                 max={20}
             />

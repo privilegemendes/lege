@@ -4,8 +4,18 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6d79a399-8924-4f24-b973-cee3210ac519" name="Changes" comment="update project workspace">
+    <list default="true" id="6d79a399-8924-4f24-b973-cee3210ac519" name="Changes" comment="updated firebase.json file">
+      <change afterPath="$PROJECT_DIR$/app/src/components/navbar-bottom/NavbarBottom.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/components/navbar/Navbar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/components/navbar/Navbar.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/components/nonogram-create-page/create-nonogram-page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/components/nonogram-create-page/create-nonogram-page.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/components/nonogram-create-page/create-nonogram.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/components/nonogram-create-page/create-nonogram.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/components/nonogram-create-page/nonogram-creator/ColHints.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/components/nonogram-create-page/nonogram-creator/ColHints.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/components/nonogram-create-page/nonogram-creator/GridItem.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/components/nonogram-create-page/nonogram-creator/GridItem.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/components/nonogram-create-page/nonogram-creator/NonogramCreator.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/components/nonogram-create-page/nonogram-creator/NonogramCreator.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/components/nonogram-create-page/nonogram-creator/RowHints.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/components/nonogram-create-page/nonogram-creator/RowHints.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/components/page-content-container/PageContentContainer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/components/page-content-container/PageContentContainer.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/contexts/theme/theme-context.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/contexts/theme/theme-context.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -33,9 +43,17 @@
         <entry key="$PROJECT_DIR$" value="mui_v5_migration" />
       </map>
     </option>
-    <option name="RECENT_COMMON_BRANCH" value="firebase-auth" />
+    <option name="RECENT_COMMON_BRANCH" value="nonogram" />
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="ROOT_SYNC" value="SYNC" />
+  </component>
+  <component name="GithubPullRequestsUISettings">
+    <option name="recentNewPullRequestHead">
+      <RepoCoordinatesHolder>
+        <option name="owner" value="privilegemendes" />
+        <option name="repository" value="lege" />
+      </RepoCoordinatesHolder>
+    </option>
   </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
@@ -55,7 +73,7 @@
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
     "jdk.selected.JAVA_MODULE": "openjdk-19",
-    "last_opened_file_path": "C:/Projects/Lege/.github",
+    "last_opened_file_path": "C:/Projects/Lege/app/src/components",
     "node.js.detected.package.eslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "nodejs_interpreter_path": "node",
@@ -69,10 +87,10 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Projects\Lege\app\src\components" />
       <recent name="C:\Projects\Lege\app" />
       <recent name="C:\Projects\Lege\app\src\components\nonogram-create-page\nonogram-creator" />
       <recent name="C:\Projects\Lege\app\src\hooks" />
-      <recent name="C:\Projects\Lege\app\src\components" />
       <recent name="C:\Projects\Lege\Lege\app\src\contexts" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
@@ -130,7 +148,7 @@
       <workItem from="1674073617319" duration="5837000" />
       <workItem from="1674082094402" duration="30368000" />
       <workItem from="1674149701857" duration="7501000" />
-      <workItem from="1674201750145" duration="89686000" />
+      <workItem from="1674201750145" duration="102106000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit">
       <created>1673277632598</created>
@@ -370,7 +388,14 @@
       <option name="project" value="LOCAL" />
       <updated>1674580566226</updated>
     </task>
-    <option name="localTasksCounter" value="35" />
+    <task id="LOCAL-00035" summary="updated firebase.json file">
+      <created>1674584225104</created>
+      <option name="number" value="00035" />
+      <option name="presentableId" value="LOCAL-00035" />
+      <option name="project" value="LOCAL" />
+      <updated>1674584225104</updated>
+    </task>
+    <option name="localTasksCounter" value="36" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -481,7 +506,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Removed theme colors" />
     <MESSAGE value="wip - firebase auth and functions setup" />
     <MESSAGE value="wip - firebase functions setup" />
     <MESSAGE value="fixed app bar &quot;not found file&quot; error" />
@@ -506,7 +530,8 @@
     <MESSAGE value="Changed to default exports" />
     <MESSAGE value="code style" />
     <MESSAGE value="update project workspace" />
-    <option name="LAST_COMMIT_MESSAGE" value="update project workspace" />
+    <MESSAGE value="updated firebase.json file" />
+    <option name="LAST_COMMIT_MESSAGE" value="updated firebase.json file" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="XDebuggerManager">

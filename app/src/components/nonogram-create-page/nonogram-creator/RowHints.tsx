@@ -49,12 +49,13 @@ export const RowHints: FC<Props> =
                     <div className={classes.rowHint}
                          key={`rowHint-${row}-${col}`}
                     >
+                        { runValue[row]&& runValue[row].map((item) =>
                             <div ref={gridRowsRef}
-                                key={`rowHintNum:[${row+1},${col+1}]`}
-                                className={classes.rowHintNumber}
+                                 className={classes.rowHintNumber}
                             >
-                                {runValue[row]}
+                                {item}
                             </div>
+                        )}
                     </div>
                 )
             })

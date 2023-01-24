@@ -34,9 +34,10 @@ export const ThemeProvider: FC =
                     },
                     palette: {
                         mode: useDark ? 'dark' : 'light',
+                        contrastThreshold: 4.5, // accessibility WCAG 2.1 Rule 1.4.3
                         background: {
-                            default: useDark ? '#211f2f' : '#fff',
-                            paper: useDark ? '#211f2f' : '#fff',
+                            default: useDark ? 'rgba(18,18,18,0.91)' : '#fff',
+                            paper: useDark ? '#121212' : '#fff',
                         },
                         // text: {
                         //     primary: '#fff',
