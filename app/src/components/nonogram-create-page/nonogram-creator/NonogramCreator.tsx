@@ -100,8 +100,8 @@ export const NonogramCreator: FC<Props> =
         }
     ) => {
 
-        let cols = 20;
-        let rows = 20;
+        let cols = 5;
+        let rows = 5;
 
         const classes = useStyles({gridRows: rows, gridColumns: cols});
 
@@ -109,11 +109,11 @@ export const NonogramCreator: FC<Props> =
         const [colHints, setColHints] = useState<number[][]>([]);
 
         useEffect(() => {
-            setColHints(calculateHints(clickedItems).colHints);
-            setRowHints(calculateHints(clickedItems).rowHints);
+            setColHints(calculateHints(clickedItems, rows, cols).colHints);
+            setRowHints(calculateHints(clickedItems, rows, cols).rowHints);
         }, [clickedItems]);
 
-        //console.log(clickedItems);
+        console.log(clickedItems);
         console.log({rowHints, colHints});
 
         return <div id="gridContainer" className={classes.gridContainer}>
@@ -169,64 +169,65 @@ you can use the following algorithm:
 5. Return the rowHints and colHints arrays
 */
 
-function calculateHints(gridAreas: string[]) {
-    let rowHints: number[][] = new Array(20).fill(0).map(() => []);
-    let colHints: number[][] = new Array(20).fill(0).map(() => []);
+function calculateHints(gridAreas: string[], rows: number, cols: number) {
+    let rowHints: number[][] = new Array(rows).fill(0).map(() => []);
+    let colHints: number[][] = new Array(cols).fill(0).map(() => []);
+    let rowCount = 0, colCount = 0;
 
     for (let area of gridAreas) {
         let areaArray = area.split("/");
         let rowStart = parseInt(areaArray[0]) - 1;
         let colStart = parseInt(areaArray[1]) - 1;
+        let rowEnd = parseInt(areaArray[2]) - 1;
+        let colEnd = parseInt(areaArray[3]) - 1;
 
-        // Add empty value if there is an uncolored cell
-        if (rowHints[rowStart].length > 0 && rowHints[rowStart][rowHints[rowStart].length - 1] !== 0) {
-            rowHints[rowStart].push(0);
-        }
-        if (colHints[colStart].length > 0 && colHints[colStart][colHints[colStart].length - 1] !== 0) {
-            colHints[colStart].push(0);
+        // Check if there is an uncolored block on the left
+        if (colStart !== 0 && !gridAreas.some(
+            a => a === `${rowStart}/${colStart-1}/${rowEnd}/${colStart}`)) {
+            //if there is an uncolored block on the left, push the count to the hints array for that row
+            if (rowCount > 0) {
+                rowHints[rowStart].push(rowCount);
+                rowCount = 1;
+            }
+        } else {
+            rowCount++;
         }
 
-        rowHints[rowStart].push(1);
-        colHints[colStart].push(1);
+        // Check if there is an uncolored block on the right
+        if (colEnd !== cols-1 && !gridAreas.some(
+            a => a === `${rowStart}/${colEnd}/${rowEnd}/${colEnd+1}`)) {
+            //if there is an uncolored block on the right, push the count to the hints array for that row
+            if (rowCount > 0) {
+                rowHints[rowStart].push(rowCount);
+                rowCount = 1;
+            }
+        } else {
+            rowCount++;
+        }
+
+        // Check if there is an uncolored block on the top
+        if (rowStart !== 0 && !gridAreas.some(
+            a => a === `${rowStart-1}/${colStart}/${rowStart}/${colEnd}`)) {
+            //if there is an uncolored block on the top, push the count to the hints array for that column
+            if (colCount > 0) {
+                colHints[colStart].push(colCount);
+                colCount = 1;
+            }
+        }else {
+            colCount++;
+        }
+
+        // Check if there is an uncolored block on the bottom
+        if (rowEnd !== rows-1 && !gridAreas.some(
+            a => a === `${rowEnd}/${colStart}/${rowEnd+1}/${colEnd}`)) {
+            //if there is an uncolored block on the bottom, push the count to the hints array for that column
+            if (colCount > 0) {
+                colHints[colStart].push(colCount);
+                colCount = 1;
+            }
+        }else{
+            colCount++;
+        }
     }
-
-
-
-    rowHints = rowHints.map(row => {
-        let hint = [];
-        let count = 0;
-        for (let i = 0; i < 20; i++) {
-            if (row[i] === 1) {
-                if (count === 0) {
-                    hint.push(1);
-                } else {
-                    hint[hint.length - 1]++;
-                }
-                count++;
-            } else {
-                count = 0;
-            }
-        }
-        return hint;
-    });
-
-    colHints = colHints.map(col => {
-        let hint = [];
-        let count = 0;
-        for (let i = 0; i < 20; i++) {
-            if (col[i] === 1) {
-                if (count === 0) {
-                    hint.push(1);
-                } else {
-                    hint[hint.length - 1]++;
-                }
-                count++;
-            } else {
-                count = 0;
-            }
-        }
-        return hint;
-    });
-
-    return { rowHints, colHints };
+    return {rowHints, colHints};
 }

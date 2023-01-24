@@ -64,7 +64,7 @@ export const ColHints: FC<Props> =
                              }}>
                             {colHints[col] &&
                                 colHints[col].map((hint, index) => (
-                                    <span>
+                                    <span key={index}>
                                         {hint}
                                     </span>
                                 ))

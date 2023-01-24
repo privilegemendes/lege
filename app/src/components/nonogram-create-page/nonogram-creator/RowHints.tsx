@@ -43,7 +43,7 @@ export const RowHints: FC<Props> =
                          }}
                     >
                         <div ref={gridRowsRef}
-                            // key={`hint-${col}-${index}`}
+                             key={`rowHintNum:[${row+1},${col+1}]`}
                              className={clsx(`rowHintNum:[${row+1},${col+1}]`)}
                              style={{
                                  fontSize: '1fr',
@@ -56,7 +56,7 @@ export const RowHints: FC<Props> =
                              }}>
                             {rowHints[row] &&
                                 rowHints[row].map((hint, index) => (
-                                    <span>
+                                    <span key={index}>
                                         {hint}
                                     </span>
                                 ))
