@@ -37,28 +37,31 @@ export const RowHints: FC<Props> =
                 return (
                     <div className={clsx(`rowHint:[${row+1},${col+1}]`)}
                          key={`rowHint-${row}-${col}`}
-                         style={{ background: 'linear-gradient(to bottom,#131321 0%, #1f1c2c 100%)',
+                         style={{
+                             background: 'linear-gradient(to bottom,#131321 0%, #1f1c2c 100%)',
+                             position: 'relative',
                          }}
                     >
-                        {rowHints[row] &&
-                            rowHints[row].map((hint, index) => (
-                                <span
-                                    ref={gridRowsRef}
-                                    key={`hint-${row}-${index}`}
-                                    className={clsx(`rowHintNum:[${row+1},${col+1}]`)}
-                                    style={{
-                                        textAlign: 'center',
-                                        fontSize: '8px',
-                                        fontWeight: 'bold',
-                                        color: 'white',
-                                        position: 'relative',
-                                        right: 0,
-                                    }}
-                                >
-                                    {hint}
-                                </span>
-                            ))
-                        }
+                        <div ref={gridRowsRef}
+                             key={`rowHintNum:[${row+1},${col+1}]`}
+                             className={clsx(`rowHintNum:[${row+1},${col+1}]`)}
+                             style={{
+                                 fontSize: '1fr',
+                                 fontWeight: 'bold',
+                                 color: 'white',
+                                 textAlign: 'center',
+                                 position: 'absolute',
+                                 top: 2,
+                                 right: 0,
+                             }}>
+                            {rowHints[row] &&
+                                rowHints[row].map((hint, index) => (
+                                    <span key={index}>
+                                        {hint}
+                                    </span>
+                                ))
+                            }
+                        </div>
                     </div>
                 )
             })

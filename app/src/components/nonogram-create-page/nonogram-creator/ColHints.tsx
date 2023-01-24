@@ -43,30 +43,34 @@ export const ColHints: FC<Props> =
             Array.from({length: 1}, (_, row) => {
                 return (
                     <div className={clsx(`colHint:[${row+1},${col+1}]`)}
-                         style={{ background: 'linear-gradient(to bottom,#131321 0%, #1f1c2c 100%)'}}
+                         style={{
+                             background: 'linear-gradient(to bottom,#131321 0%, #1f1c2c 100%)',
+                             position: 'relative',
+                         }}
                          key={`colHint-${row}-${col}`}
                     >
-                        {colHints[col] &&
-                            colHints[col].map((hint, index) => (
-                                <span
-                                    ref={gridColsRef}
-                                    key={`hint-${col}-${index}`}
-                                    className={clsx(`colHintNum:[${row+1},${col+1}]`)}
-                                    style={{
-                                        fontSize: '8px',
-                                        fontWeight: 'bold',
-                                        color: 'white',
-                                        textAlign: 'center',
-                                        position: 'relative',
-                                        bottom: 0,
-                                    }}
-                                >
-                                    {hint}
-                                </span>
-                            ))
-                        }
+                        <div ref={gridColsRef}
+                            // key={`hint-${col}-${index}`}
+                             className={clsx(`colHintNum:[${row+1},${col+1}]`)}
+                             style={{
+                                 fontSize: '1fr',
+                                 fontWeight: 'bold',
+                                 color: 'white',
+                                 textAlign: 'center',
+                                 position: 'absolute',
+                                 bottom: 0,
+                                 textOrientation: 'upright',
+                                 writingMode: 'vertical-rl',
+                             }}>
+                            {colHints[col] &&
+                                colHints[col].map((hint, index) => (
+                                    <span key={index}>
+                                        {hint}
+                                    </span>
+                                ))
+                            }
+                        </div>
                     </div>
-
                 )
             })
         );

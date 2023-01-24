@@ -45,10 +45,15 @@ export const GridItem: FC<Props> =
             if(!clickedItems.includes(gridArea)){
                 setClickedItems([...clickedItems, gridArea]);
                 setMouseDown(true);
+            }else{
+                setClickedItems(clickedItems.filter(item => item !== gridArea));
+                setMouseDown(true);
             }
         } else {
-            setClickedItems(clickedItems.filter(item => item !== gridArea));
-            setMouseDown(true);
+            if(clickedItems.includes(gridArea)){
+                setClickedItems(clickedItems.filter(item => item !== gridArea));
+                setMouseDown(true);
+            }
         }
     }
 
