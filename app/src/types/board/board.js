@@ -1,5 +1,3 @@
-//const deepCopy = require('objtools').deepCopy;
-
 /**
  * This class represents a puzzle board and includes the dimensions (rows and columns),
  * clues, and cell data.  Cell data may or may not include unknowns.  Also supported
@@ -25,7 +23,7 @@
  * @param {Number} rows - Number of rows, ie, height
  * @param {Number} cols - Number of columns, ie, width
  */
-class Board {
+export default class Board {
 
     constructor(rows, cols) {
         if (rows < 2) rows = 2;
@@ -455,6 +453,4 @@ class Board {
     }
 
 }
-
-module.exports = Board;
 

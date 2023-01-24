@@ -1,5 +1,3 @@
-//const objtools = require('objtools');
-//const deepCopy = objtools.deepCopy;
 const Board = require('../board/board');
 
 /**
@@ -9,7 +7,7 @@ const Board = require('../board/board');
  * @constructor
  * @param {Board} board - The game board with unknowns the solver should solve.
  */
-class Solver {
+export default class Solver {
 
     constructor(board) {
         this.board = board;
@@ -450,7 +448,6 @@ class Solver {
                 // We can continue if the starting cell is unknown
                 if (valueSetContains(line[pos], 0)) {
                     curLine[pos] = 0;
-                    continue;
                 } else {
                     break;
                 }
@@ -504,5 +501,3 @@ class Solver {
     }
 
 }
-
-module.exports = Solver;
