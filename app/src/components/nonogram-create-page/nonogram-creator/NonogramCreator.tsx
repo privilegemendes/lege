@@ -14,20 +14,16 @@ const useStyles = makeStyles<Theme,StylesProps>(theme => ({
         position:'relative',
         padding: 8,
         display: 'grid',
-        gridTemplateColumns: '1fr 3fr',
-        gridTemplateRows: '1fr 3fr',
+        gridTemplateColumns: '0.5fr 3fr',
+        gridTemplateRows: '0.5fr 3fr',
         gridColumnGap: 4,
         gridRowGap: 4,
-        width: '80vw',
-        height: '80vw',
+        width: '100vw',
+        height: '100vw',
         //background: '#131321', /* Old browsers */
-        [theme.breakpoints.up('md')]: {
+        [theme.breakpoints.up('sm')]: {
             width: '80vw',
             height: '80vw',
-        },
-        [theme.breakpoints.down('sm')]: {
-            width: '100vw',
-            height: '100vw',
         },
     },
     empty:{
@@ -57,7 +53,7 @@ const useStyles = makeStyles<Theme,StylesProps>(theme => ({
         border: '1px solid #08ffbd',
         position: 'relative',
         display: 'grid',
-        gridAutoFlow: 'row dense',
+        //gridAutoFlow: 'row dense',
         gridTemplateColumns: `repeat(${gridColumns}, 1fr)`,
         gridTemplateRows: `repeat(${gridRows}, 1fr)`,
         background: 'linear-gradient(to bottom,#131321 0%, #1f1c2c 100%)', /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
@@ -70,7 +66,7 @@ const useStyles = makeStyles<Theme,StylesProps>(theme => ({
             cursor: 'move',
             position: 'relative',
             zIndex: 1000,
-            opacity: 0.5,
+            opacity: 0.2,
         },
         [theme.breakpoints.down('sm')]: {
             '& > *':{

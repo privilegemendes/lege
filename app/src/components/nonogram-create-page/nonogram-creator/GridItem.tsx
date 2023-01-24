@@ -6,8 +6,8 @@ import clsx from "clsx";
 
 const useStyles = makeStyles<Theme>(theme => ({
     highlight: {
-        background: 'rgba(77,138,15,.7)',
-        border: '0.5px dotted white',
+        background: 'rgb(92,147,248)',
+        border: '0.5px solid white',
     },
     highlightDrag: {
         // background: 'rgba(77,138,15,.7)',
@@ -87,7 +87,7 @@ export const GridItem: FC<Props> =
                     `${clickedItems.includes(gridArea) ? classes.highlight : ''}
                         ${isMouseDown ? classes.highlightDrag : ''}`)}
                 onMouseDown={(event) => handleMouseDown(event, gridArea)}
-                //onMouseMove={(event) => handleMouseMove(event, gridArea)}
+                onMouseMove={(event) => handleMouseMove(event, gridArea)}
                 onMouseUp={handleMouseUp}
             ></div>
         })

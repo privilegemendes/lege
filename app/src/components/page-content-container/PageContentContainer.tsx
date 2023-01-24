@@ -6,14 +6,11 @@ import clsx from "clsx";
 
 const useStyles = makeStyles<Theme>(theme => ({
     contentCenterer: {
-        marginTop: 24,
         boxSizing: 'border-box',
+        marginTop: 4,
         marginLeft: 'auto',
         marginRight: 'auto',
         [theme.breakpoints.up('md')]: {
-
-        },
-        [theme.breakpoints.down('sm')]: {
 
         },
         display: 'flex',
@@ -24,15 +21,23 @@ const useStyles = makeStyles<Theme>(theme => ({
         marginBottom: 8,
     },
     contentContainer: {
-        background: 'radial-gradient(ellipse at center,#192d38 0,#211f2f 100%)',
+        //background: 'radial-gradient(ellipse at center,#192d38 0,#211f2f 100%)',
         borderRadius: 4,
         alignSelf: 'stretch',
         position: 'relative',
-        [theme.breakpoints.down('sm')]: {
-            //marginTop: 0,
-
-        },
-    },
+        overflow: 'hidden', /* Hide scrollbars */
+        // display: 'grid',
+        // gridTemplateColumns: '1fr',
+        // gridTemplateRows: '0.5fr 4fr 0.5fr',
+        // gridColumnGap: 0,
+        // gridRowGap: 0,
+        // "& > first-child": {
+        //     gridArea: '1/1/2/2',
+        // },
+        // "& > last-child": {
+        //     gridArea: '4/1/5/2',
+        // }
+},
 }));
 
 interface Props

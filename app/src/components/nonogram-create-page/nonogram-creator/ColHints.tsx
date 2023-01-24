@@ -8,14 +8,12 @@ const useStyles = makeStyles<Theme>( {
         position: 'relative',
     },
     colHintNumber: {
-        fontSize: '1fr',
+        fontSize: '10',
         fontWeight: 'bold',
         color: 'white',
         textAlign: 'center',
         position: 'absolute',
         bottom: 0,
-        textOrientation: 'upright',
-        writingMode: 'vertical-rl',
     }
 
 
@@ -48,15 +46,20 @@ export const ColHints: FC<Props> =
         const gridColsRef = useRef<HTMLDivElement>(null);
         const gridCols = Array.from({length: cols}, (_, col) =>
             Array.from({length: 1}, (_, row) => {
+                const gridArea = `${row+1} / ${col+1} / ${row+2} / ${col+2}`;
                 return (
                     <div className={classes.colHint}
                          key={`colHint-${row}-${col}`}
+                         style={{gridArea:`${row+1} / ${col+1} / ${row+2} / ${col+2}`}}
                     >
-                        <div ref={gridColsRef}
-                             className={classes.colHintNumber}
-                        >
-                            {runValue[col]}
-                        </div>
+                        { runValue[col]&& runValue[col].map((item) =>
+                            <div ref={gridColsRef}
+                                 className={classes.colHintNumber}
+                                 style={{gridArea:`${row+1} / ${col+1} / ${row+2} / ${col+2}`}}
+                            >
+                                {item}
+                            </div>
+                        )}
                     </div>
                 )
             })

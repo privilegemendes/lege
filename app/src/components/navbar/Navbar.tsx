@@ -1,10 +1,10 @@
-import {Theme} from "@mui/material";
+import {AppBar, Box, IconButton, Theme, Toolbar} from "@mui/material";
 import {makeStyles} from "@mui/styles";
-import clsx from "clsx";
 import {CSSProperties, FC} from 'react';
 import {NavLink} from 'react-router-dom';
 import logoSvg from "../../assets/logo-final.svg";
 import {useNavBarHeight} from "../../contexts/navbar-height/navbar-height-context";
+import MenuIcon from '@mui/icons-material/Menu';
 
 type StylesProps = {
     navBarHeight: number
@@ -44,8 +44,8 @@ const useStyles = makeStyles<Theme, StylesProps>(theme => ({
         lineHeight: 0,
     },
     logo: {
-        marginLeft: -1,
-        height: 50,
+        marginLeft: -10,
+        height: 40,
     },
     paper: {
         marginRight: theme.spacing(2),
@@ -79,31 +79,35 @@ export const Navbar: FC<Props> =
         const navBarHeight = useNavBarHeight();
         const classes = useStyles({navBarHeight});
 
-        return <div
-            className={clsx(classes.bar, className)}
-            style={style}
-        >
-            <NavLink
-                activeClassName="active"
-                exact
-                to="/"
-                className={classes.logoLink}
-            >
-                <img
-                    src={logoSvg}
-                    className={classes.logo}
-                    alt={"logo"}
-                    aria-label={"logo"}
-                />
-            </NavLink>
-            <div
-                className={classes.userTrayContainer}
-                style={{
-                    opacity: hideTopRightButtons ? '0' : '1',
-                    pointerEvents: hideTopRightButtons ? 'none' : undefined,
-                }}
-            >
-
-            </div>
-        </div>
+        return <Box sx={{ flexGrow: 1 }}>
+            <AppBar position="static">
+                <Toolbar>
+                    <NavLink
+                        activeClassName="active"
+                        exact
+                        to="/"
+                        className={classes.logoLink}
+                    >
+                        <img
+                            src={logoSvg}
+                            className={classes.logo}
+                            alt={"logo"}
+                            aria-label={"logo"}
+                        />
+                    </NavLink>
+                    <Box sx={{ flexGrow: 1 }} />
+                    <IconButton
+                        size="large"
+                        edge="end"
+                        color="inherit"
+                        aria-label="menu"
+                        sx={{ ml: 2 }}
+                    >
+                        <MenuIcon />
+                    </IconButton>
+                </Toolbar>
+            </AppBar>
+        </Box>
     };
+
+
