@@ -88,6 +88,7 @@ interface Props {
     isRemoving: boolean;
     clickedItems: string[];
     setClickedItems: (items: string[]) => void;
+    gridSize: number;
 }
 
 
@@ -97,11 +98,12 @@ export const NonogramCreator: FC<Props> =
             isRemoving,
             clickedItems,
             setClickedItems,
+            gridSize
         }
     ) => {
 
-        let cols = 5;
-        let rows = 5;
+        let cols = gridSize;
+        let rows = gridSize;
 
         const classes = useStyles({gridRows: rows, gridColumns: cols});
 
