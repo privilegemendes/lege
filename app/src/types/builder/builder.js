@@ -1,4 +1,3 @@
-//const deepCopy = require('objtools').deepCopy;
 const Solver = require('../solver/solver');
 
 /**
@@ -42,7 +41,7 @@ const Solver = require('../solver/solver');
  * @param {Board} board - Board containing data (no unknowns).
  * @param {Object} [params]
  */
-class Builder {
+export default class Builder {
 
     constructor(board, params = {}) {
         this.filledBoard = board;
@@ -165,7 +164,9 @@ class Builder {
         let visitedSet = {};
 
         let allPossibleValues = [];
-        for (let i = 0; i <= maxValue; i++) allPossibleValues.push(i);
+        for (let i = 0; i <= maxValue; i++) {
+            allPossibleValues.push(i);
+        }
 
         let numBranches = 0;
         let curTotalSteps = 0;
@@ -422,5 +423,3 @@ class Builder {
         };
     }
 }
-
-module.exports = Builder;
