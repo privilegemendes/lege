@@ -111,7 +111,7 @@ export const NonogramCreator: FC<Props> =
             setColHints(puzzle(clickedItems, rows, cols).colHints);
             setRowHints(puzzle(clickedItems, rows, cols).rowHints);
 
-        }, [clickedItems]);
+        }, [clickedItems, rows, cols]);
 
         return <div id="gridContainer" className={classes.gridContainer}>
                 <div className={classes.empty}/>
