@@ -1,6 +1,7 @@
 import React, {FC, useEffect, useRef} from "react";
 import {makeStyles} from "@mui/styles";
 import {Theme} from "@mui/material";
+import {v4 as uuid} from "uuid";
 
 const useStyles = makeStyles<Theme>( {
     colHint: {
@@ -8,12 +9,13 @@ const useStyles = makeStyles<Theme>( {
         position: 'relative',
     },
     colHintNumber: {
-        fontSize: '10',
+        fontSize: 10,
         fontWeight: 'bold',
         color: 'white',
         textAlign: 'center',
         position: 'absolute',
         bottom: 0,
+        width: '100%',
     }
 
 
@@ -46,19 +48,19 @@ export const ColHints: FC<Props> =
         const gridColsRef = useRef<HTMLDivElement>(null);
         const gridCols = Array.from({length: cols}, (_, col) =>
             Array.from({length: 1}, (_, row) => {
-                const gridArea = `${row+1} / ${col+1} / ${row+2} / ${col+2}`;
                 return (
                     <div className={classes.colHint}
-                         key={`colHint-${row}-${col}`}
+                         key={uuid()}
                          style={{gridArea:`${row+1} / ${col+1} / ${row+2} / ${col+2}`}}
                     >
                         { runValue[col]&& runValue[col].map((item) =>
                             <div ref={gridColsRef}
                                  className={classes.colHintNumber}
-                                 style={{gridArea:`${row+1} / ${col+1} / ${row+2} / ${col+2}`}}
+                                 key={uuid()}
                             >
-                                {item}
+                               <br>{item}</br>
                             </div>
+
                         )}
                     </div>
                 )
