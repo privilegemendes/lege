@@ -20,7 +20,7 @@ export const Console: FC = () => {
     //     sol.printBoard(' ', '?');
     // }
 
-
+    displayConsoleLogo();
     return <>
     </>;
 }
