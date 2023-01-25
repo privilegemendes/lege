@@ -4,18 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6d79a399-8924-4f24-b973-cee3210ac519" name="Changes" comment="updated firebase.json file">
-      <change afterPath="$PROJECT_DIR$/app/src/components/navbar-bottom/NavbarBottom.tsx" afterDir="false" />
+    <list default="true" id="6d79a399-8924-4f24-b973-cee3210ac519" name="Changes" comment="Fixing deployment issues">
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/components/navbar/Navbar.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/components/navbar/Navbar.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/components/nonogram-create-page/create-nonogram-page.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/components/nonogram-create-page/create-nonogram-page.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/components/nonogram-create-page/create-nonogram.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/components/nonogram-create-page/create-nonogram.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/components/nonogram-create-page/nonogram-creator/ColHints.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/components/nonogram-create-page/nonogram-creator/ColHints.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/components/nonogram-create-page/nonogram-creator/GridItem.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/components/nonogram-create-page/nonogram-creator/GridItem.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/components/nonogram-create-page/nonogram-creator/NonogramCreator.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/components/nonogram-create-page/nonogram-creator/NonogramCreator.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/components/nonogram-create-page/nonogram-creator/RowHints.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/components/nonogram-create-page/nonogram-creator/RowHints.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/components/page-content-container/PageContentContainer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/components/page-content-container/PageContentContainer.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/contexts/theme/theme-context.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/contexts/theme/theme-context.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -81,7 +73,7 @@
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.15722656",
     "project.structure.side.proportion": "0.2",
-    "settings.editor.selected.configurable": "Docker",
+    "settings.editor.selected.configurable": "preferences.pluginManager",
     "ts.external.directory.path": "C:\\Projects\\Artiry\\Webapp\\node_modules\\typescript\\lib"
   }
 }]]></component>
@@ -148,7 +140,7 @@
       <workItem from="1674073617319" duration="5837000" />
       <workItem from="1674082094402" duration="30368000" />
       <workItem from="1674149701857" duration="7501000" />
-      <workItem from="1674201750145" duration="102106000" />
+      <workItem from="1674201750145" duration="109659000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit">
       <created>1673277632598</created>
@@ -395,7 +387,35 @@
       <option name="project" value="LOCAL" />
       <updated>1674584225104</updated>
     </task>
-    <option name="localTasksCounter" value="36" />
+    <task id="LOCAL-00036" summary="mobile first design">
+      <created>1674597168019</created>
+      <option name="number" value="00036" />
+      <option name="presentableId" value="LOCAL-00036" />
+      <option name="project" value="LOCAL" />
+      <updated>1674597168019</updated>
+    </task>
+    <task id="LOCAL-00037" summary="changed folder to build">
+      <created>1674637743955</created>
+      <option name="number" value="00037" />
+      <option name="presentableId" value="LOCAL-00037" />
+      <option name="project" value="LOCAL" />
+      <updated>1674637743955</updated>
+    </task>
+    <task id="LOCAL-00038" summary="Added 404 page">
+      <created>1674639791838</created>
+      <option name="number" value="00038" />
+      <option name="presentableId" value="LOCAL-00038" />
+      <option name="project" value="LOCAL" />
+      <updated>1674639791838</updated>
+    </task>
+    <task id="LOCAL-00039" summary="Fixing deployment issues">
+      <created>1674651423235</created>
+      <option name="number" value="00039" />
+      <option name="presentableId" value="LOCAL-00039" />
+      <option name="project" value="LOCAL" />
+      <updated>1674651423235</updated>
+    </task>
+    <option name="localTasksCounter" value="40" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -506,10 +526,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="wip - firebase auth and functions setup" />
-    <MESSAGE value="wip - firebase functions setup" />
-    <MESSAGE value="fixed app bar &quot;not found file&quot; error" />
-    <MESSAGE value="Deleted obsolete files" />
     <MESSAGE value="Added cool colors!" />
     <MESSAGE value="Changed grid from HTML tables to CSS Grid" />
     <MESSAGE value="removed obsolete components" />
@@ -531,7 +547,11 @@
     <MESSAGE value="code style" />
     <MESSAGE value="update project workspace" />
     <MESSAGE value="updated firebase.json file" />
-    <option name="LAST_COMMIT_MESSAGE" value="updated firebase.json file" />
+    <MESSAGE value="mobile first design" />
+    <MESSAGE value="changed folder to build" />
+    <MESSAGE value="Added 404 page" />
+    <MESSAGE value="Fixing deployment issues" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixing deployment issues" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="XDebuggerManager">
