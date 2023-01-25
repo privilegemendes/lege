@@ -1,6 +1,7 @@
 import React, {FC, useEffect, useRef} from "react";
 import {makeStyles} from "@mui/styles";
 import {Theme} from "@mui/material";
+import {v4 as uuid} from "uuid";
 
 const useStyles = makeStyles<Theme>({
     rowHint: {
@@ -8,13 +9,14 @@ const useStyles = makeStyles<Theme>({
         position: 'relative',
     },
     rowHintNumber: {
-        fontSize: '1fr',
+        fontSize: 10,
         fontWeight: 'bold',
         color: 'white',
         textAlign: 'center',
         position: 'absolute',
         top: 2,
         right: 0,
+        height: '100%',
     }
 });
 
@@ -47,11 +49,12 @@ export const RowHints: FC<Props> =
             Array.from({length: rows}, (_, row) => {
                 return (
                     <div className={classes.rowHint}
-                         key={`rowHint-${row}-${col}`}
+                         key={uuid()}
                     >
                         { runValue[row]&& runValue[row].map((item) =>
                             <div ref={gridRowsRef}
                                  className={classes.rowHintNumber}
+                                 key={uuid()}
                             >
                                 {item}
                             </div>

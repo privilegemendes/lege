@@ -11,7 +11,7 @@ const useStyles = makeStyles<Theme>(theme => ({
         marginLeft: 'auto',
         marginRight: 'auto',
         [theme.breakpoints.up('md')]: {
-
+            maxWidth: 800,
         },
         display: 'flex',
         flexDirection: 'column',
