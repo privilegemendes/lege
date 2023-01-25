@@ -4,10 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6d79a399-8924-4f24-b973-cee3210ac519" name="Changes" comment="Removed PR deployment">
-      <change beforePath="$PROJECT_DIR$/.github/workflows/firebase-hosting-merge.yml" beforeDir="false" afterPath="$PROJECT_DIR$/.github/workflows/firebase-hosting-merge.yml" afterDir="false" />
+    <list default="true" id="6d79a399-8924-4f24-b973-cee3210ac519" name="Changes" comment="Added permissions for CI v2">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/package.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/components/nonogram-create-page/nonogram-creator/GridItem.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/components/nonogram-create-page/nonogram-creator/GridItem.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -141,7 +139,7 @@
       <workItem from="1674073617319" duration="5837000" />
       <workItem from="1674082094402" duration="30368000" />
       <workItem from="1674149701857" duration="7501000" />
-      <workItem from="1674201750145" duration="115935000" />
+      <workItem from="1674201750145" duration="116784000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit">
       <created>1673277632598</created>
@@ -444,7 +442,21 @@
       <option name="project" value="LOCAL" />
       <updated>1674657025246</updated>
     </task>
-    <option name="localTasksCounter" value="44" />
+    <task id="LOCAL-00044" summary="Added permissions for CI">
+      <created>1674658275220</created>
+      <option name="number" value="00044" />
+      <option name="presentableId" value="LOCAL-00044" />
+      <option name="project" value="LOCAL" />
+      <updated>1674658275220</updated>
+    </task>
+    <task id="LOCAL-00045" summary="Added permissions for CI v2">
+      <created>1674658453316</created>
+      <option name="number" value="00045" />
+      <option name="presentableId" value="LOCAL-00045" />
+      <option name="project" value="LOCAL" />
+      <updated>1674658453316</updated>
+    </task>
+    <option name="localTasksCounter" value="46" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -555,8 +567,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="wip" />
-    <MESSAGE value="Grid item creation and storage works!" />
     <MESSAGE value="Added Draw/Erase and Clear Buttons" />
     <MESSAGE value="Renamed component" />
     <MESSAGE value="Added row and col unit grid layers" />
@@ -580,7 +590,9 @@
     <MESSAGE value="More deployment issues fixes" />
     <MESSAGE value="Even more deployment issues fixes" />
     <MESSAGE value="Removed PR deployment" />
-    <option name="LAST_COMMIT_MESSAGE" value="Removed PR deployment" />
+    <MESSAGE value="Added permissions for CI" />
+    <MESSAGE value="Added permissions for CI v2" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added permissions for CI v2" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="XDebuggerManager">
