@@ -4,8 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6d79a399-8924-4f24-b973-cee3210ac519" name="Changes" comment="Fixing deployment issues">
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+    <list default="true" id="6d79a399-8924-4f24-b973-cee3210ac519" name="Changes" comment="More deployment issues fixes">
+      <change afterPath="$PROJECT_DIR$/.github/boring-cyborg.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app/src/components/nonogram-create-page/nonogram-creator/GridItem.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/components/nonogram-create-page/nonogram-creator/GridItem.tsx" afterDir="false" />
     </list>
@@ -140,7 +140,7 @@
       <workItem from="1674073617319" duration="5837000" />
       <workItem from="1674082094402" duration="30368000" />
       <workItem from="1674149701857" duration="7501000" />
-      <workItem from="1674201750145" duration="109659000" />
+      <workItem from="1674201750145" duration="110866000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit">
       <created>1673277632598</created>
@@ -415,7 +415,14 @@
       <option name="project" value="LOCAL" />
       <updated>1674651423235</updated>
     </task>
-    <option name="localTasksCounter" value="40" />
+    <task id="LOCAL-00040" summary="More deployment issues fixes">
+      <created>1674651870615</created>
+      <option name="number" value="00040" />
+      <option name="presentableId" value="LOCAL-00040" />
+      <option name="project" value="LOCAL" />
+      <updated>1674651870615</updated>
+    </task>
+    <option name="localTasksCounter" value="41" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -526,7 +533,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Added cool colors!" />
     <MESSAGE value="Changed grid from HTML tables to CSS Grid" />
     <MESSAGE value="removed obsolete components" />
     <MESSAGE value="wip" />
@@ -551,7 +557,8 @@
     <MESSAGE value="changed folder to build" />
     <MESSAGE value="Added 404 page" />
     <MESSAGE value="Fixing deployment issues" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixing deployment issues" />
+    <MESSAGE value="More deployment issues fixes" />
+    <option name="LAST_COMMIT_MESSAGE" value="More deployment issues fixes" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="XDebuggerManager">
