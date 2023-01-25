@@ -63,12 +63,12 @@
     "web-vitals": "^1.1.2"
   },
   "scripts": {
-    "start": "react-scripts start",
+    "start": "react-app-rewired start",
     "build": "react-scripts build",
-    "test": "react-scripts test",
-    "eject": "react-scripts eject",
+    "test": "react-app-rewired test",
+    "eject": "react-app-rewired eject",
     "deploy": "npm run build && firebase deploy --only hosting",
-    "prod-build": "chmod +x ./build-production.sh"
+    "prod-build": "./build-production.sh"
   },
   "eslintConfig": {
     "extends": [
@@ -113,7 +113,8 @@
     "apollo": "^2.22.1",
     "apollo-hooks-codegen": "^1.2.0",
     "cross-env": "^7.0.3",
-    "gh-pages": "^4.0.0",
+    "customize-cra": "^1.0.0",
+    "react-app-rewired": "^2.2.1",
     "typescript": "^4.9.4"
   }
 }
