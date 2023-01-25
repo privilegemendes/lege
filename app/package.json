@@ -68,7 +68,7 @@
     "test": "react-scripts test",
     "eject": "react-scripts eject",
     "deploy": "npm run build && firebase deploy --only hosting",
-    "prod-build": "chmod +x /build-production.sh"
+    "prod-build": "chmod +x ./build-production.sh"
   },
   "eslintConfig": {
     "extends": [
