@@ -57,7 +57,7 @@ export const GridItem: FC<Props> =
         }
     }
 
-    const handleMouseMove = (event: React.MouseEvent<HTMLDivElement,MouseEvent>,gridArea:string) => {
+    const handleMouseMove = (event: React.TouchEvent<HTMLDivElement>,gridArea:string) => {
 
         if (isMouseDown) {
            if (isRemoving) {
@@ -87,7 +87,7 @@ export const GridItem: FC<Props> =
                     `${clickedItems.includes(gridArea) ? classes.highlight : ''}
                         ${isMouseDown ? classes.highlightDrag : ''}`)}
                 onMouseDown={(event) => handleMouseDown(event, gridArea)}
-                onMouseMove={(event) => handleMouseMove(event, gridArea)}
+                onTouchMove={(event) => handleMouseMove(event, gridArea)}
                 onMouseUp={handleMouseUp}
             ></div>
         })
