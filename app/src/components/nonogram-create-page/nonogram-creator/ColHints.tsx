@@ -58,7 +58,7 @@ export const ColHints: FC<Props> =
                                  className={classes.colHintNumber}
                                  key={uuid()}
                             >
-                               <br>{item}</br>
+                               {item}
                             </div>
 
                         )}
