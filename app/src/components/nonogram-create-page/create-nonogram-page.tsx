@@ -1,7 +1,6 @@
 import {FC} from "react";
 import {PageContentContainer} from "../page-content-container/PageContentContainer";
 import {CreateNonogram} from "./create-nonogram";
-import {NavbarBottom} from "../navbar-bottom/NavbarBottom";
 
 
 export const CreateNonogramPage: FC = () => {
@@ -10,7 +9,5 @@ export const CreateNonogramPage: FC = () => {
         <PageContentContainer>
             <CreateNonogram/>
         </PageContentContainer>
-        <NavbarBottom/>
-
     </>
 }

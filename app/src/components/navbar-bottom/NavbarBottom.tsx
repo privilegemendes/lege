@@ -1,4 +1,4 @@
-import {Drawer, List, ListItem, ListItemButton, ListItemIcon, Theme, useMediaQuery} from "@mui/material";
+import {IconButton, List, ListItem, Theme, useMediaQuery} from "@mui/material";
 import {makeStyles} from "@mui/styles";
 import {CSSProperties, FC, useState} from 'react';
 import AddIcon from '@mui/icons-material/Add';
@@ -6,6 +6,7 @@ import SearchIcon from '@mui/icons-material/Search';
 import GridOnIcon from '@mui/icons-material/GridOn';
 import SportsScoreIcon from '@mui/icons-material/SportsScore';
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
+import clsx from "clsx";
 
 
 const useStyles = makeStyles<Theme>(theme => ({
@@ -27,10 +28,24 @@ const useStyles = makeStyles<Theme>(theme => ({
         marginRight: -2,
         transition: 'opacity 0.2s',
     },
-    list: {
+    listMobile: {
         display: 'flex',
         flexDirection: 'row',
-        justifyContent: 'space-between'
+        justifyContent: 'space-evenly',
+        alignItems: 'center',
+        paddingLeft: 8,
+        paddingRight: 8,
+        marginTop: 'auto',
+        marginBottom: 8,
+    },
+    listDesktop: {
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
+        // paddingLeft: 8,
+        // paddingRight: 8,
+        // marginTop: 'auto',
+        // marginBottom: 8,
     }
 }));
 
@@ -39,7 +54,11 @@ type Props = {
     className?: string
 }
 
-export const NavbarBottom: FC<Props> = () =>
+export const NavbarBottom: FC<Props> = (
+    {
+        className,
+    }
+) =>
     {
         const classes = useStyles();
 
@@ -47,50 +66,28 @@ export const NavbarBottom: FC<Props> = () =>
 
         const [viewportWidth, setViewportWidth] = useState(getViewportWidth());
 
-        const isMobile = useMediaQuery('(max-width:500px)');
-        const anchor = isMobile ? 'bottom' : 'left';
+        const isMobile = useMediaQuery('(max-width:600px)');
 
-        const list = [<GridOnIcon/>, <SearchIcon/>, <AddIcon/>, <SportsScoreIcon/>, <AccountCircleIcon/>];
+        const list = [
+            <GridOnIcon fontSize="large"/>,
+            <SearchIcon fontSize="large"/>,
+            <AddIcon fontSize="large"/>,
+            <SportsScoreIcon fontSize="large"/>,
+            <AccountCircleIcon fontSize="large"/>
+        ];
 
-
-        return <Drawer
-                open={true}
-                anchor={anchor}
-                color="primary"
-                className={classes.appBar}
-                variant="permanent"
-        >
-                    { list.map((item, index) => (
-                        <List className={isMobile ? classes.list : ""}>
-                            <ListItem key={index} disablePadding >
-                                <ListItemButton>
-                                    <ListItemIcon sx={{fontSize:'10', justifyContent: 'center'}}>
-                                        {item}
-                                    </ListItemIcon>
-                                </ListItemButton>
-                            </ListItem>
-                        </List>
-                    ))}
-
-                    {/*<Box sx={{ flexGrow: 1 }} />*/}
-                    {/*<IconButton color="inherit" size="large" aria-label="search">*/}
-                    {/*    <SearchIcon fontSize="large" />*/}
-                    {/*</IconButton>*/}
-                    {/*<Box sx={{ flexGrow: 1 }} />*/}
-                    {/*<IconButton color="inherit" size="large" aria-label="create nonogram">*/}
-                    {/*<AddIcon fontSize="large" />*/}
-                    {/*</IconButton>*/}
-                    {/*<Box sx={{ flexGrow: 1 }} />*/}
-                    {/*<IconButton color="inherit" size="large" aria-label="scores">*/}
-                    {/*    <SportsScoreIcon fontSize="large" />*/}
-                    {/*</IconButton>*/}
-                    {/*<Box sx={{ flexGrow: 1 }} />*/}
-                    {/*<IconButton color="inherit" size="large" aria-label="profile" >*/}
-                    {/*    <AccountCircleIcon  fontSize="large"/>*/}
-                    {/*</IconButton>*/}
-            </Drawer>
+        return <>
+            <List className={clsx(className, isMobile ? classes.listMobile : classes.listDesktop)}>
+                { list.map((item, index) => (
+                    <ListItem key={index} disablePadding >
+                        <IconButton size="large">
+                            {item}
+                        </IconButton>
+                    </ListItem>
+                ))}
+            </List>
+        </>
     };
-
 
 function getViewportWidth() {
     return window.innerWidth;
