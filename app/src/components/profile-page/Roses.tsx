@@ -104,6 +104,9 @@ const AnimatedMesh: FC<Props> = (
 
 
     const torusKnotGeometry = new THREE.TorusKnotGeometry(5, 1.8, 64, 5, 7, 5);
+    //console.log(torusKnotGeometry.getAttribute('faces'));
+
+
     const numFaces = torusKnotGeometry.attributes.position.count / 3;
 
     // Create colors and displacement arrays
@@ -225,9 +228,27 @@ function tesselateModifier(geometry: any) {
     const maxEdgeLengthSquared = 1 * 1; // todo
 
 
-    for( let i=0; i < geometry.faceVertexUvs.length; i++ ) {
-        faceVertexUvs[i] = [];
-    }
+// Create a TorusKnotGeometry object with specified parameters: radius, tube radius, number of radial segments, number of tubular segments, p, q.
+//
+//     Initialize some variables: maxEdgeLengthSquared, edge, faces, faceVertexUvs.
+//
+//     Set maxEdgeLengthSquared to maxEdgeLength * maxEdgeLength.
+//
+//     Loop through the face vertex UVs of the geometry and push an empty array for each iteration.
+//
+//     Loop through the faces of the geometry and perform the following steps for each face:
+//     a. Check if the face is an instance of THREE.Face3.
+//     b. Get the vertices of the face (a, b, c).
+//     c. Calculate the squared distance between vertex a and b, b and c, and a and c.
+//     d. Check if any of the calculated distances are greater than maxEdgeLengthSquared.
+//     e. If one of the distances is greater than maxEdgeLengthSquared, create two new faces by cloning the original face.
+//     f. If dab >= dbc && dab >= dac, lerp the midpoint of vertices a and b and set the two new faces accordingly.
+//     g. If dbc >= dab && dbc >= dac, lerp the midpoint of vertices b and c and set the two new faces accordingly.
+//     h. If dac >= dab && dac >= dbc, lerp the midpoint of vertices a and c and set the two new faces accordingly.
+//     i. Set the values for vertex normals and vertex colors for each new face if applicable.
+//     j. Set the value for the edge variable based on the longest distance.
+//
+//     Push the newly created faces and face vertex UVs to the faces and faceVertexUvs arrays.
 
 
     for( let i=0; i < geometry.faceVertexUvs.length; i++ ) {
