@@ -10,7 +10,7 @@ const useStyles = makeStyles<Theme>((theme) => ({
     aboutRoot:{
         width: '100vw',
         height: 700,
-        background: `url(${Eindhoven}) 50% no-repeat #141618`,
+        background: `url(${Eindhoven}) center center no-repeat #141618`,
         backgroundSize: 'cover',
         padding: 100,
         margin: 0,

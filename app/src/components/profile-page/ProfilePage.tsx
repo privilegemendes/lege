@@ -10,7 +10,7 @@ const useStyles = makeStyles<Theme>((theme) => ({
        padding: 0,
        overflow: 'hidden',
        height: '100%',
-       maxWidth: 1000
+       color: '#eee',
    }
 }));
 
