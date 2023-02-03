@@ -4,8 +4,7 @@ import React, {FC, useEffect, useMemo, useRef} from "react";
 import * as THREE from "three";
 import {Canvas, useFrame} from '@react-three/fiber'
 import {gsap, Sine} from "gsap";
-import {PerspectiveCamera, shaderMaterial} from "@react-three/drei";
-
+import {shaderMaterial} from "@react-three/drei";
 
 const useStyles = makeStyles((theme: Theme) => ({
     canvas: {
@@ -30,26 +29,32 @@ export const Roses: FC<Props> =
 
 
 
-    return <Canvas className={classes.canvas}>
-        <Camera/>
+    return <Canvas className={classes.canvas}
+    camera={{
+        position: [0, 2.5, 80],
+        fov: 40,
+        near: 1,
+        far: 10000,
+        aspect: window.innerWidth / window.innerHeight,
+    }}
+    >
         <Lights/>
         <Rose isBroken={isBroken}/>
     </Canvas>
 }
 
-function Camera() {
-
-    return <PerspectiveCamera
-        makeDefault
-        position={[0, 2.5, 80]}
-        fov={40}
-        near={1}
-        far={10000}
-        aspect={window.innerWidth / window.innerHeight}
-        onUpdate={(c) => c.updateProjectionMatrix()}
-        lookAt={() => [0, 0, 0]}
-    />
-}
+// function Camera() {
+//
+//     return <PerspectiveCamera
+//         makeDefault
+//         position={[0, 2.5, 80]}
+//         fov={40}
+//         near={1}
+//         far={10000}
+//         aspect={window.innerWidth / window.innerHeight}
+//
+//    />
+// }
 
 function Lights() {
     return (
@@ -103,11 +108,26 @@ const AnimatedMesh: FC<Props> = (
 
 
 
-    const torusKnotGeometry = new THREE.TorusKnotGeometry(5, 1.8, 64, 5, 7, 5);
-    //console.log(torusKnotGeometry.getAttribute('faces'));
+    //let torusKnotGeometry = new THREE.TorusKnotGeometry(5, 1.8, 64, 5, 7, 5);
+    let torusKnotGeometry = new THREE.TorusKnotGeometry(5, 1.8, 165, 11, 9, 5);
 
+    useEffect(() => {
 
-    const numFaces = torusKnotGeometry.attributes.position.count / 3;
+        for (let i = 0; i < 6; i++) {
+           torusKnotGeometry =  tessellateModifier( 8, torusKnotGeometry);
+        }
+
+    }, []);
+
+    useEffect(() => {
+        if (isBroken) {
+
+            torusKnotGeometry = explodeModifier(torusKnotGeometry);
+        }
+    }, []);
+
+    let geometry = new THREE.BufferGeometry().fromGeometry(torusKnotGeometry);
+    const numFaces = geometry.attributes.position.count / 3;
 
     // Create colors and displacement arrays
     const [displacement, colors] = useMemo(() => {
@@ -133,8 +153,8 @@ const AnimatedMesh: FC<Props> = (
         }
         return [displacement, colors]}, []);
 
-    torusKnotGeometry.setAttribute('customColor', new THREE.BufferAttribute(colors, 3));
-    torusKnotGeometry.setAttribute('displacement', new THREE.BufferAttribute(displacement, 3));
+    geometry.addAttribute('customColor', new THREE.BufferAttribute(colors, 3));
+    geometry.addAttribute('displacement', new THREE.BufferAttribute(displacement, 3));
 
 
     useEffect(() => {
@@ -168,7 +188,7 @@ const AnimatedMesh: FC<Props> = (
                 ease: Sine.easeIn
             });
         }
-    }, []);
+    }, [isBroken]);
 
     return (
         <group>
@@ -178,9 +198,7 @@ const AnimatedMesh: FC<Props> = (
                 rotation={[rotationX, rotationY, 0]}
                 scale={[scaleX, scaleY, scaleZ]}
             >
-                <boxGeometry args={[1, 1, 1]}/>
-                {/*<bufferGeometry attach="geometry" args={[torusKnotGeometry]}/>*/}
-
+                <bufferGeometry attach="geometry" {...geometry}/>
                 <shaderMaterial
                     fragmentShader={fragmentShader}
                     vertexShader={vertexShader}
@@ -221,14 +239,8 @@ const fragmentShader =  `
             }
     `;
 
-function tesselateModifier(geometry: any) {
-    const edge: number = 0;
-    const faces: number[] = [];
-    const faceVertexUvs: unknown[] = [];
-    const maxEdgeLengthSquared = 1 * 1; // todo
 
-
-// Create a TorusKnotGeometry object with specified parameters: radius, tube radius, number of radial segments, number of tubular segments, p, q.
+/* Create a TorusKnotGeometry object with specified parameters: radius, tube radius, number of radial segments, number of tubular segments, p, q.
 //
 //     Initialize some variables: maxEdgeLengthSquared, edge, faces, faceVertexUvs.
 //
@@ -249,30 +261,40 @@ function tesselateModifier(geometry: any) {
 //     j. Set the value for the edge variable based on the longest distance.
 //
 //     Push the newly created faces and face vertex UVs to the faces and faceVertexUvs arrays.
+*/
 
+function tessellateModifier(maxEdgeLength: number, geometry: any) {
+    let edge: number = 0;
+    const faces: any[] = [];
+    const faceVertexUvs: any[] = [];
+    const maxEdgeLengthSquared = maxEdgeLength * maxEdgeLength;
 
-    for( let i=0; i < geometry.faceVertexUvs.length; i++ ) {
-        var face = geometry.faces[i];
+    for (let i = 0, il = geometry.faceVertexUvs.length; i < il; i++) {
+        faceVertexUvs[i] = [];
+    }
+    for (let i = 0, il = geometry.faces.length; i < il; i++) {
+        let face = geometry.faces[i];
         if (face instanceof THREE.Face3) {
-            var a = face.a;
-            var b = face.b;
-            var c = face.c;
-            var va = geometry.vertices[a];
-            var vb = geometry.vertices[b];
-            var vc = geometry.vertices[c];
-            var dab = va.distanceToSquared(vb);
-            var dbc = vb.distanceToSquared(vc);
-            var dac = va.distanceToSquared(vc);
+            let a = face.a;
+            let b = face.b;
+            let c = face.c;
+            let va = geometry.vertices[a];
+            let vb = geometry.vertices[b];
+            let vc = geometry.vertices[c];
+            let dab = va.distanceToSquared(vb);
+            let dbc = vb.distanceToSquared(vc);
+            let dac = va.distanceToSquared(vc);
             if (
                 dab > maxEdgeLengthSquared ||
                 dbc > maxEdgeLengthSquared ||
                 dac > maxEdgeLengthSquared
             ) {
-                var m = geometry.vertices.length;
-                var triA = face.clone();
-                var triB = face.clone();
+                let m = geometry.vertices.length;
+                let triA = face.clone();
+                let triB = face.clone();
+                let vm: any = [];
                 if (dab >= dbc && dab >= dac) {
-                    var vm = va.clone();
+                    vm.push(va.clone());
                     vm.lerp(vb, 0.5);
                     triA.a = a;
                     triA.b = m;
@@ -281,20 +303,20 @@ function tesselateModifier(geometry: any) {
                     triB.b = b;
                     triB.c = c;
                     if (face.vertexNormals.length === 3) {
-                        var vnm = face.vertexNormals[0].clone();
+                        let vnm = face.vertexNormals[0].clone();
                         vnm.lerp(face.vertexNormals[1], 0.5);
                         triA.vertexNormals[1].copy(vnm);
                         triB.vertexNormals[0].copy(vnm);
                     }
                     if (face.vertexColors.length === 3) {
-                        var vcm = face.vertexColors[0].clone();
+                        let vcm = face.vertexColors[0].clone();
                         vcm.lerp(face.vertexColors[1], 0.5);
                         triA.vertexColors[1].copy(vcm);
                         triB.vertexColors[0].copy(vcm);
                     }
                     edge = 0;
                 } else if (dbc >= dab && dbc >= dac) {
-                    var vm = vb.clone();
+                    vm.push(vb.clone());
                     vm.lerp(vc, 0.5);
                     triA.a = a;
                     triA.b = b;
@@ -303,7 +325,7 @@ function tesselateModifier(geometry: any) {
                     triB.b = c;
                     triB.c = a;
                     if (face.vertexNormals.length === 3) {
-                        var vnm = face.vertexNormals[1].clone();
+                        let vnm = face.vertexNormals[1].clone();
                         vnm.lerp(face.vertexNormals[2], 0.5);
                         triA.vertexNormals[2].copy(vnm);
                         triB.vertexNormals[0].copy(vnm);
@@ -311,7 +333,7 @@ function tesselateModifier(geometry: any) {
                         triB.vertexNormals[2].copy(face.vertexNormals[0]);
                     }
                     if (face.vertexColors.length === 3) {
-                        var vcm = face.vertexColors[1].clone();
+                        let vcm = face.vertexColors[1].clone();
                         vcm.lerp(face.vertexColors[2], 0.5);
                         triA.vertexColors[2].copy(vcm);
                         triB.vertexColors[0].copy(vcm);
@@ -320,7 +342,7 @@ function tesselateModifier(geometry: any) {
                     }
                     edge = 1;
                 } else {
-                    var vm = va.clone();
+                    let vm = va.clone();
                     vm.lerp(vc, 0.5);
                     triA.a = a;
                     triA.b = b;
@@ -329,19 +351,90 @@ function tesselateModifier(geometry: any) {
                     triB.b = b;
                     triB.c = c;
                     if (face.vertexNormals.length === 3) {
-                        var vnm = face.vertexNormals[0].clone();
+                        let vnm = face.vertexNormals[0].clone();
                         vnm.lerp(face.vertexNormals[2], 0.5);
                         triA.vertexNormals[2].copy(vnm);
                         triB.vertexNormals[0].copy(vnm);
                     }
                     if (face.vertexColors.length === 3) {
-                        var vcm = face.vertexColors[0].clone();
+                        let vcm = face.vertexColors[0].clone();
                         vcm.lerp(face.vertexColors[2], 0.5);
                         triA.vertexColors[2].copy(vcm);
                         triB.vertexColors[0].copy(vcm);
                     }
                     edge = 2;
                 }
+                faces.push(triA, triB);
+                geometry.vertices.push(vm);
+
+                for (let j = 0, jl = geometry.faceVertexUvs.length; j < jl; j++) {
+                    let uvsTriA: any = [];
+                    let uvsTriB: any = [];
+                    if (geometry.faceVertexUvs[j].length) {
+                        let uvs = geometry.faceVertexUvs[j][i];
+                        let uvA = uvs[0];
+                        let uvB = uvs[1];
+                        let uvC = uvs[2];
+                        if (edge === 0) {
+                            let uvM = uvA.clone();
+                            uvM.lerp(uvB, 0.5);
+                            uvsTriA.push(uvA.clone(), uvM.clone(), uvC.clone());
+                            uvsTriA.push(uvM.clone(), uvB.clone(), uvC.clone());
+                        } else if (edge === 1) {
+                            let uvM = uvB.clone();
+                            uvM.lerp(uvC, 0.5);
+                            uvsTriA.push(uvA.clone(), uvM.clone(), uvC.clone());
+                            uvsTriA.push(uvM.clone(), uvB.clone(), uvC.clone());
+                        } else {
+                            let uvM = uvA.clone();
+                            uvM.lerp(uvC, 0.5);
+                            uvsTriA.push(uvA.clone(), uvM.clone(), uvC.clone());
+                            uvsTriA.push(uvM.clone(), uvB.clone(), uvC.clone());
+                        }
+                        faceVertexUvs[j].push(uvsTriA, uvsTriB);
+                    }
+                }
+            } else {
+                faces.push(face);
+                for (let j = 0, jl = geometry.faceVertexUvs.length; j < jl; j++) {
+                    faceVertexUvs[j].push(geometry.faceVertexUvs[j][i]);
+                }
+            }
+        }
+    }
+    geometry.faces = faces;
+    geometry.faceVertexUvs = faceVertexUvs;
+
+    return geometry;
+}
+
+const explodeModifier = ( geometry: any) =>  {
+    let vertices = [];
+
+    for ( let i = 0, il = geometry.faces.length; i < il; i ++ ) {
+
+        let n = vertices.length;
+
+        let face = geometry.faces[ i ];
+
+        let a = face.a;
+        let b = face.b;
+        let c = face.c;
+
+        let va = geometry.vertices[ a ];
+        let vb = geometry.vertices[ b ];
+        let vc = geometry.vertices[ c ];
+
+        vertices.push( va.clone() );
+        vertices.push( vb.clone() );
+        vertices.push( vc.clone() );
+
+        face.a = n;
+        face.b = n + 1;
+        face.c = n + 2;
+
     }
 
+    geometry.vertices = vertices;
+    return geometry;
 }

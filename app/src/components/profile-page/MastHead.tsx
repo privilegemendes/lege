@@ -66,7 +66,7 @@ const useStyles = makeStyles<Theme>((theme: Theme) => ({
         alignItems: 'center',
         width: '100vw',
         padding: '8vmin 12vmin 8vmin 8vmin',
-        '& > div ': {
+        '& > h1 ': {
             marginTop: -90,
             textTransform: 'uppercase',
             fontSize: 'calc(18vmin + (18 - 10) * ((100vw - 400px) / (800 - 400)))',
@@ -120,19 +120,13 @@ export const MastHead: FC = () => {
 
     return <div className={classes.mastHead}>
             <div className={classes.glitchSection}>
-                <h1 className={classes.glitch}
-                     data-text={isBroken ? "I Break Stuff" : "I Build Stuff"}
-                     onMouseEnter={(event) => handleMouseEnter(event)}
-                     onMouseLeave={(event) => handleMouseLeave(event)}
+                <h1
+                    className={classes.glitch}
+                    data-text={isBroken ? "I Break Stuff" : "I Build Stuff"}
+                    onMouseEnter={event => handleMouseEnter(event)}
+                    onMouseLeave={event => handleMouseLeave(event)}
                 >
-                    I
-                    {isBroken
-                        ?
-                        <span> Break </span>
-                        :
-                        <span> Build </span>
-                    }
-                    Stuff
+                    I {isBroken ? <span> Break </span> : <span> Build </span> } Stuff
                 </h1>
                <Roses isBroken={isBroken}/>
             </div>
