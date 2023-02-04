@@ -4,12 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6d79a399-8924-4f24-b973-cee3210ac519" name="Changes" comment="Added draw/erase functionality">
-      <changelist_data name="PrivilegeMendes" email="mendesprivilege@gmail.com" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/package-lock.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/app/package.json" afterDir="false" />
-    </list>
+    <list default="true" id="6d79a399-8924-4f24-b973-cee3210ac519" name="Changes" comment="First release of MasterHead" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -19,9 +14,9 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="package.json" />
-        <option value="TypeScript JSX File" />
-        <option value="JavaScript File" />
         <option value="TypeScript File" />
+        <option value="JavaScript File" />
+        <option value="TypeScript JSX File" />
       </list>
     </option>
   </component>
@@ -51,8 +46,11 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
+  <component name="PackageJsonUpdateNotifier">
+    <dismissed value="$PROJECT_DIR$/../Artiry/factloader/package.json" />
+  </component>
   <component name="ProblemsViewState">
-    <option name="selectedTabId" value="ProjectErrors" />
+    <option name="selectedTabId" value="CurrentFile" />
   </component>
   <component name="ProjectId" id="2G2hIwutQjiiSz1B03RVUQCADaf" />
   <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
@@ -64,9 +62,10 @@
   &quot;keyToString&quot;: {
     &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
     &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
+    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
     &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
     &quot;jdk.selected.JAVA_MODULE&quot;: &quot;openjdk-19&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Projects/Lege/app&quot;,
+    &quot;last_opened_file_path&quot;: &quot;C:/Projects/Lege/API&quot;,
     &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
     &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
     &quot;nodejs_interpreter_path&quot;: &quot;node&quot;,
@@ -75,6 +74,7 @@
     &quot;project.structure.proportion&quot;: &quot;0.15722656&quot;,
     &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
     &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
+    &quot;spring.configuration.checksum&quot;: &quot;db974238714ca8de634a7ce1d083a14f&quot;,
     &quot;ts.external.directory.path&quot;: &quot;C:\\Projects\\Artiry\\Webapp\\node_modules\\typescript\\lib&quot;
   }
 }</component>
@@ -87,11 +87,11 @@
       <recent name="C:\Projects\Lege\Lege\app\src\contexts" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Projects\Lege\app\src\types\tessellate-modifier" />
       <recent name="C:\Projects\Lege\app\src\types" />
       <recent name="C:\Projects\Lege\app\src\functions" />
       <recent name="C:\Projects\Lege\app\src\components\nonogram-create-page\classes\solver" />
       <recent name="C:\Projects\Lege\app\src\components\nonogram-create-page\classes\nonogram" />
-      <recent name="C:\Projects\Lege\app\src\components\nonogram-create-page\classes\builder" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -105,6 +105,13 @@
     <configuration name="Debug Application" type="JavascriptDebugType" uri="http://localhost:3000">
       <method v="2" />
     </configuration>
+    <configuration name="ApiApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="API" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.legemendes.api.ApiApplication" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="start" type="js.build_tools.npm" nameIsGenerated="true">
       <package-json value="$PROJECT_DIR$/app/package.json" />
       <command value="start" />
@@ -115,6 +122,7 @@
     <list>
       <item itemvalue="JavaScript Debug.Debug Application" />
       <item itemvalue="npm.start" />
+      <item itemvalue="Spring Boot.ApiApplication" />
     </list>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
@@ -142,20 +150,9 @@
       <workItem from="1674082094402" duration="30368000" />
       <workItem from="1674149701857" duration="7501000" />
       <workItem from="1674201750145" duration="115935000" />
-    </task>
-    <task id="LOCAL-00001" summary="Initial commit">
-      <created>1673277632598</created>
-      <option name="number" value="00001" />
-      <option name="presentableId" value="LOCAL-00001" />
-      <option name="project" value="LOCAL" />
-      <updated>1673277632598</updated>
-    </task>
-    <task id="LOCAL-00002" summary="Added missing files">
-      <created>1673278714343</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1673278714343</updated>
+      <workItem from="1675192227836" duration="883000" />
+      <workItem from="1675193138545" duration="16716000" />
+      <workItem from="1675238149126" duration="49522000" />
     </task>
     <task id="LOCAL-00003" summary="created canvas for nonogram creation">
       <created>1673305132117</created>
@@ -444,87 +441,83 @@
       <option name="project" value="LOCAL" />
       <updated>1674657025246</updated>
     </task>
-    <option name="localTasksCounter" value="44" />
+    <task id="LOCAL-00044" summary="Working on appbar">
+      <created>1674691149071</created>
+      <option name="number" value="00044" />
+      <option name="presentableId" value="LOCAL-00044" />
+      <option name="project" value="LOCAL" />
+      <updated>1674691149071</updated>
+    </task>
+    <task id="LOCAL-00045" summary="removed &lt;br&gt;&lt;br/&gt;">
+      <created>1674742014141</created>
+      <option name="number" value="00045" />
+      <option name="presentableId" value="LOCAL-00045" />
+      <option name="project" value="LOCAL" />
+      <updated>1674742014141</updated>
+    </task>
+    <task id="LOCAL-00046" summary="wip">
+      <created>1675068739106</created>
+      <option name="number" value="00046" />
+      <option name="presentableId" value="LOCAL-00046" />
+      <option name="project" value="LOCAL" />
+      <updated>1675068739106</updated>
+    </task>
+    <task id="LOCAL-00047" summary="profile page">
+      <created>1675123635888</created>
+      <option name="number" value="00047" />
+      <option name="presentableId" value="LOCAL-00047" />
+      <option name="project" value="LOCAL" />
+      <updated>1675123635888</updated>
+    </task>
+    <task id="LOCAL-00048" summary="wip">
+      <created>1675384653095</created>
+      <option name="number" value="00048" />
+      <option name="presentableId" value="LOCAL-00048" />
+      <option name="project" value="LOCAL" />
+      <updated>1675384653095</updated>
+    </task>
+    <task id="LOCAL-00049" summary="Finally!">
+      <created>1675438747698</created>
+      <option name="number" value="00049" />
+      <option name="presentableId" value="LOCAL-00049" />
+      <option name="project" value="LOCAL" />
+      <updated>1675438747698</updated>
+    </task>
+    <task id="LOCAL-00050" summary="First release of MasterHead">
+      <created>1675516674498</created>
+      <option name="number" value="00050" />
+      <option name="presentableId" value="LOCAL-00050" />
+      <option name="project" value="LOCAL" />
+      <updated>1675516674498</updated>
+    </task>
+    <task id="LOCAL-00051" summary="First release of MasterHead">
+      <created>1675530578455</created>
+      <option name="number" value="00051" />
+      <option name="presentableId" value="LOCAL-00051" />
+      <option name="project" value="LOCAL" />
+      <updated>1675530578455</updated>
+    </task>
+    <option name="localTasksCounter" value="52" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
     <option name="exactExcludedFiles">
       <list>
-        <option value="$PROJECT_DIR$/app/src/env-vars.d.ts.map" />
         <option value="$PROJECT_DIR$/app/src/reportWebVitals.d.ts" />
-        <option value="$PROJECT_DIR$/app/src/App.d.ts.map" />
+        <option value="$PROJECT_DIR$/app/src/env-vars.d.ts.map" />
         <option value="$PROJECT_DIR$/app/src/App.test.d.ts" />
-        <option value="$PROJECT_DIR$/app/src/env-vars.d.ts" />
+        <option value="$PROJECT_DIR$/app/src/App.d.ts.map" />
         <option value="$PROJECT_DIR$/app/src/setupTests.d.ts.map" />
-        <option value="$PROJECT_DIR$/app/src/index.d.ts.map" />
+        <option value="$PROJECT_DIR$/app/src/env-vars.d.ts" />
         <option value="$PROJECT_DIR$/app/src/reportWebVitals.d.ts.map" />
-        <option value="$PROJECT_DIR$/app/src/setupTests.d.ts" />
+        <option value="$PROJECT_DIR$/app/src/index.d.ts.map" />
         <option value="$PROJECT_DIR$/app/src/App.test.d.ts.map" />
-        <option value="$PROJECT_DIR$/app/src/index.d.ts" />
+        <option value="$PROJECT_DIR$/app/src/setupTests.d.ts" />
         <option value="$PROJECT_DIR$/app/src/App.d.ts" />
-        <option value="$PROJECT_DIR$/app/src/assets/gridBackground.d.ts.map" />
+        <option value="$PROJECT_DIR$/app/src/index.d.ts" />
         <option value="$PROJECT_DIR$/app/src/assets/gridBackground.d.ts" />
-        <option value="$PROJECT_DIR$/app/src/lib/auth/UserCredentials.d.ts" />
-        <option value="$PROJECT_DIR$/app/src/lib/auth/UserCredentials.d.ts.map" />
-        <option value="$PROJECT_DIR$/app/src/lib/util/nonNullish.d.ts" />
-        <option value="$PROJECT_DIR$/app/src/lib/util/requireNonNullish.d.ts.map" />
-        <option value="$PROJECT_DIR$/app/src/lib/util/nonNullish.d.ts.map" />
-        <option value="$PROJECT_DIR$/app/src/lib/util/requireNonNullish.d.ts" />
-        <option value="$PROJECT_DIR$/app/src/lib/browser/local-storage-keys.d.ts" />
-        <option value="$PROJECT_DIR$/app/src/lib/browser/local-storage-keys.d.ts.map" />
-        <option value="$PROJECT_DIR$/app/src/lib/browser/session-storage-keys.d.ts" />
-        <option value="$PROJECT_DIR$/app/src/lib/browser/session-storage-keys.d.ts.map" />
-        <option value="$PROJECT_DIR$/app/src/lib/firebase/DocumentData.d.ts" />
-        <option value="$PROJECT_DIR$/app/src/lib/firebase/ClientSideDocument.d.ts.map" />
-        <option value="$PROJECT_DIR$/app/src/lib/firebase/firestore.config.d.ts.map" />
-        <option value="$PROJECT_DIR$/app/src/lib/firebase/DocumentSnapshot.d.ts" />
-        <option value="$PROJECT_DIR$/app/src/lib/firebase/useFirestoreCollection.d.ts.map" />
-        <option value="$PROJECT_DIR$/app/src/lib/firebase/useQuery.d.ts" />
-        <option value="$PROJECT_DIR$/app/src/lib/firebase/firestore.config.d.ts" />
-        <option value="$PROJECT_DIR$/app/src/lib/firebase/useQuery.d.ts.map" />
-        <option value="$PROJECT_DIR$/app/src/lib/firebase/Doc.d.ts.map" />
-        <option value="$PROJECT_DIR$/app/src/lib/firebase/DocumentData.d.ts.map" />
-        <option value="$PROJECT_DIR$/app/src/lib/firebase/ClientSideDocument.d.ts" />
-        <option value="$PROJECT_DIR$/app/src/lib/firebase/Doc.d.ts" />
-        <option value="$PROJECT_DIR$/app/src/lib/firebase/useList.d.ts" />
-        <option value="$PROJECT_DIR$/app/src/lib/firebase/useFirestoreCollection.d.ts" />
-        <option value="$PROJECT_DIR$/app/src/lib/firebase/DocumentSnapshot.d.ts.map" />
-        <option value="$PROJECT_DIR$/app/src/lib/firebase/useList.d.ts.map" />
-        <option value="$PROJECT_DIR$/app/src/hooks/and-require-context/useAndRequireContext.d.ts" />
-        <option value="$PROJECT_DIR$/app/src/hooks/and-require-context/useAndRequireContext.d.ts.map" />
-        <option value="$PROJECT_DIR$/app/src/contexts/theme/theme-context.d.ts" />
-        <option value="$PROJECT_DIR$/app/src/contexts/theme/theme-context.d.ts.map" />
-        <option value="$PROJECT_DIR$/app/src/contexts/theme-color/theme-color-context.d.ts" />
-        <option value="$PROJECT_DIR$/app/src/contexts/theme-color/theme-color-context.d.ts.map" />
-        <option value="$PROJECT_DIR$/app/src/contexts/navbar-height/navbar-height-context.d.ts" />
-        <option value="$PROJECT_DIR$/app/src/contexts/navbar-height/navbar-height-context.d.ts.map" />
-        <option value="$PROJECT_DIR$/app/src/contexts/authentication/authentication-context.d.ts" />
-        <option value="$PROJECT_DIR$/app/src/contexts/authentication/authentication-context.d.ts.map" />
-        <option value="$PROJECT_DIR$/app/src/components/root/Root.d.ts" />
-        <option value="$PROJECT_DIR$/app/src/components/root/Root.d.ts.map" />
-        <option value="$PROJECT_DIR$/app/src/components/navbar/Navbar.d.ts" />
-        <option value="$PROJECT_DIR$/app/src/components/navbar/Navbar.d.ts.map" />
-        <option value="$PROJECT_DIR$/app/src/components/console-viewer/Console.d.ts" />
-        <option value="$PROJECT_DIR$/app/src/components/console-viewer/Console.d.ts.map" />
-        <option value="$PROJECT_DIR$/app/src/components/nonogram-create-page/create-nonogram-page.d.ts" />
-        <option value="$PROJECT_DIR$/app/src/components/nonogram-create-page/create-nonogram.d.ts" />
-        <option value="$PROJECT_DIR$/app/src/components/nonogram-create-page/create-nonogram.d.ts.map" />
-        <option value="$PROJECT_DIR$/app/src/components/nonogram-create-page/create-nonogram-page.d.ts.map" />
-        <option value="$PROJECT_DIR$/app/src/components/page-content-container/PageContentContainer.d.ts.map" />
-        <option value="$PROJECT_DIR$/app/src/components/page-content-container/PageContentContainer.d.ts" />
-        <option value="$PROJECT_DIR$/app/src/components/sign-in-with-google-button/SignInWithGoogleButton.d.ts.map" />
-        <option value="$PROJECT_DIR$/app/src/components/sign-in-with-google-button/SignInWithGoogleButton.d.ts" />
-        <option value="$PROJECT_DIR$/app/src/components/nonogram-create-page/nonogram-creator/ColHints.d.ts" />
-        <option value="$PROJECT_DIR$/app/src/components/nonogram-create-page/nonogram-creator/RowHints.d.ts.map" />
-        <option value="$PROJECT_DIR$/app/src/components/nonogram-create-page/nonogram-creator/GridItem.d.ts.map" />
-        <option value="$PROJECT_DIR$/app/src/components/nonogram-create-page/nonogram-creator/draw-canvas.d.ts.map" />
-        <option value="$PROJECT_DIR$/app/src/components/nonogram-create-page/nonogram-creator/RowHints.d.ts" />
-        <option value="$PROJECT_DIR$/app/src/components/nonogram-create-page/nonogram-creator/ColHints.d.ts.map" />
-        <option value="$PROJECT_DIR$/app/src/components/nonogram-create-page/nonogram-creator/NonogramCreator.d.ts.map" />
-        <option value="$PROJECT_DIR$/app/src/components/nonogram-create-page/nonogram-creator/NonogramCreator.d.ts" />
-        <option value="$PROJECT_DIR$/app/src/components/nonogram-create-page/nonogram-creator/draw-canvas.d.ts" />
-        <option value="$PROJECT_DIR$/app/src/components/nonogram-create-page/nonogram-creator/GridItem.d.ts" />
+        <option value="$PROJECT_DIR$/app/src/assets/gridBackground.d.ts.map" />
       </list>
     </option>
   </component>
@@ -572,12 +565,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="wip" />
-    <MESSAGE value="Grid item creation and storage works!" />
-    <MESSAGE value="Added Draw/Erase and Clear Buttons" />
-    <MESSAGE value="Renamed component" />
-    <MESSAGE value="Added row and col unit grid layers" />
-    <MESSAGE value="wip - Improved responsiveness to the nonogram" />
     <MESSAGE value="wip - Algo v2 and improved responsiveness" />
     <MESSAGE value="Row hints and Column hints now write in correct directions" />
     <MESSAGE value="Major remodel" />
@@ -597,7 +584,13 @@
     <MESSAGE value="More deployment issues fixes" />
     <MESSAGE value="Even more deployment issues fixes" />
     <MESSAGE value="Removed PR deployment" />
-    <option name="LAST_COMMIT_MESSAGE" value="Removed PR deployment" />
+    <MESSAGE value="Working on appbar" />
+    <MESSAGE value="removed &lt;br&gt;&lt;br/&gt;" />
+    <MESSAGE value="profile page" />
+    <MESSAGE value="wip" />
+    <MESSAGE value="Finally!" />
+    <MESSAGE value="First release of MasterHead" />
+    <option name="LAST_COMMIT_MESSAGE" value="First release of MasterHead" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="XDebuggerManager">
