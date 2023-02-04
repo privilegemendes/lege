@@ -4,16 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6d79a399-8924-4f24-b973-cee3210ac519" name="Changes" comment="First release of MasterHead">
-      <change afterPath="$PROJECT_DIR$/.idea/encodings.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/API/mvnw" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/API/mvnw.cmd" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/API/pom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/compiler.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/compiler.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-    </list>
+    <list default="true" id="6d79a399-8924-4f24-b973-cee3210ac519" name="Changes" comment="First release of MasterHead" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -161,14 +152,7 @@
       <workItem from="1674201750145" duration="115935000" />
       <workItem from="1675192227836" duration="883000" />
       <workItem from="1675193138545" duration="16716000" />
-      <workItem from="1675238149126" duration="49198000" />
-    </task>
-    <task id="LOCAL-00002" summary="Added missing files">
-      <created>1673278714343</created>
-      <option name="number" value="00002" />
-      <option name="presentableId" value="LOCAL-00002" />
-      <option name="project" value="LOCAL" />
-      <updated>1673278714343</updated>
+      <workItem from="1675238149126" duration="49522000" />
     </task>
     <task id="LOCAL-00003" summary="created canvas for nonogram creation">
       <created>1673305132117</created>
@@ -506,7 +490,14 @@
       <option name="project" value="LOCAL" />
       <updated>1675516674498</updated>
     </task>
-    <option name="localTasksCounter" value="51" />
+    <task id="LOCAL-00051" summary="First release of MasterHead">
+      <created>1675530578455</created>
+      <option name="number" value="00051" />
+      <option name="presentableId" value="LOCAL-00051" />
+      <option name="project" value="LOCAL" />
+      <updated>1675530578455</updated>
+    </task>
+    <option name="localTasksCounter" value="52" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
