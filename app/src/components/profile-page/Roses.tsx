@@ -1,6 +1,6 @@
 import {Theme} from "@mui/material";
 import {makeStyles} from "@mui/styles";
-import React, {FC, useEffect, useMemo, useRef} from "react";
+import React, {FC, useEffect, useMemo, useRef, useState} from "react";
 import * as THREE from "three";
 import {Canvas, useFrame} from '@react-three/fiber'
 import {gsap, Sine} from "gsap";
@@ -27,20 +27,20 @@ export const Roses: FC<Props> =
     }) => {
     const classes = useStyles();
 
-
-
-    return <Canvas className={classes.canvas}
-    camera={{
-        position: [0, 2.5, 80],
-        fov: 40,
-        near: 1,
-        far: 10000,
-        aspect: window.innerWidth / window.innerHeight,
-    }}
+    return <div className={classes.canvas}>
+        <Canvas
+            camera={{
+                position: [0, 2.5, 80],
+                fov: 40,
+                near: 1,
+                far: 10000,
+                aspect: window.innerWidth / window.innerHeight,
+            }}
     >
         <Lights/>
         <Rose isBroken={isBroken}/>
     </Canvas>
+    </div>
 }
 
 // function Camera() {
@@ -69,6 +69,7 @@ function Lights() {
 const Rose: FC<Props> = ({isBroken}) => {
 
     const groupRef = useRef<THREE.Group | null >(null);
+    const [hovered, hover] = useState(false)
 
     // Subscribe this component to the render-loop, rotate the mesh every frame
     useFrame((state) => {
@@ -80,10 +81,13 @@ const Rose: FC<Props> = ({isBroken}) => {
 
     });
 
-    return <group ref={groupRef}>
+    return <group ref={groupRef}
+                  onPointerOver={() => hover(true)}
+                  onPointerOut={() => hover(false)}
+    >
         {[...Array(35)].map((_, i) => (
             <AnimatedMesh
-                isBroken={isBroken}
+                isBroken={isBroken || hovered}
                 key={i}
             />
         ))}

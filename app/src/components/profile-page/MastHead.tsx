@@ -67,9 +67,9 @@ const useStyles = makeStyles<Theme>((theme: Theme) => ({
         width: '100vw',
         padding: '8vmin 12vmin 8vmin 8vmin',
         '& > h1 ': {
-            marginTop: -90,
+            //marginTop: -90,
             textTransform: 'uppercase',
-            fontSize: 'calc(18vmin + (18 - 10) * ((100vw - 400px) / (800 - 400)))',
+            fontSize: 'calc(18vmin + 8*(100vw - 400px)/ 400)',
             cursor: 'pointer',
             position: 'relative',
             zIndex: 1000,
@@ -111,9 +111,11 @@ export const MastHead: FC = () => {
     const [isBroken, setIsBroken] = useState<boolean>(false);
 
     const handleMouseEnter = (event: React.MouseEvent<HTMLDivElement | MouseEvent>) => {
+        event.preventDefault();
         setIsBroken(true);
     }
     const handleMouseLeave = (event: React.MouseEvent<HTMLDivElement | MouseEvent>) => {
+        event.preventDefault();
         setIsBroken(false);
     }
 
@@ -128,7 +130,7 @@ export const MastHead: FC = () => {
                 >
                     I {isBroken ? <span> Break </span> : <span> Build </span> } Stuff
                 </h1>
-               <Roses isBroken={isBroken}/>
+                 <Roses isBroken={isBroken}/>
             </div>
         </div>
 }
