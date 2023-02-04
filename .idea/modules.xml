@@ -5,6 +5,7 @@
       <module fileurl="file://$PROJECT_DIR$/.github/.github.iml" filepath="$PROJECT_DIR$/.github/.github.iml" />
       <module fileurl="file://$PROJECT_DIR$/../Artiry/Webapp/Webapp.iml" filepath="$PROJECT_DIR$/../Artiry/Webapp/Webapp.iml" />
       <module fileurl="file://$PROJECT_DIR$/app/app.iml" filepath="$PROJECT_DIR$/app/app.iml" />
+      <module fileurl="file://$PROJECT_DIR$/app-nextjs/app-nextjs.iml" filepath="$PROJECT_DIR$/app-nextjs/app-nextjs.iml" />
       <module fileurl="file://$PROJECT_DIR$/../Artiry/factloader/factloader.iml" filepath="$PROJECT_DIR$/../Artiry/factloader/factloader.iml" />
       <module fileurl="file://$PROJECT_DIR$/firebase-functions.iml" filepath="$PROJECT_DIR$/firebase-functions.iml" />
     </modules>

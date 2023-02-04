@@ -2,7 +2,6 @@ import {FC} from "react";
 import {Theme} from "@mui/material";
 import {makeStyles} from "@mui/styles";
 import {About} from "./About";
-import {Contact} from "./Contact";
 import {MastHead} from "./MastHead";
 
 
@@ -20,6 +19,5 @@ export const Profile: FC = () => {
     return <div className={classes.main}>
             <MastHead/>
             <About/>
-            <Contact/>
         </div>
 }
