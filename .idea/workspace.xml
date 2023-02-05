@@ -4,34 +4,26 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6d79a399-8924-4f24-b973-cee3210ac519" name="Changes" comment="workspace">
-      <change afterPath="$PROJECT_DIR$/app-nextjs/.gitignore" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app-nextjs/.npmrc" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app-nextjs/README.md" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app-nextjs/app-nextjs.iml" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app-nextjs/next-env.d.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app-nextjs/next.config.js" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app-nextjs/package-lock.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app-nextjs/package.json" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app-nextjs/public/favicon.ico" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app-nextjs/public/vercel.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app-nextjs/src/components/Cards.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app-nextjs/src/components/Hero/Roses.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app-nextjs/src/pages/_app.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app-nextjs/src/pages/_document.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app-nextjs/src/pages/about.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app-nextjs/src/pages/hero.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app-nextjs/src/pages/index.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app-nextjs/src/styles/Button.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app-nextjs/src/styles/Home.module.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app-nextjs/src/styles/globalStyles.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app-nextjs/src/styles/globals.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app-nextjs/src/styles/sharedStyles.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app-nextjs/src/types/styled.d.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app-nextjs/tsconfig.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
+    <list default="true" id="6d79a399-8924-4f24-b973-cee3210ac519" name="Changes" comment="Migration to NextJs">
+      <change afterPath="$PROJECT_DIR$/app-nextjs/src/assets/logo-uptick.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app-nextjs/src/components/header/Header.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app-nextjs/src/context/theme-context/InlineCssVariables.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app-nextjs/src/context/theme-context/ThemeColors.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app-nextjs/src/context/theme-context/ThemeContext.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app-nextjs/src/context/theme-mode-toggle/ThemeModeToggle.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app-nextjs/src/hooks/usePrefersReducedMotion.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app/src/components/profile-page/Profile.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/components/profile-page/Profile.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app-nextjs/next.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/app-nextjs/next.config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app-nextjs/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/app-nextjs/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app-nextjs/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/app-nextjs/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app-nextjs/src/components/Hero/Roses.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app-nextjs/src/components/hero/Roses.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app-nextjs/src/pages/_app.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app-nextjs/src/pages/_app.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app-nextjs/src/pages/_document.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app-nextjs/src/pages/_document.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app-nextjs/src/pages/about.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app-nextjs/src/pages/about.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app-nextjs/src/pages/hero.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app-nextjs/src/pages/hero.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app-nextjs/src/pages/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app-nextjs/src/pages/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app-nextjs/src/styles/globalStyles.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app-nextjs/src/styles/GlobalStyles.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app-nextjs/src/styles/sharedStyles.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app-nextjs/src/styles/SharedStyles.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -115,11 +107,11 @@
       <recent name="C:\Projects\Lege\app\src\components\nonogram-create-page\nonogram-creator" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Projects\Lege\app-nextjs\src\context\theme-context" />
+      <recent name="C:\Projects\Lege\app-nextjs\src\context" />
       <recent name="C:\Projects\Lege\app-nextjs\src\components" />
       <recent name="C:\Projects\Lege\app-nextjs\src" />
       <recent name="C:\Projects\Lege\app-nextjs" />
-      <recent name="C:\Projects\Lege\lege\src\components\hero" />
-      <recent name="C:\Projects\Lege\lege\src\components" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -184,14 +176,7 @@
       <workItem from="1675192227836" duration="883000" />
       <workItem from="1675193138545" duration="16716000" />
       <workItem from="1675238149126" duration="49522000" />
-      <workItem from="1675549215850" duration="5678000" />
-    </task>
-    <task id="LOCAL-00003" summary="created canvas for nonogram creation">
-      <created>1673305132117</created>
-      <option name="number" value="00003" />
-      <option name="presentableId" value="LOCAL-00003" />
-      <option name="project" value="LOCAL" />
-      <updated>1673305132117</updated>
+      <workItem from="1675549215850" duration="31882000" />
     </task>
     <task id="LOCAL-00004" summary="Added picking tiles functionality - yet to optimise">
       <created>1673393414268</created>
@@ -529,7 +514,14 @@
       <option name="project" value="LOCAL" />
       <updated>1675530578455</updated>
     </task>
-    <option name="localTasksCounter" value="52" />
+    <task id="LOCAL-00052" summary="Migration to NextJs">
+      <created>1675555029848</created>
+      <option name="number" value="00052" />
+      <option name="presentableId" value="LOCAL-00052" />
+      <option name="project" value="LOCAL" />
+      <updated>1675555029848</updated>
+    </task>
+    <option name="localTasksCounter" value="53" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -598,7 +590,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="wip - Algo v2 and improved responsiveness" />
     <MESSAGE value="Row hints and Column hints now write in correct directions" />
     <MESSAGE value="Major remodel" />
     <MESSAGE value="Added new nonogram algorithm, created declaration files for JS -&gt; TS compatibility" />
@@ -623,7 +614,8 @@
     <MESSAGE value="wip" />
     <MESSAGE value="Finally!" />
     <MESSAGE value="First release of MasterHead" />
-    <option name="LAST_COMMIT_MESSAGE" value="First release of MasterHead" />
+    <MESSAGE value="Migration to NextJs" />
+    <option name="LAST_COMMIT_MESSAGE" value="Migration to NextJs" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="XDebuggerManager">

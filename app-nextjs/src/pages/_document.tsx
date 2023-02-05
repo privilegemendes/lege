@@ -1,4 +1,4 @@
-import Document, {DocumentContext} from 'next/document'
+import Document, {DocumentContext, Head, Html, Main, NextScript} from 'next/document'
 import {ServerStyleSheet} from 'styled-components'
 
 export default class MyDocument extends Document {
@@ -21,5 +21,31 @@ export default class MyDocument extends Document {
         } finally {
             sheet.seal()
         }
+    }
+
+    render() {
+        const setInitialTheme = `
+          function getUserPreference() {
+            if(window.localStorage.getItem('theme')) {
+              return window.localStorage.getItem('theme')
+            }
+            return window.matchMedia('(prefers-color-scheme: dark)').matches 
+              ? 'dark' 
+              : 'light'
+          }
+          document.body.dataset.theme = getUserPreference();
+        `;
+        return (
+            <Html>
+                <Head>
+                    <title>Privilege's Site</title>
+                </Head>
+                <body>
+                    <script dangerouslySetInnerHTML={{ __html: setInitialTheme }} />
+                    <Main />
+                    <NextScript />
+                </body>
+            </Html>
+        )
     }
 }
