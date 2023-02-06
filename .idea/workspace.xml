@@ -4,7 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6d79a399-8924-4f24-b973-cee3210ac519" name="Changes" comment="add nextjs-notion to master" />
+    <list default="true" id="6d79a399-8924-4f24-b973-cee3210ac519" name="Changes" comment="add nextjs-notion to master">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -212,13 +214,7 @@
       <workItem from="1675549215850" duration="69847000" />
       <workItem from="1675696883523" duration="1553000" />
       <workItem from="1675700016337" duration="655000" />
-    </task>
-    <task id="LOCAL-00006" summary="Wip - Configuring Dockerfile">
-      <created>1673943565729</created>
-      <option name="number" value="00006" />
-      <option name="presentableId" value="LOCAL-00006" />
-      <option name="project" value="LOCAL" />
-      <updated>1673943565729</updated>
+      <workItem from="1675705102185" duration="118000" />
     </task>
     <task id="LOCAL-00007" summary="Migrated theme and typography's, uninstalled material-ui v4">
       <created>1673946697287</created>
@@ -556,7 +552,14 @@
       <option name="project" value="LOCAL" />
       <updated>1675693441233</updated>
     </task>
-    <option name="localTasksCounter" value="55" />
+    <task id="LOCAL-00055" summary="add nextjs-notion to master">
+      <created>1675704525801</created>
+      <option name="number" value="00055" />
+      <option name="presentableId" value="LOCAL-00055" />
+      <option name="project" value="LOCAL" />
+      <updated>1675704525801</updated>
+    </task>
+    <option name="localTasksCounter" value="56" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
