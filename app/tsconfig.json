@@ -12,7 +12,7 @@
     ],
     "allowJs": true,
     "declaration": true,
-    //"emitDeclarationOnly": true,
+   // "emitDeclarationOnly": true,
     "declarationMap": true,
     "skipLibCheck": true,
     "esModuleInterop": true,

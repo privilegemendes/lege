@@ -1,0 +1,37 @@
+{
+  "name": "priviilege-portfolio",
+  "version": "1.0.0",
+  "main": "index.tsx",
+  "author": "Privilege Mendes",
+  "private": true,
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "start": "next start"
+  },
+  "dependencies": {
+    "@react-spring/web": "^9.6.1",
+    "@react-three/drei": "^9.56.10",
+    "@react-three/fiber": "^8.10.1",
+    "gsap": "^3.11.4",
+    "next": "latest",
+    "next-themes": "^0.2.1",
+    "react": "18.2.0",
+    "react-dom": "18.2.0",
+    "react-icons-kit": "1.2.1",
+    "react-notion": "^0.10.0",
+    "react-spring": "^9.6.1",
+    "styled-components": "^5.3.6",
+    "terser": "^4.6.13",
+    "three": "^0.104.0",
+    "use-sound": "^4.0.1",
+    "node-fetch": "^2.6.0"
+  },
+  "devDependencies": {
+    "@types/node": "18.11.18",
+    "@types/react": "18.0.27",
+    "@types/styled-components": "^5.1.26",
+    "@types/three": "^0.149.0",
+    "typescript": "4.9.5"
+  }
+}

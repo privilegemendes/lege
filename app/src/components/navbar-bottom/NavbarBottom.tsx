@@ -1,55 +1,15 @@
-import {AppBar, Box, IconButton, styled, Theme, Toolbar} from "@mui/material";
+import {IconButton, List, ListItem, Theme, useMediaQuery} from "@mui/material";
 import {makeStyles} from "@mui/styles";
-import {CSSProperties, FC} from 'react';
-import {useNavBarHeight} from "../../contexts/navbar-height/navbar-height-context";
+import {CSSProperties, FC, useState} from 'react';
 import AddIcon from '@mui/icons-material/Add';
 import SearchIcon from '@mui/icons-material/Search';
-import Fab from '@mui/material/Fab';
 import GridOnIcon from '@mui/icons-material/GridOn';
 import SportsScoreIcon from '@mui/icons-material/SportsScore';
 import AccountCircleIcon from '@mui/icons-material/AccountCircle';
+import clsx from "clsx";
 
-type StylesProps = {
-    navBarHeight: number
-}
 
-const StyledFab = styled(Fab)({
-    position: 'absolute',
-    zIndex: 1,
-    top: -30,
-    left: 0,
-    right: 0,
-    margin: '0 auto',
-});
-
-const useStyles = makeStyles<Theme, StylesProps>(theme => ({
-    bar: ({navBarHeight}) => ({
-        display: 'flex',
-        boxSizing: 'border-box',
-        flexDirection: 'row',
-        justifyContent: 'space-between',
-        alignContent: 'center',
-        alignItems: 'center',
-        borderTop: '1px solid rgb(98,95,95)',
-        bottom: 0,
-        paddingLeft: 17,
-        paddingRight: 17,
-        [theme.breakpoints.up('md')]: {
-            paddingLeft: 20,
-            paddingRight: 20,
-        },
-        zIndex: 1000,
-        overflowX: 'hidden',
-        '& > :first-child': {
-            marginRight: 'auto',
-        },
-        '& > :nth-child(2)': {
-            marginLeft: 'auto',
-        },
-        '& > :not(:first-child):not(:last-child)': {
-            marginRight: 24,
-        },
-    }),
+const useStyles = makeStyles<Theme>(theme => ({
     logoLink: {
         lineHeight: 0,
     },
@@ -68,6 +28,25 @@ const useStyles = makeStyles<Theme, StylesProps>(theme => ({
         marginRight: -2,
         transition: 'opacity 0.2s',
     },
+    listMobile: {
+        display: 'flex',
+        flexDirection: 'row',
+        justifyContent: 'space-evenly',
+        alignItems: 'center',
+        paddingLeft: 8,
+        paddingRight: 8,
+        marginTop: 'auto',
+        marginBottom: 8,
+    },
+    listDesktop: {
+        display: 'flex',
+        flexDirection: 'column',
+        alignItems: 'center',
+        // paddingLeft: 8,
+        // paddingRight: 8,
+        // marginTop: 'auto',
+        // marginBottom: 8,
+    }
 }));
 
 type Props = {
@@ -75,38 +54,41 @@ type Props = {
     className?: string
 }
 
-export const NavbarBottom: FC<Props> =
-    (
-        {
-            style,
-            className,
-        }
-    ) =>
+export const NavbarBottom: FC<Props> = (
     {
-        const navBarHeight = useNavBarHeight();
-        const classes = useStyles({navBarHeight});
+        className,
+    }
+) =>
+    {
+        const classes = useStyles();
 
-        return <AppBar position="fixed" color="primary" sx={{ top: 'auto', bottom: 0 }}>
-                <Toolbar>
-                    <IconButton color="inherit" size="large" aria-label="nonograms">
-                        <GridOnIcon fontSize="large"/>
-                    </IconButton>
-                    <Box sx={{ flexGrow: 1 }} />
-                    <IconButton color="inherit" size="large" aria-label="search">
-                        <SearchIcon fontSize="large" />
-                    </IconButton>
-                    <Box sx={{ flexGrow: 1 }} />
-                    <IconButton color="inherit" size="large" aria-label="create nonogram">
-                    <AddIcon fontSize="large" />
-                    </IconButton>
-                    <Box sx={{ flexGrow: 1 }} />
-                    <IconButton color="inherit" size="large" aria-label="scores">
-                        <SportsScoreIcon fontSize="large" />
-                    </IconButton>
-                    <Box sx={{ flexGrow: 1 }} />
-                    <IconButton color="inherit" size="large" aria-label="profile" >
-                        <AccountCircleIcon  fontSize="large"/>
-                    </IconButton>
-                </Toolbar>
-            </AppBar>
+       // const viewportWidth = useMemo(() => window.innerWidth, []);
+
+        const [viewportWidth, setViewportWidth] = useState(getViewportWidth());
+
+        const isMobile = useMediaQuery('(max-width:600px)');
+
+        const list = [
+            <GridOnIcon fontSize="large"/>,
+            <SearchIcon fontSize="large"/>,
+            <AddIcon fontSize="large"/>,
+            <SportsScoreIcon fontSize="large"/>,
+            <AccountCircleIcon fontSize="large"/>
+        ];
+
+        return <>
+            <List className={clsx(className, isMobile ? classes.listMobile : classes.listDesktop)}>
+                { list.map((item, index) => (
+                    <ListItem key={index} disablePadding >
+                        <IconButton size="large">
+                            {item}
+                        </IconButton>
+                    </ListItem>
+                ))}
+            </List>
+        </>
     };
+
+function getViewportWidth() {
+    return window.innerWidth;
+}

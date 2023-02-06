@@ -18,6 +18,8 @@
     "@mui/styles": "^5.11.2",
     "@react-firebase/auth": "^0.2.10",
     "@react-firebase/firestore": "^0.5.5",
+    "@react-three/drei": "^9.56.10",
+    "@react-three/fiber": "^8.10.1",
     "@testing-library/jest-dom": "^5.12.0",
     "@testing-library/react": "^11.2.6",
     "@testing-library/user-event": "^12.8.3",
@@ -37,6 +39,7 @@
     "globol": "^0.8.0",
     "graphql": "^15.5.0",
     "graphql.macro": "^1.4.2",
+    "gsap": "^3.11.4",
     "md5": "^2.3.0",
     "mobx": "^5.0.3",
     "mobx-react": "^5.2.3",
@@ -44,12 +47,12 @@
     "mobx-react-router": "^4.1.0",
     "mobx-utils": "^5.0.0",
     "queue-ts": "^0.1.0",
-    "react": "^17.0.2",
+    "react": "^18.2.0",
     "react-device-detect": "^2.0.1",
     "react-dnd": "^14.0.4",
     "react-dnd-html5-backend": "^14.0.2",
     "react-dnd-touch-backend": "^14.1.1",
-    "react-dom": "^17.0.2",
+    "react-dom": "^18.2.0",
     "react-easy-chart": "^1.0.0",
     "react-firebase-hooks": "^3.0.4",
     "react-ga": "^3.3.0",
@@ -60,7 +63,8 @@
     "sockjs-client": "^1.6.1",
     "subscriptions-transport-ws": "^0.9.16",
     "uuid": "^3.4.0",
-    "web-vitals": "^1.1.2"
+    "web-vitals": "^1.1.2",
+    "three": "^0.104.0"
   },
   "scripts": {
     "start": "react-app-rewired start",
@@ -76,18 +80,11 @@
       "react-app/jest"
     ]
   },
-  "browserslist": {
-    "production": [
-      ">0.2%",
-      "not dead",
-      "not op_mini all"
-    ],
-    "development": [
-      "last 1 chrome version",
-      "last 1 firefox version",
-      "last 1 safari version"
-    ]
-  },
+  "browserslist": [
+    ">0.2%",
+    "not dead",
+    "not op_mini all"
+  ],
   "devDependencies": {
     "@graphql-codegen/cli": "1.15.0",
     "@graphql-codegen/introspection": "^1.18.2",
@@ -109,12 +106,14 @@
     "@types/react-router": "^5.1.14",
     "@types/react-router-dom": "^5.1.7",
     "@types/sockjs-client": "^1.5.1",
+    "@types/three": "^0.149.0",
     "@types/uuid": "^8.3.4",
     "apollo": "^2.22.1",
     "apollo-hooks-codegen": "^1.2.0",
     "cross-env": "^7.0.3",
     "customize-cra": "^1.0.0",
     "react-app-rewired": "^2.2.1",
-    "typescript": "^4.9.4"
+    "typescript": "^4.4.4",
+    "webpack-bundle-analyzer": "^4.7.0"
   }
 }
