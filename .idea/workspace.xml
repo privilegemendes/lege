@@ -4,9 +4,12 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6d79a399-8924-4f24-b973-cee3210ac519" name="Changes" comment="removed yarn.lock and applied some fixes">
+    <list default="true" id="6d79a399-8924-4f24-b973-cee3210ac519" name="Changes" comment="stringify font URLs">
+      <change afterPath="$PROJECT_DIR$/nextjs-notion/components/ToggleThemeButton/ToggleThemeButton.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nextjs-notion/pages/api/social-image.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/nextjs-notion/pages/api/social-image.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nextjs-notion/components/NotionPageHeader.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/nextjs-notion/components/NotionPageHeader.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nextjs-notion/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/nextjs-notion/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nextjs-notion/site.config.ts" beforeDir="false" afterPath="$PROJECT_DIR$/nextjs-notion/site.config.ts" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -216,14 +219,7 @@
       <workItem from="1675696883523" duration="1553000" />
       <workItem from="1675700016337" duration="655000" />
       <workItem from="1675705102185" duration="226000" />
-      <workItem from="1675705366902" duration="3354000" />
-    </task>
-    <task id="LOCAL-00011" summary="wip - firebase functions setup">
-      <created>1673986148266</created>
-      <option name="number" value="00011" />
-      <option name="presentableId" value="LOCAL-00011" />
-      <option name="project" value="LOCAL" />
-      <updated>1673986148266</updated>
+      <workItem from="1675705366902" duration="7557000" />
     </task>
     <task id="LOCAL-00012" summary="fixed app bar &quot;not found file&quot; error">
       <created>1673986433462</created>
@@ -561,7 +557,14 @@
       <option name="project" value="LOCAL" />
       <updated>1675710871669</updated>
     </task>
-    <option name="localTasksCounter" value="60" />
+    <task id="LOCAL-00060" summary="stringify font URLs">
+      <created>1675711473619</created>
+      <option name="number" value="00060" />
+      <option name="presentableId" value="LOCAL-00060" />
+      <option name="project" value="LOCAL" />
+      <updated>1675711473619</updated>
+    </task>
+    <option name="localTasksCounter" value="61" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -664,7 +667,6 @@
       <path value="$PROJECT_DIR$/lege" />
       <path value="$PROJECT_DIR$/../nonogram" />
     </ignored-roots>
-    <MESSAGE value="Nonogram creator works!!" />
     <MESSAGE value="Added firebase hosting and Github actions workflow" />
     <MESSAGE value="Changed to default exports" />
     <MESSAGE value="code style" />
@@ -689,7 +691,8 @@
     <MESSAGE value="fix nextjs-notion to master" />
     <MESSAGE value="Add nextjs-notion to master" />
     <MESSAGE value="removed yarn.lock and applied some fixes" />
-    <option name="LAST_COMMIT_MESSAGE" value="removed yarn.lock and applied some fixes" />
+    <MESSAGE value="stringify font URLs" />
+    <option name="LAST_COMMIT_MESSAGE" value="stringify font URLs" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="XDebuggerManager">

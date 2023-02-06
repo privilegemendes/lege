@@ -52,18 +52,18 @@ export default siteConfig({
   // important pages
   //navigationStyle: 'default',
   navigationStyle: 'custom',
-  // navigationLinks: [
-  //   {
-  //     title: 'About',
-  //     pageId: 'ed4f8075dffe462d8e498e15d33df0b2'
-  //   },
-  //   {
-  //     title: 'Projects',
-  //     pageId: '84735b191b3b4d259ac41b9e347ca5bb'
-  //   },
-  //   {
-  //     title: 'Contact',
-  //     pageId: '99d705dcf8b64fd6a9cc16e175270c9f'
-  //   }
-  // ]
+  navigationLinks: [
+    {
+      title: 'About',
+      pageId: 'About-ed4f8075dffe462d8e498e15d33df0b2'
+    },
+    {
+      title: 'Projects',
+      pageId: 'Projects-5ff4f692594049d0a9451c9c276c39c6'
+    },
+    {
+      title: 'Contact',
+      pageId: 'Contact-99d705dcf8b64fd6a9cc16e175270c9f'
+    }
+  ]
 })
