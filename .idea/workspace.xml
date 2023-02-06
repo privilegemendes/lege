@@ -4,9 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6d79a399-8924-4f24-b973-cee3210ac519" name="Changes" comment="Add nextjs-notion to master">
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+    <list default="true" id="6d79a399-8924-4f24-b973-cee3210ac519" name="Changes" comment="removed yarn.lock and applied some fixes">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nextjs-notion/pages/api/social-image.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/nextjs-notion/pages/api/social-image.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -216,14 +216,7 @@
       <workItem from="1675696883523" duration="1553000" />
       <workItem from="1675700016337" duration="655000" />
       <workItem from="1675705102185" duration="226000" />
-      <workItem from="1675705366902" duration="2594000" />
-    </task>
-    <task id="LOCAL-00010" summary="wip - firebase auth and functions setup">
-      <created>1673986035201</created>
-      <option name="number" value="00010" />
-      <option name="presentableId" value="LOCAL-00010" />
-      <option name="project" value="LOCAL" />
-      <updated>1673986035201</updated>
+      <workItem from="1675705366902" duration="3354000" />
     </task>
     <task id="LOCAL-00011" summary="wip - firebase functions setup">
       <created>1673986148266</created>
@@ -561,7 +554,14 @@
       <option name="project" value="LOCAL" />
       <updated>1675710375528</updated>
     </task>
-    <option name="localTasksCounter" value="59" />
+    <task id="LOCAL-00059" summary="removed yarn.lock and applied some fixes">
+      <created>1675710871669</created>
+      <option name="number" value="00059" />
+      <option name="presentableId" value="LOCAL-00059" />
+      <option name="project" value="LOCAL" />
+      <updated>1675710871669</updated>
+    </task>
+    <option name="localTasksCounter" value="60" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -664,7 +664,6 @@
       <path value="$PROJECT_DIR$/lege" />
       <path value="$PROJECT_DIR$/../nonogram" />
     </ignored-roots>
-    <MESSAGE value="Added slider to change nonogram size" />
     <MESSAGE value="Nonogram creator works!!" />
     <MESSAGE value="Added firebase hosting and Github actions workflow" />
     <MESSAGE value="Changed to default exports" />
@@ -689,7 +688,8 @@
     <MESSAGE value="add nextjs-notion to master" />
     <MESSAGE value="fix nextjs-notion to master" />
     <MESSAGE value="Add nextjs-notion to master" />
-    <option name="LAST_COMMIT_MESSAGE" value="Add nextjs-notion to master" />
+    <MESSAGE value="removed yarn.lock and applied some fixes" />
+    <option name="LAST_COMMIT_MESSAGE" value="removed yarn.lock and applied some fixes" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="XDebuggerManager">

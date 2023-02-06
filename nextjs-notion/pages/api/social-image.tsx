@@ -6,14 +6,12 @@ import { ImageResponse } from '@vercel/og'
 import { api, apiHost, rootNotionPageId } from '@/lib/config'
 import { NotionPageInfo } from '@/lib/types'
 
-const interRegularFontPURL = new URL('../../public/fonts/Inter-Regular.ttf', import.meta.url);
-const interBoldFontPURL = new URL('../../public/fonts/Inter-Bold.ttf', import.meta.url);
 const interRegularFontP = fetch(
-  interRegularFontPURL.toString(),
+  new URL('../../public/fonts/Inter-Regular.ttf', import.meta.url).toString()
 ).then((res) => res.arrayBuffer())
 
 const interBoldFontP = fetch(
-  interBoldFontPURL.toString(),
+  new URL('../../public/fonts/Inter-SemiBold.ttf', import.meta.url).toString()
 ).then((res) => res.arrayBuffer())
 
 export const config = {
