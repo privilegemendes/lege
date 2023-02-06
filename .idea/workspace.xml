@@ -4,23 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6d79a399-8924-4f24-b973-cee3210ac519" name="Changes" comment="Added dark Mode">
-      <change afterPath="$PROJECT_DIR$/nextjs-notion/.npmrc" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nextjs-notion/nextjs-notion.iml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nextjs-notion-starter-kit" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/nextjs-notion/components/Footer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/nextjs-notion/components/Footer.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nextjs-notion/components/NotionPage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/nextjs-notion/components/NotionPage.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nextjs-notion/components/NotionPageHeader.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/nextjs-notion/components/NotionPageHeader.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nextjs-notion/lib/bootstrap-client.ts" beforeDir="false" afterPath="$PROJECT_DIR$/nextjs-notion/lib/bootstrap-client.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nextjs-notion/next.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/nextjs-notion/next.config.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nextjs-notion/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/nextjs-notion/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nextjs-notion/pages/_document.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/nextjs-notion/pages/_document.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nextjs-notion/site.config.ts" beforeDir="false" afterPath="$PROJECT_DIR$/nextjs-notion/site.config.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nextjs-notion/yarn.lock" beforeDir="false" afterPath="$PROJECT_DIR$/nextjs-notion/yarn.lock" afterDir="false" />
-    </list>
+    <list default="true" id="6d79a399-8924-4f24-b973-cee3210ac519" name="Changes" comment="add nextjs-notion to master" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -44,11 +28,11 @@
     </option>
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="mui_v5_migration" />
+        <entry key="$PROJECT_DIR$" value="0df1d25b858e42c30db7b728ca1603c3d74b8684" />
       </map>
     </option>
     <option name="RECENT_COMMON_BRANCH" value="master" />
-    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/nextjs-notion" />
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
     <option name="ROOT_SYNC" value="SYNC" />
   </component>
   <component name="GithubPullRequestsUISettings">
@@ -189,9 +173,11 @@
     </list>
     <recent_temporary>
       <list>
+        <item itemvalue="npm.deps:update" />
+        <item itemvalue="npm.deps" />
+        <item itemvalue="npm.deploy" />
         <item itemvalue="npm.deploy" />
         <item itemvalue="npm.deps" />
-        <item itemvalue="npm.deps:update" />
       </list>
     </recent_temporary>
   </component>
@@ -602,7 +588,19 @@
       <map>
         <entry key="MAIN">
           <value>
-            <State />
+            <State>
+              <option name="FILTERS">
+                <map>
+                  <entry key="branch">
+                    <value>
+                      <list>
+                        <option value="HEAD" />
+                      </list>
+                    </value>
+                  </entry>
+                </map>
+              </option>
+            </State>
           </value>
         </entry>
       </map>
@@ -619,17 +617,17 @@
               </RecentGroup>
               <RecentGroup>
                 <option name="FILTER_VALUES">
+                  <option value="master" />
+                </option>
+              </RecentGroup>
+              <RecentGroup>
+                <option name="FILTER_VALUES">
                   <option value="nonogram" />
                 </option>
               </RecentGroup>
               <RecentGroup>
                 <option name="FILTER_VALUES">
                   <option value="origin/master" />
-                </option>
-              </RecentGroup>
-              <RecentGroup>
-                <option name="FILTER_VALUES">
-                  <option value="master" />
                 </option>
               </RecentGroup>
             </list>
@@ -639,7 +637,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Major remodel" />
     <MESSAGE value="Added new nonogram algorithm, created declaration files for JS -&gt; TS compatibility" />
     <MESSAGE value="Added declaration files to git" />
     <MESSAGE value="Added slider to change nonogram size" />
@@ -664,7 +661,8 @@
     <MESSAGE value="First release of MasterHead" />
     <MESSAGE value="Migration to NextJs" />
     <MESSAGE value="Added dark Mode" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added dark Mode" />
+    <MESSAGE value="add nextjs-notion to master" />
+    <option name="LAST_COMMIT_MESSAGE" value="add nextjs-notion to master" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="XDebuggerManager">

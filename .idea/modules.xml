@@ -8,7 +8,6 @@
       <module fileurl="file://$PROJECT_DIR$/app-nextjs/app-nextjs.iml" filepath="$PROJECT_DIR$/app-nextjs/app-nextjs.iml" />
       <module fileurl="file://$PROJECT_DIR$/../Artiry/factloader/factloader.iml" filepath="$PROJECT_DIR$/../Artiry/factloader/factloader.iml" />
       <module fileurl="file://$PROJECT_DIR$/firebase-functions.iml" filepath="$PROJECT_DIR$/firebase-functions.iml" />
-      <module fileurl="file://$PROJECT_DIR$/nextjs-notion/nextjs-notion.iml" filepath="$PROJECT_DIR$/nextjs-notion/nextjs-notion.iml" />
     </modules>
   </component>
 </project>
