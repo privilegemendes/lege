@@ -5,6 +5,7 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="6d79a399-8924-4f24-b973-cee3210ac519" name="Changes" comment="add nextjs-notion to master">
+      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -60,26 +61,26 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;openjdk-19&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Projects/Lege/nextjs-notion&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_interpreter_path&quot;: &quot;node&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15722656&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;preferences.pluginManager&quot;,
-    &quot;spring.configuration.checksum&quot;: &quot;db974238714ca8de634a7ce1d083a14f&quot;,
-    &quot;ts.external.directory.path&quot;: &quot;C:\\Projects\\Artiry\\Webapp\\node_modules\\typescript\\lib&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "jdk.selected.JAVA_MODULE": "openjdk-19",
+    "last_opened_file_path": "C:/Projects/Lege/nextjs-notion",
+    "node.js.detected.package.eslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "nodejs_interpreter_path": "node",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.15722656",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "project.propVCSSupport.DirectoryMappings",
+    "spring.configuration.checksum": "db974238714ca8de634a7ce1d083a14f",
+    "ts.external.directory.path": "C:\\Projects\\Artiry\\Webapp\\node_modules\\typescript\\lib"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Projects\Lege\nextjs-notion-starter-kit" />
@@ -214,14 +215,8 @@
       <workItem from="1675549215850" duration="69847000" />
       <workItem from="1675696883523" duration="1553000" />
       <workItem from="1675700016337" duration="655000" />
-      <workItem from="1675705102185" duration="118000" />
-    </task>
-    <task id="LOCAL-00007" summary="Migrated theme and typography's, uninstalled material-ui v4">
-      <created>1673946697287</created>
-      <option name="number" value="00007" />
-      <option name="presentableId" value="LOCAL-00007" />
-      <option name="project" value="LOCAL" />
-      <updated>1673946697287</updated>
+      <workItem from="1675705102185" duration="226000" />
+      <workItem from="1675705366902" duration="1391000" />
     </task>
     <task id="LOCAL-00008" summary="Change Typopgraphy,Theme and makeStyles import locations to v5">
       <created>1673961433190</created>
@@ -559,7 +554,14 @@
       <option name="project" value="LOCAL" />
       <updated>1675704525801</updated>
     </task>
-    <option name="localTasksCounter" value="56" />
+    <task id="LOCAL-00056" summary="add nextjs-notion to master">
+      <created>1675705242222</created>
+      <option name="number" value="00056" />
+      <option name="presentableId" value="LOCAL-00056" />
+      <option name="project" value="LOCAL" />
+      <updated>1675705242223</updated>
+    </task>
+    <option name="localTasksCounter" value="57" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -591,7 +593,13 @@
       <map>
         <entry key="MAIN">
           <value>
+            <State />
+          </value>
+        </entry>
+        <entry key="c4890832-76ef-4191-aea0-80d60266791f">
+          <value>
             <State>
+              <option name="SHOW_ONLY_AFFECTED_CHANGES" value="true" />
               <option name="FILTERS">
                 <map>
                   <entry key="branch">
@@ -601,11 +609,23 @@
                       </list>
                     </value>
                   </entry>
+                  <entry key="structure">
+                    <value>
+                      <list>
+                        <option value="dir:C:/Projects/Lege/nextjs-notion" />
+                      </list>
+                    </value>
+                  </entry>
                 </map>
               </option>
             </State>
           </value>
         </entry>
+      </map>
+    </option>
+    <option name="OPEN_GENERIC_TABS">
+      <map>
+        <entry key="c4890832-76ef-4191-aea0-80d60266791f" value="TOOL_WINDOW" />
       </map>
     </option>
     <option name="RECENT_FILTERS">
@@ -640,6 +660,10 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
+    <ignored-roots>
+      <path value="$PROJECT_DIR$/lege" />
+      <path value="$PROJECT_DIR$/../nonogram" />
+    </ignored-roots>
     <MESSAGE value="Added new nonogram algorithm, created declaration files for JS -&gt; TS compatibility" />
     <MESSAGE value="Added declaration files to git" />
     <MESSAGE value="Added slider to change nonogram size" />
