@@ -9,7 +9,6 @@ import { FaYoutube } from '@react-icons/all-files/fa/FaYoutube'
 import { FaZhihu } from '@react-icons/all-files/fa/FaZhihu'
 
 import * as config from '@/lib/config'
-import { useDarkMode } from '@/lib/use-dark-mode'
 
 import styles from './styles.module.css'
 import { ToggleThemeButton } from '@/components/ToggleThemeButton/ToggleThemeButton'
@@ -17,20 +16,20 @@ import { ToggleThemeButton } from '@/components/ToggleThemeButton/ToggleThemeBut
 // TODO: merge the data and icons from PageSocial with the social links in Footer
 
 export const FooterImpl: React.FC = () => {
-  const [hasMounted, setHasMounted] = React.useState(false)
-  const { isDarkMode, toggleDarkMode } = useDarkMode()
-
-  const onToggleDarkMode = React.useCallback(
-    (e) => {
-      e.preventDefault()
-      toggleDarkMode()
-    },
-    [toggleDarkMode]
-  )
-
-  React.useEffect(() => {
-    setHasMounted(true)
-  }, [])
+  // const [hasMounted, setHasMounted] = React.useState(false)
+  // const { isDarkMode, toggleDarkMode } = useDarkMode()
+  //
+  // const onToggleDarkMode = React.useCallback(
+  //   (e) => {
+  //     e.preventDefault()
+  //     toggleDarkMode()
+  //   },
+  //   [toggleDarkMode]
+  // )
+  //
+  // React.useEffect(() => {
+  //   setHasMounted(true)
+  // }, [])
 
   return (
     <footer className={styles.footer}>

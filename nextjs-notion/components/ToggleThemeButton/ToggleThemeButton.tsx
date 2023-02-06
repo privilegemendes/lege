@@ -78,7 +78,6 @@ export const ToggleThemeButton:FC = () => {
 const ThemeToggleSVG: React.FC<Props> =
   ({
      onChange,
-     children,
      checked = false,
      size = 24,
      animationProperties = defaultProperties,
@@ -148,8 +147,8 @@ const ThemeToggleSVG: React.FC<Props> =
         <mask id={uniqueMaskId}>
           <rect x="0" y="0" width="100%" height="100%" fill="white" />
           <animated.circle
-            // @ts-ignore
-            style={maskedCircleProps}
+            cx={maskedCircleProps.cx}
+            cy={maskedCircleProps.cy}
             r="9"
             fill="black"
           />
@@ -159,8 +158,7 @@ const ThemeToggleSVG: React.FC<Props> =
           cx="12"
           cy="12"
           fill={checked ? moonColor : sunColor}
-          // @ts-ignore
-          style={centerCircleProps}
+          r={centerCircleProps.r}
           mask={`url(#${uniqueMaskId})`}
         />
         <animated.g stroke="currentColor" style={linesProps}>
