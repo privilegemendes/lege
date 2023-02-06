@@ -1,9 +1,9 @@
-import React, {FC, useEffect, useMemo, useRef, useState} from "react";
-import * as THREE from "three";
-import {Canvas, useFrame} from '@react-three/fiber'
-import {gsap, Sine} from "gsap";
-import {shaderMaterial} from "@react-three/drei";
-import styled from "styled-components";
+import React, { FC, useEffect, useMemo, useRef, useState } from 'react'
+import * as THREE from 'three'
+import { Canvas, useFrame } from '@react-three/fiber'
+import { gsap, Sine } from 'gsap'
+import { shaderMaterial } from '@react-three/drei'
+import styled from 'styled-components'
 
 const CanvasContainer = styled.div `
     width: 100vw;
@@ -51,7 +51,7 @@ function Lights() {
 
 const Rose: FC<Props> = ({isBroken}) => {
 
-    const groupRef = useRef<THREE.Group | null >(null);
+    const groupRef = useRef<THREE.Group>(null!);
     const [hovered, hover] = useState(false)
 
     // Subscribe this component to the render-loop, rotate the mesh every frame
@@ -95,8 +95,8 @@ const AnimatedMesh: FC<Props> = (
 
 
 
-    //let torusKnotGeometry = new THREE.TorusKnotGeometry(5, 1.8, 64, 5, 7, 5);
-    let torusKnotGeometry = new THREE.TorusKnotGeometry(5, 1.8, 165, 11, 9, 5);
+    let torusKnotGeometry = new THREE.TorusKnotGeometry(5, 1.8, 64, 5, 7, 5);
+    //let torusKnotGeometry = new THREE.TorusKnotGeometry(12, 1.5, 212, 12, 15, 3);
 
     useEffect(() => {
 
@@ -254,13 +254,13 @@ function tessellateModifier(maxEdgeLength: number, geometry: any) {
     let edge: number = 0;
     const faces: any[] = [];
     const faceVertexUvs: any[] = [];
-    const maxEdgeLengthSquared = maxEdgeLength * maxEdgeLength;
+    const maxEdgeLengthSquared: number = maxEdgeLength * maxEdgeLength;
 
     for (let i = 0, il = geometry.faceVertexUvs.length; i < il; i++) {
         faceVertexUvs[i] = [];
     }
     for (let i = 0, il = geometry.faces.length; i < il; i++) {
-        let face = geometry.faces[i];
+        let face: THREE.Face3 = geometry.faces[i];
         if (face instanceof THREE.Face3) {
             let a = face.a;
             let b = face.b;

@@ -1,9 +1,13 @@
 //Update styled-components to use SWC
 /** @type {import('next').NextConfig} */
 
-export const nextConfig = {
+const nextConfig = {
     reactStrictMode: true,
     compiler: {
-        styledComponents: true,
+        styledComponents: true | {
+
+        }
     },
 }
+
+module.exports = nextConfig

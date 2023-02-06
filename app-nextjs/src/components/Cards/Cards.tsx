@@ -44,7 +44,7 @@ export default function Cards() {
                 <StyledLink href="/about" name="About Page &rarr;" />
             </Card>
             <Card>
-                <StyledLink href="/hero" name="Hero &rarr;" />
+                <StyledLink href="/hero" name="Hero" />
             </Card>
         </FlexContainer>
     )

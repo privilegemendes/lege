@@ -1,4 +1,5 @@
 import styled from 'styled-components'
+import { BREAKPOINTS } from '../context/theme-context/ThemeConfig'
 
 const Container = styled.div`
   padding: 0 0.5rem;
@@ -25,7 +26,7 @@ const Title = styled.h1`
   text-align: center;
   text-decoration: none;
   a {
-    color: ${({ theme }) => theme.colors.secondary};
+    color: var(--color-secondary);
     text-decoration: none;
     &:hover,
     :focus,
@@ -50,4 +51,16 @@ const CodeTag = styled.code`
     Bitstream Vera Sans Mono, Courier New, monospace;
 `
 
-export { Container, Main, Title, Description, CodeTag }
+const DesktopOnly = styled.div`
+@media ${BREAKPOINTS.md} {
+    display: none;
+    }
+`;
+
+const MobileOnly = styled.div`
+@media ${BREAKPOINTS.mdMin} {
+    display: none;
+    }
+`;
+
+export { Container, Main, Title, Description, CodeTag, DesktopOnly }
