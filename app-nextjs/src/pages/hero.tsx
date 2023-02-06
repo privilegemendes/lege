@@ -1,6 +1,6 @@
 import Link from 'next/link'
-import {Container, Description, Main, Title} from '../styles/SharedStyles'
-import {Roses} from "../components/hero/Roses";
+import { Container, Description, Main, Title } from '../styles/SharedStyles'
+import { Roses } from '../components/Hero/Roses'
 
 export default function Hero() {
     return (

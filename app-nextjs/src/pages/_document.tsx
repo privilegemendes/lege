@@ -1,5 +1,6 @@
-import Document, {DocumentContext, Head, Html, Main, NextScript} from 'next/document'
-import {ServerStyleSheet} from 'styled-components'
+import Document, { DocumentContext, Head, Html, Main, NextScript } from 'next/document'
+import { ServerStyleSheet } from 'styled-components'
+import { FallbackStyles, MagicScriptTag } from '../context/theme-context/InlineCssVariables'
 
 export default class MyDocument extends Document {
     static async getInitialProps(ctx: DocumentContext) {
@@ -36,12 +37,14 @@ export default class MyDocument extends Document {
           document.body.dataset.theme = getUserPreference();
         `;
         return (
-            <Html>
+            <Html lang="en">
                 <Head>
                     <title>Privilege's Site</title>
+                    <FallbackStyles />
                 </Head>
                 <body>
-                    <script dangerouslySetInnerHTML={{ __html: setInitialTheme }} />
+                <script dangerouslySetInnerHTML={{ __html: setInitialTheme }} />
+                <MagicScriptTag/>
                     <Main />
                     <NextScript />
                 </body>

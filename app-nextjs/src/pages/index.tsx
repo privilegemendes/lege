@@ -1,6 +1,6 @@
 import Head from 'next/head'
-import {CodeTag, Container, Description, Main, Title,} from '../styles/SharedStyles'
-import Cards from '../components/Cards'
+import { CodeTag, Container, Description, Main, Title } from '../styles/SharedStyles'
+import Cards from '../components/Cards/Cards'
 
 export default function Home() {
   return (

@@ -48,32 +48,40 @@ export const COLORS = {
 export const COLOR_MODE_KEY = 'color-mode';
 export const INITIAL_COLOR_MODE_CSS_PROP = '--initial-color-mode';
 
-// --color-text: hsl(222deg, 22%, 5%);
-// --color-background: hsl(0deg, 0%, 100%);
-// --color-blurred-background: hsla(0deg, 0%, 100%, 0.85);
-// --color-primary: hsl(245deg, 100%, 60%);
-// --color-secondary: hsl(333deg, 100%, 45%);
-// --color-tertiary: hsl(255deg, 85%, 30%);
-// --color-decorative: hsl(200deg, 75%, 65%);
-// --color-muted: hsl(210deg, 55%, 92%);
-// --color-info: hsl(245deg, 100%, 60%);
-// --color-success: hsl(160deg, 100%, 40%);
-// --color-success-background: hsla(160deg, 100%, 40%, 0.1);
-// --color-error: hsl(340deg, 95%, 50%);
-// --color-error-background: hsla(340deg, 95%, 43%, 0.1);
-// --color-alert: hsl(37deg, 100%, 50%);
-// --color-alert-background: hsla(52deg, 100%, 50%, 0.25);
-// --color-subtle-background: hsl(225deg, 25%, 95%);
-// --color-subtle-floating: hsl(0deg, 0%, 100%);
-// --color-homepage-light: hsl(204deg, 67%, 85%);
-// --color-homepage-dark: hsl(202deg, 71%, 90%);
-// --color-homepage-bg: hsl(204deg, 67%, 85%);
-// --color-gray-100: hsl(225deg, 25%, 95%);
-// --color-gray-200: hsl(225deg, 16%, 90%);
-// --color-gray-300: hsl(225deg, 8%, 80%);
-// --color-gray-400: hsl(225deg, 8%, 70%);
-// --color-gray-500: hsl(225deg, 7%, 60%);
-// --color-gray-600: hsl(225deg, 15%, 50%);
-// --color-gray-700: hsl(225deg, 12%, 40%);
-// --color-gray-900: hsl(225deg, 25%, 20%);
-// --color-gray-1000: hsl(225deg, 15%, 15%);
+export const BREAKPOINT_SIZES = {
+    xs: 320,
+    sm: 540,
+    md: 900,
+    lg: 1024,
+    xl: 1440,
+};
+
+export const BREAKPOINTS = {
+    xs: `(max-width: ${BREAKPOINT_SIZES.xs}px)`,
+    sm: `(max-width: ${BREAKPOINT_SIZES.sm}px)`,
+    md: `(max-width: ${BREAKPOINT_SIZES.md}px)`,
+    lg: `(max-width: ${BREAKPOINT_SIZES.lg}px)`,
+    xl: `(max-width: ${BREAKPOINT_SIZES.xl}px)`,
+    xsMin: `(min-width: ${BREAKPOINT_SIZES.xs + 1}px)`,
+    smMin: `(min-width: ${BREAKPOINT_SIZES.sm + 1}px)`,
+    mdMin: `(min-width: ${BREAKPOINT_SIZES.md + 1}px)`,
+    lgMin: `(min-width: ${BREAKPOINT_SIZES.lg + 1}px)`,
+    xlMin: `(min-width: ${BREAKPOINT_SIZES.xl + 1}px)`,
+    desktop: `(min-width: ${BREAKPOINT_SIZES.sm + 1}px)`,
+}
+
+export const READING_WIDTH = 850;
+export const EXTRA_WIDE_WIDTH = 1024;
+
+const mobileRegex = /Android|webOS|iPhone|iPad|iPod|BlackBerry/i;
+
+const userAgent =
+    typeof window !== 'undefined' ? window.navigator.userAgent : 'node';
+
+export const IS_MOBILE_USER_AGENT = mobileRegex.test(userAgent);
+
+export const Z_INDICES = {
+    hero: 1,
+    mainContent: 10,
+    header: 100,
+};

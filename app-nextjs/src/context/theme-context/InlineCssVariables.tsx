@@ -1,7 +1,7 @@
-import React from 'react';
-import Terser from 'terser';
+import React from 'react'
+import Terser from 'terser'
 
-import {COLOR_MODE_KEY, COLORS, INITIAL_COLOR_MODE_CSS_PROP,} from './ThemeColors';
+import { COLOR_MODE_KEY, COLORS, INITIAL_COLOR_MODE_CSS_PROP } from './ThemeConfig'
 
 function setColorsByTheme() {
     const colors = '🌈';
@@ -33,7 +33,7 @@ function setColorsByTheme() {
     });
 }
 
-const MagicScriptTag = () => {
+export const MagicScriptTag = () => {
     const boundFn = String(setColorsByTheme)
         .replace("'🌈'", JSON.stringify(COLORS))
         .replace('🔑', COLOR_MODE_KEY)
@@ -55,7 +55,7 @@ const MagicScriptTag = () => {
  * document, which sets default values for all of our colors.
  * Only light mode will be available for users with JS disabled.
  */
-const FallbackStyles = () => {
+export const FallbackStyles = () => {
     // Create a string holding each CSS variable:
       `--color-text: black;
       --color-background: white;`

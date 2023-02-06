@@ -1,9 +1,9 @@
-import React, {FC, useEffect, useMemo, useRef, useState} from "react";
-import * as THREE from "three";
-import {Canvas, useFrame} from '@react-three/fiber'
-import {gsap, Sine} from "gsap";
-import {shaderMaterial} from "@react-three/drei";
-import styled from "styled-components";
+import React, { FC, useEffect, useMemo, useRef, useState } from 'react'
+import * as THREE from 'three'
+import { Canvas, useFrame } from '@react-three/fiber'
+import { gsap, Sine } from 'gsap'
+import { shaderMaterial } from '@react-three/drei'
+import styled from 'styled-components'
 
 const CanvasContainer = styled.div `
     width: 100vw;
@@ -95,8 +95,8 @@ const AnimatedMesh: FC<Props> = (
 
 
 
-    //let torusKnotGeometry = new THREE.TorusKnotGeometry(5, 1.8, 64, 5, 7, 5);
-    let torusKnotGeometry = new THREE.TorusKnotGeometry(12, 1.5, 212, 12, 15, 3);
+    let torusKnotGeometry = new THREE.TorusKnotGeometry(5, 1.8, 64, 5, 7, 5);
+    //let torusKnotGeometry = new THREE.TorusKnotGeometry(12, 1.5, 212, 12, 15, 3);
 
     useEffect(() => {
 

@@ -1,6 +1,8 @@
-import {useDarkMode} from '../theme-context/ThemeContext';
-import styled from "styled-components";
-import React, {useEffect, useState} from "react";
+import { useDarkMode } from '../theme-context/ThemeContext'
+import styled from 'styled-components'
+import React, { useEffect, useState } from 'react'
+import { ThemeToggleButton } from '../../components/ThemeToggleButton/ThemeToggleButton'
+import { useTheme } from 'next-themes'
 
 const ToggleButton = styled.button`
   --toggle-width: 80px;
@@ -47,35 +49,28 @@ const ToggleThumb = styled.span`
 
 `;
 
-
 export default function ThemeModeToggle() {
+    const { setTheme, resolvedTheme } = useTheme();
+    const [mounted, setMounted] = useState(false);
+
+    useEffect(() =>
+        setMounted(true),
+        []);
 
     const { colorMode, setColorMode } = useDarkMode()
-    const [activeTheme, setActiveTheme] = useState(document.body.dataset.theme);
+    const [isDarkMode, setDarkMode] = React.useState(false)
 
-    const inactiveTheme = colorMode === "dark" ? "light" : "dark";
 
-    // Save the theme choice to localStorage
-    useEffect(() => {
-        document.body.dataset.theme = activeTheme;
-        window.localStorage.setItem("theme", activeTheme);
-    }, [activeTheme]);
-
-    const handleToggle = (event: React.MouseEvent<MouseEvent | HTMLButtonElement>) => {
-        setColorMode(colorMode === "dark" ? "light" : "dark");
-        setActiveTheme(inactiveTheme)
+    const toggleTheme = (checked: boolean) => {
+        setDarkMode(checked);
+        if (checked == true) {
+            setColorMode("dark");
+        } else {
+            setColorMode("light");
+        }
     }
 
     return (
-    <ToggleButton
-        aria-label={`Change to ${inactiveTheme} mode`}
-        type="button"
-        onClick={(event) => handleToggle(event)}
-    >
-        <ToggleThumb color={colorMode} />
-        <span>🌙</span>
-        <span>☀ </span>
-    </ToggleButton>
-
+        mounted && ( <ThemeToggleButton onChange={toggleTheme} checked={isDarkMode}/> )
     );
 };

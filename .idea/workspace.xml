@@ -4,26 +4,38 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6d79a399-8924-4f24-b973-cee3210ac519" name="Changes" comment="Migration to NextJs">
-      <change afterPath="$PROJECT_DIR$/app-nextjs/src/assets/logo-uptick.svg" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app-nextjs/src/components/header/Header.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app-nextjs/src/context/theme-context/InlineCssVariables.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app-nextjs/src/context/theme-context/ThemeColors.ts" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app-nextjs/src/context/theme-context/ThemeContext.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app-nextjs/src/context/theme-mode-toggle/ThemeModeToggle.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/app-nextjs/src/hooks/usePrefersReducedMotion.ts" afterDir="false" />
+    <list default="true" id="6d79a399-8924-4f24-b973-cee3210ac519" name="Changes" comment="Added dark Mode">
+      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/Project.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/codeStyles/codeStyleConfig.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app-nextjs/src/assets/github.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app-nextjs/src/assets/logo.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app-nextjs/src/assets/sun.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app-nextjs/src/assets/twitter.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app-nextjs/src/components/Footer/Footer.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app-nextjs/src/components/Header/Header.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app-nextjs/src/components/InvisibleButton/InvisibleButton.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app-nextjs/src/components/ThemeToggleButton/ThemeToggleButton.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app-nextjs/src/pages/blog/[slug].tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/app-nextjs/src/pages/posts.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/nextjs-notion-starter-kit" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/modules.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app-nextjs/next.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/app-nextjs/next.config.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app-nextjs/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/app-nextjs/package-lock.json" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app-nextjs/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/app-nextjs/package.json" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app-nextjs/src/components/Hero/Roses.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app-nextjs/src/components/hero/Roses.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app-nextjs/src/components/Cards.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app-nextjs/src/components/Cards/Cards.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app-nextjs/src/components/header/Header.tsx" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/app-nextjs/src/components/hero/Roses.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app-nextjs/src/components/Hero/Roses.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app-nextjs/src/context/theme-context/InlineCssVariables.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app-nextjs/src/context/theme-context/InlineCssVariables.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app-nextjs/src/context/theme-context/ThemeColors.ts" beforeDir="false" afterPath="$PROJECT_DIR$/app-nextjs/src/context/theme-context/ThemeConfig.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app-nextjs/src/context/theme-context/ThemeContext.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app-nextjs/src/context/theme-context/ThemeContext.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app-nextjs/src/context/theme-mode-toggle/ThemeModeToggle.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app-nextjs/src/context/theme-mode-toggle/ThemeModeToggle.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app-nextjs/src/pages/_app.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app-nextjs/src/pages/_app.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app-nextjs/src/pages/_document.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app-nextjs/src/pages/_document.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app-nextjs/src/pages/about.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app-nextjs/src/pages/about.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app-nextjs/src/pages/hero.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app-nextjs/src/pages/hero.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/app-nextjs/src/pages/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app-nextjs/src/pages/index.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app-nextjs/src/styles/globalStyles.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app-nextjs/src/styles/GlobalStyles.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/app-nextjs/src/styles/sharedStyles.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app-nextjs/src/styles/SharedStyles.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app-nextjs/src/styles/GlobalStyles.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app-nextjs/src/styles/GlobalStyles.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app-nextjs/src/styles/SharedStyles.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app-nextjs/src/styles/SharedStyles.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nextjs-notion-starter-kit/components/NotionPageHeader.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/nextjs-notion-starter-kit/components/NotionPageHeader.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -85,7 +97,7 @@
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
     "jdk.selected.JAVA_MODULE": "openjdk-19",
-    "last_opened_file_path": "C:/Projects/Lege/app-nextjs",
+    "last_opened_file_path": "C:/Projects/Lege/nextjs-notion-starter-kit",
     "node.js.detected.package.eslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "nodejs_interpreter_path": "node",
@@ -100,18 +112,18 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Projects\Lege\nextjs-notion-starter-kit" />
+      <recent name="C:\Projects\Lege\app-nextjs\src\pages" />
+      <recent name="C:\Projects\Lege\app-nextjs\src\assets" />
+      <recent name="C:\Projects\Lege\app-nextjs\public" />
       <recent name="C:\Projects\Lege\app-nextjs" />
-      <recent name="C:\Projects\Lege\lege\src\pages" />
-      <recent name="C:\Projects\Lege\app" />
-      <recent name="C:\Projects\Lege\app\src\components" />
-      <recent name="C:\Projects\Lege\app\src\components\nonogram-create-page\nonogram-creator" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
-      <recent name="C:\Projects\Lege\app-nextjs\src\context\theme-context" />
-      <recent name="C:\Projects\Lege\app-nextjs\src\context" />
-      <recent name="C:\Projects\Lege\app-nextjs\src\components" />
-      <recent name="C:\Projects\Lege\app-nextjs\src" />
-      <recent name="C:\Projects\Lege\app-nextjs" />
+      <recent name="C:\Projects\Lege\app-nextjs\src\pages\blog" />
+      <recent name="C:\Projects\Lege\app-nextjs\src\assets" />
+      <recent name="C:\Projects\Lege\app-nextjs\src\components\ThemeToggleButton" />
+      <recent name="C:\Projects\Lege\app-nextjs\src\components\Header" />
+      <recent name="C:\Projects\Lege\app-nextjs\src\components\Footer" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -121,7 +133,7 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="npm.dev">
+  <component name="RunManager" selected="npm.nextjs-dev">
     <configuration name="Debug Application" type="JavascriptDebugType" uri="http://localhost:3000">
       <method v="2" />
     </configuration>
@@ -142,8 +154,19 @@
       <envs />
       <method v="2" />
     </configuration>
+    <configuration name="nextjs-dev" type="js.build_tools.npm">
+      <package-json value="$PROJECT_DIR$/nextjs-notion-starter-kit/package.json" />
+      <command value="run" />
+      <scripts>
+        <script value="dev" />
+      </scripts>
+      <node-interpreter value="project" />
+      <envs />
+      <method v="2" />
+    </configuration>
     <list>
       <item itemvalue="JavaScript Debug.Debug Application" />
+      <item itemvalue="npm.nextjs-dev" />
       <item itemvalue="npm.dev" />
       <item itemvalue="Spring Boot.ApiApplication" />
     </list>
@@ -176,14 +199,7 @@
       <workItem from="1675192227836" duration="883000" />
       <workItem from="1675193138545" duration="16716000" />
       <workItem from="1675238149126" duration="49522000" />
-      <workItem from="1675549215850" duration="31882000" />
-    </task>
-    <task id="LOCAL-00004" summary="Added picking tiles functionality - yet to optimise">
-      <created>1673393414268</created>
-      <option name="number" value="00004" />
-      <option name="presentableId" value="LOCAL-00004" />
-      <option name="project" value="LOCAL" />
-      <updated>1673393414268</updated>
+      <workItem from="1675549215850" duration="66819000" />
     </task>
     <task id="LOCAL-00005" summary="Added draw/erase functionality">
       <created>1673542265018</created>
@@ -521,7 +537,14 @@
       <option name="project" value="LOCAL" />
       <updated>1675555029848</updated>
     </task>
-    <option name="localTasksCounter" value="53" />
+    <task id="LOCAL-00053" summary="Added dark Mode">
+      <created>1675620822068</created>
+      <option name="number" value="00053" />
+      <option name="presentableId" value="LOCAL-00053" />
+      <option name="project" value="LOCAL" />
+      <updated>1675620822068</updated>
+    </task>
+    <option name="localTasksCounter" value="54" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -590,7 +613,6 @@
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <MESSAGE value="Row hints and Column hints now write in correct directions" />
     <MESSAGE value="Major remodel" />
     <MESSAGE value="Added new nonogram algorithm, created declaration files for JS -&gt; TS compatibility" />
     <MESSAGE value="Added declaration files to git" />
@@ -615,7 +637,8 @@
     <MESSAGE value="Finally!" />
     <MESSAGE value="First release of MasterHead" />
     <MESSAGE value="Migration to NextJs" />
-    <option name="LAST_COMMIT_MESSAGE" value="Migration to NextJs" />
+    <MESSAGE value="Added dark Mode" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added dark Mode" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="XDebuggerManager">
