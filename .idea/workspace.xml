@@ -4,8 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6d79a399-8924-4f24-b973-cee3210ac519" name="Changes" comment="add nextjs-notion to master">
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/vcs.xml" afterDir="false" />
+    <list default="true" id="6d79a399-8924-4f24-b973-cee3210ac519" name="Changes" comment="Add nextjs-notion to master">
+      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -104,7 +104,7 @@
       </set>
     </option>
   </component>
-  <component name="RunManager" selected="npm.deploy">
+  <component name="RunManager" selected="npm.nextjs-dev">
     <configuration name="Debug Application" type="JavascriptDebugType" uri="http://localhost:3000">
       <method v="2" />
     </configuration>
@@ -216,21 +216,7 @@
       <workItem from="1675696883523" duration="1553000" />
       <workItem from="1675700016337" duration="655000" />
       <workItem from="1675705102185" duration="226000" />
-      <workItem from="1675705366902" duration="1391000" />
-    </task>
-    <task id="LOCAL-00008" summary="Change Typopgraphy,Theme and makeStyles import locations to v5">
-      <created>1673961433190</created>
-      <option name="number" value="00008" />
-      <option name="presentableId" value="LOCAL-00008" />
-      <option name="project" value="LOCAL" />
-      <updated>1673961433190</updated>
-    </task>
-    <task id="LOCAL-00009" summary="Removed theme colors">
-      <created>1673961465230</created>
-      <option name="number" value="00009" />
-      <option name="presentableId" value="LOCAL-00009" />
-      <option name="project" value="LOCAL" />
-      <updated>1673961465230</updated>
+      <workItem from="1675705366902" duration="2594000" />
     </task>
     <task id="LOCAL-00010" summary="wip - firebase auth and functions setup">
       <created>1673986035201</created>
@@ -561,7 +547,21 @@
       <option name="project" value="LOCAL" />
       <updated>1675705242223</updated>
     </task>
-    <option name="localTasksCounter" value="57" />
+    <task id="LOCAL-00057" summary="fix nextjs-notion to master">
+      <created>1675709495643</created>
+      <option name="number" value="00057" />
+      <option name="presentableId" value="LOCAL-00057" />
+      <option name="project" value="LOCAL" />
+      <updated>1675709495643</updated>
+    </task>
+    <task id="LOCAL-00058" summary="Add nextjs-notion to master">
+      <created>1675710375528</created>
+      <option name="number" value="00058" />
+      <option name="presentableId" value="LOCAL-00058" />
+      <option name="project" value="LOCAL" />
+      <updated>1675710375528</updated>
+    </task>
+    <option name="localTasksCounter" value="59" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -664,8 +664,6 @@
       <path value="$PROJECT_DIR$/lege" />
       <path value="$PROJECT_DIR$/../nonogram" />
     </ignored-roots>
-    <MESSAGE value="Added new nonogram algorithm, created declaration files for JS -&gt; TS compatibility" />
-    <MESSAGE value="Added declaration files to git" />
     <MESSAGE value="Added slider to change nonogram size" />
     <MESSAGE value="Nonogram creator works!!" />
     <MESSAGE value="Added firebase hosting and Github actions workflow" />
@@ -689,7 +687,9 @@
     <MESSAGE value="Migration to NextJs" />
     <MESSAGE value="Added dark Mode" />
     <MESSAGE value="add nextjs-notion to master" />
-    <option name="LAST_COMMIT_MESSAGE" value="add nextjs-notion to master" />
+    <MESSAGE value="fix nextjs-notion to master" />
+    <MESSAGE value="Add nextjs-notion to master" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add nextjs-notion to master" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="XDebuggerManager">
