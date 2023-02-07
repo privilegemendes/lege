@@ -10,6 +10,7 @@
 .notion {
   --notion-max-width: 720px;
   --notion-header-height: 54px;
+
 }
 
 .notion-page {
@@ -379,5 +380,10 @@
 }
 
 .notion-block-260baa77f1e1428b97fb14ac99c7c385 {
+  display: none;
+}
+
+
+.notion-row {
   display: none;
 }

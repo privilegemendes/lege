@@ -19,7 +19,7 @@
   line-height: 1.5;
   color: rgb(55, 53, 47);
   caret-color: rgb(55, 53, 47);
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica,
+  font-family: 'Roboto-Bold',-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica,
     'Apple Color Emoji', Arial, sans-serif, 'Segoe UI Emoji', 'Segoe UI Symbol';
 }
 
@@ -44,20 +44,52 @@
 }
 
 .footer {
+  background: hsla(200deg, 100%, 85%, 0.1);
+  background: linear-gradient(0deg, hsla(200deg, 100%, 85%, 0), hsla(200deg, 100%, 85%, 0.1));
+  position: relative;
+  transition: background 350ms ease 0s;
   width: 100%;
-  max-width: 1100px;
-  margin: auto auto 0;
-  padding: 8px;
 
+}
+
+.footerContainer {
+  position: relative;
+  max-width: 1100px;
   display: flex;
   flex-direction: row;
   justify-content: space-between;
   align-items: center;
+  padding: 32px;
+  margin: auto auto 0;
+}
+
+.footerHeader {
+  display: flex;
+  flex-direction: column;
+  -moz-box-pack: justify;
+  justify-content: space-between;
+  align-items: flex-start;
 }
 
 .copyright {
-  font-size: 80%;
-  padding: 0.5em;
+  order: 1;
+  flex: 1 1 auto;
+  font-size: 12px;
+  padding-top: 16px;
+}
+
+.copyrightBottom {
+  display: none;
+}
+
+.settings {
+  order: 2;
+  flex: 0 1 auto;
+}
+
+.social {
+  order: 3;
+  flex: 0 1 auto;
 }
 
 .settings,
@@ -123,23 +155,42 @@
   border-top: 1px solid var(--fg-color-0);
 }
 
-@media only screen and (max-width: 566px) {
-  .footer {
+/*// TODO: revisit the mobile footer settings*/
+@media only screen and (max-width: 725px) {
+
+  .footerContainer {
     flex-direction: column;
+    -moz-box-pack: start;
+    justify-content: flex-start;
+    align-items: stretch;
   }
 
-  .footer > div {
-    margin-top: 1em;
+  .footerHeader {
+    justify-content: flex-start;
+    align-self: center;
   }
 
-  .footer .settings {
-    order: 1;
-  }
-  .footer .social {
+  .settings {
     order: 2;
+    padding-bottom: 8px;
+    align-self: center;
+
   }
-  .footer .copyright {
+  .social {
     order: 3;
+    align-self: center;
+  }
+  .copyright {
+    display: none;
+  }
+
+  .copyrightBottom {
+    order: 4;
+    display: flex;
+    font-size: 12px;
+    text-align: center;
+    padding-top: 16px;
+    align-self: center;
   }
 }
 
@@ -211,6 +262,10 @@
 
   .githubCorner .octoArm {
     animation: octocat-wave 560ms ease-in-out;
+  }
+
+  .footerContainer {
+    flex-direction: column;
   }
 }
 

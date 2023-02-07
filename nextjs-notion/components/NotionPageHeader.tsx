@@ -2,12 +2,13 @@ import * as React from 'react'
 import * as types from 'notion-types'
 
 import cs from 'classnames'
-import { Breadcrumbs, Header, Search, useNotionContext } from 'react-notion-x'
+import { Header, Search, useNotionContext } from 'react-notion-x'
 
 import { isSearchEnabled, navigationLinks, navigationStyle } from '@/lib/config'
 
 import styles from './styles.module.css'
 import { ToggleThemeButton } from '@/components/ToggleThemeButton/ToggleThemeButton'
+import { LogoHeader } from '@/components/Logo/Logo'
 
 export const NotionPageHeader: React.FC<{
   block: types.CollectionViewPageBlock | types.PageBlock
@@ -21,8 +22,7 @@ export const NotionPageHeader: React.FC<{
   return (
     <header className='notion-header'>
       <div className='notion-nav-header'>
-        <Breadcrumbs block={block} rootOnly={true} />
-
+        <LogoHeader/>
         <div className='notion-nav-header-rhs breadcrumbs'>
           {navigationLinks
             ?.map((link, index) => {
@@ -58,6 +58,7 @@ export const NotionPageHeader: React.FC<{
           <ToggleThemeButton />
 
           {isSearchEnabled && <Search block={block} title={null} />}
+
         </div>
       </div>
     </header>

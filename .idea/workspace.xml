@@ -4,10 +4,29 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6d79a399-8924-4f24-b973-cee3210ac519" name="Changes" comment="Added GitHub Actions for Vercel deployment">
+    <list default="true" id="6d79a399-8924-4f24-b973-cee3210ac519" name="Changes" comment="Fixed type errors and darkmode SVG circles">
+      <change afterPath="$PROJECT_DIR$/nextjs-notion/components/Logo/Logo.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/nextjs-notion/public/fonts/roboto/Roboto-Black.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/nextjs-notion/public/fonts/roboto/Roboto-BlackItalic.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/nextjs-notion/public/fonts/roboto/Roboto-Bold.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/nextjs-notion/public/fonts/roboto/Roboto-BoldItalic.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/nextjs-notion/public/fonts/roboto/Roboto-Italic.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/nextjs-notion/public/fonts/roboto/Roboto-Light.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/nextjs-notion/public/fonts/roboto/Roboto-LightItalic.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/nextjs-notion/public/fonts/roboto/Roboto-Medium.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/nextjs-notion/public/fonts/roboto/Roboto-MediumItalic.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/nextjs-notion/public/fonts/roboto/Roboto-Regular.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/nextjs-notion/public/fonts/roboto/Roboto-Thin.ttf" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/nextjs-notion/public/fonts/roboto/Roboto-ThinItalic.ttf" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/nextjs-notion/components/Footer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/nextjs-notion/components/Footer.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nextjs-notion/components/ToggleThemeButton/ToggleThemeButton.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/nextjs-notion/components/ToggleThemeButton/ToggleThemeButton.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nextjs-notion/components/NotionPageHeader.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/nextjs-notion/components/NotionPageHeader.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nextjs-notion/components/styles.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/nextjs-notion/components/styles.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nextjs-notion/lib/notion-api.ts" beforeDir="false" afterPath="$PROJECT_DIR$/nextjs-notion/lib/notion-api.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nextjs-notion/next.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/nextjs-notion/next.config.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nextjs-notion/pages/_document.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/nextjs-notion/pages/_document.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nextjs-notion/pages/api/social-image.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/nextjs-notion/pages/api/social-image.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nextjs-notion/styles/notion.css" beforeDir="false" afterPath="$PROJECT_DIR$/nextjs-notion/styles/notion.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -69,7 +88,7 @@
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
     "jdk.selected.JAVA_MODULE": "openjdk-19",
-    "last_opened_file_path": "C:/Projects/Lege/nextjs-notion",
+    "last_opened_file_path": "C:/Projects/Lege/nextjs-notion/public/fonts",
     "node.js.detected.package.eslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "nodejs_interpreter_path": "node",
@@ -84,18 +103,18 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Projects\Lege\nextjs-notion\public\fonts" />
       <recent name="C:\Projects\Lege\nextjs-notion-starter-kit" />
       <recent name="C:\Projects\Lege\app-nextjs\src\pages" />
       <recent name="C:\Projects\Lege\app-nextjs\src\assets" />
       <recent name="C:\Projects\Lege\app-nextjs\public" />
-      <recent name="C:\Projects\Lege\app-nextjs" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Projects\Lege\nextjs-notion\src" />
       <recent name="C:\Projects\Lege\app-nextjs\src\pages\blog" />
       <recent name="C:\Projects\Lege\app-nextjs\src\assets" />
       <recent name="C:\Projects\Lege\app-nextjs\src\components\ThemeToggleButton" />
       <recent name="C:\Projects\Lege\app-nextjs\src\components\Header" />
-      <recent name="C:\Projects\Lege\app-nextjs\src\components\Footer" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -217,14 +236,7 @@
       <workItem from="1675696883523" duration="1553000" />
       <workItem from="1675700016337" duration="655000" />
       <workItem from="1675705102185" duration="226000" />
-      <workItem from="1675705366902" duration="10221000" />
-    </task>
-    <task id="LOCAL-00014" summary="Added cool colors!">
-      <created>1673997838548</created>
-      <option name="number" value="00014" />
-      <option name="presentableId" value="LOCAL-00014" />
-      <option name="project" value="LOCAL" />
-      <updated>1673997838548</updated>
+      <workItem from="1675705366902" duration="28545000" />
     </task>
     <task id="LOCAL-00015" summary="Changed grid from HTML tables to CSS Grid">
       <created>1674036227847</created>
@@ -562,7 +574,14 @@
       <option name="project" value="LOCAL" />
       <updated>1675723979109</updated>
     </task>
-    <option name="localTasksCounter" value="63" />
+    <task id="LOCAL-00063" summary="Fixed type errors and darkmode SVG circles">
+      <created>1675725409321</created>
+      <option name="number" value="00063" />
+      <option name="presentableId" value="LOCAL-00063" />
+      <option name="project" value="LOCAL" />
+      <updated>1675725409321</updated>
+    </task>
+    <option name="localTasksCounter" value="64" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -665,7 +684,6 @@
       <path value="$PROJECT_DIR$/lege" />
       <path value="$PROJECT_DIR$/../nonogram" />
     </ignored-roots>
-    <MESSAGE value="code style" />
     <MESSAGE value="update project workspace" />
     <MESSAGE value="updated firebase.json file" />
     <MESSAGE value="mobile first design" />
@@ -690,7 +708,8 @@
     <MESSAGE value="stringify font URLs" />
     <MESSAGE value="Added animinated dark mode button" />
     <MESSAGE value="Added GitHub Actions for Vercel deployment" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added GitHub Actions for Vercel deployment" />
+    <MESSAGE value="Fixed type errors and darkmode SVG circles" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixed type errors and darkmode SVG circles" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="XDebuggerManager">

@@ -60,7 +60,6 @@ export default class MyDocument extends Document {
               dangerouslySetInnerHTML={{ __html: noFlashDarkMode, }}
             />
             <Main />
-
             <NextScript />
           </body>
         </Html>
