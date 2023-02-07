@@ -169,8 +169,8 @@ const Z = [ [`██████████╗`],
             [`██████████╗`],
             [`╚═════════╝`]];
 
-let result = [];
-for (let i = 0; i < J.length; i++) {
-  result.push(J[i][0] + J[i][0]);
-}
-console.log(result.join('\n'));
+// let result = [];
+// for (let i = 0; i < J.length; i++) {
+//   result.push(J[i][0] + J[i][0]);
+// }
+// console.log(result.join('\n'));
