@@ -1,4 +1,4 @@
-import { siteConfig } from './lib/site-config'
+import { siteConfig } from './src/lib/site-config'
 
 export default siteConfig({
   // the site's root Notion page (required)

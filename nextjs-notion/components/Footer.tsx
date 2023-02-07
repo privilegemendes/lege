@@ -7,7 +7,7 @@ import { FaTwitter } from '@react-icons/all-files/fa/FaTwitter'
 import { FaYoutube } from '@react-icons/all-files/fa/FaYoutube'
 import { FaZhihu } from '@react-icons/all-files/fa/FaZhihu'
 
-import * as config from '@/lib/config'
+import * as config from '../src/lib/config'
 
 import styles from './styles.module.css'
 import { ToggleThemeButton } from '@/components/ToggleThemeButton/ToggleThemeButton'

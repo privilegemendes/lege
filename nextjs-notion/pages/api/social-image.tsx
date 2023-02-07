@@ -3,8 +3,8 @@ import { NextRequest } from 'next/server'
 
 import { ImageResponse } from '@vercel/og'
 
-import { api, apiHost, rootNotionPageId } from '@/lib/config'
-import { NotionPageInfo } from '@/lib/types'
+import { api, apiHost, rootNotionPageId } from '../../src/lib/config'
+import { NotionPageInfo } from '../../src/lib/types'
 
 const interRegularFontP = fetch(
   new URL('../../public/fonts/roboto/Roboto-Regular.ttf', import.meta.url).toString()

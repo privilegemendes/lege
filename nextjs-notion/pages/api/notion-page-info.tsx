@@ -4,10 +4,10 @@ import got from 'got'
 import { PageBlock } from 'notion-types'
 import { getBlockIcon, getBlockTitle, getPageProperty, isUrl, parsePageId } from 'notion-utils'
 
-import * as libConfig from '@/lib/config'
-import { mapImageUrl } from '@/lib/map-image-url'
-import { notion } from '@/lib/notion-api'
-import { NotionPageInfo } from '@/lib/types'
+import * as libConfig from '../../src/lib/config'
+import { mapImageUrl } from '../../src/lib/map-image-url'
+import { notion } from '../../src/lib/notion-api'
+import { NotionPageInfo } from '../../src/lib/types'
 
 export default async (req: NextApiRequest, res: NextApiResponse) => {
   if (req.method !== 'POST') {

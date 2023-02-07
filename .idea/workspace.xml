@@ -4,29 +4,64 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6d79a399-8924-4f24-b973-cee3210ac519" name="Changes" comment="Fixed type errors and darkmode SVG circles">
-      <change afterPath="$PROJECT_DIR$/nextjs-notion/components/Logo/Logo.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nextjs-notion/public/fonts/roboto/Roboto-Black.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nextjs-notion/public/fonts/roboto/Roboto-BlackItalic.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nextjs-notion/public/fonts/roboto/Roboto-Bold.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nextjs-notion/public/fonts/roboto/Roboto-BoldItalic.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nextjs-notion/public/fonts/roboto/Roboto-Italic.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nextjs-notion/public/fonts/roboto/Roboto-Light.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nextjs-notion/public/fonts/roboto/Roboto-LightItalic.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nextjs-notion/public/fonts/roboto/Roboto-Medium.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nextjs-notion/public/fonts/roboto/Roboto-MediumItalic.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nextjs-notion/public/fonts/roboto/Roboto-Regular.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nextjs-notion/public/fonts/roboto/Roboto-Thin.ttf" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nextjs-notion/public/fonts/roboto/Roboto-ThinItalic.ttf" afterDir="false" />
+    <list default="true" id="6d79a399-8924-4f24-b973-cee3210ac519" name="Changes" comment="Improved footer responsiveness">
+      <change afterPath="$PROJECT_DIR$/nextjs-notion/src/styles/fonts.css" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/nextjs-notion/components/Footer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/nextjs-notion/components/Footer.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nextjs-notion/components/NotionPage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/nextjs-notion/components/NotionPage.tsx" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/nextjs-notion/components/NotionPageHeader.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/nextjs-notion/components/NotionPageHeader.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nextjs-notion/components/styles.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/nextjs-notion/components/styles.module.css" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nextjs-notion/lib/notion-api.ts" beforeDir="false" afterPath="$PROJECT_DIR$/nextjs-notion/lib/notion-api.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nextjs-notion/next.config.js" beforeDir="false" afterPath="$PROJECT_DIR$/nextjs-notion/next.config.js" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nextjs-notion/pages/_document.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/nextjs-notion/pages/_document.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nextjs-notion/components/Page404.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/nextjs-notion/components/Page404.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nextjs-notion/components/PageAside.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/nextjs-notion/components/PageAside.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nextjs-notion/components/PageHead.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/nextjs-notion/components/PageHead.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nextjs-notion/components/PageSocial.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/nextjs-notion/components/PageSocial.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nextjs-notion/components/ToggleThemeButton/ToggleThemeButton.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/nextjs-notion/components/ToggleThemeButton/ToggleThemeButton.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nextjs-notion/lib/acl.ts" beforeDir="false" afterPath="$PROJECT_DIR$/nextjs-notion/src/lib/acl.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nextjs-notion/lib/bootstrap-client.ts" beforeDir="false" afterPath="$PROJECT_DIR$/nextjs-notion/src/lib/bootstrap-client.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nextjs-notion/lib/config.ts" beforeDir="false" afterPath="$PROJECT_DIR$/nextjs-notion/src/lib/config.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nextjs-notion/lib/db.ts" beforeDir="false" afterPath="$PROJECT_DIR$/nextjs-notion/src/lib/db.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nextjs-notion/lib/get-canonical-page-id.ts" beforeDir="false" afterPath="$PROJECT_DIR$/nextjs-notion/src/lib/get-canonical-page-id.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nextjs-notion/lib/get-config-value.ts" beforeDir="false" afterPath="$PROJECT_DIR$/nextjs-notion/src/lib/get-config-value.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nextjs-notion/lib/get-page-tweet.ts" beforeDir="false" afterPath="$PROJECT_DIR$/nextjs-notion/src/lib/get-page-tweet.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nextjs-notion/lib/get-site-map.ts" beforeDir="false" afterPath="$PROJECT_DIR$/nextjs-notion/src/lib/get-site-map.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nextjs-notion/lib/get-social-image-url.ts" beforeDir="false" afterPath="$PROJECT_DIR$/nextjs-notion/src/lib/get-social-image-url.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nextjs-notion/lib/map-image-url.ts" beforeDir="false" afterPath="$PROJECT_DIR$/nextjs-notion/src/lib/map-image-url.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nextjs-notion/lib/map-page-url.ts" beforeDir="false" afterPath="$PROJECT_DIR$/nextjs-notion/src/lib/map-page-url.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nextjs-notion/lib/notion-api.ts" beforeDir="false" afterPath="$PROJECT_DIR$/nextjs-notion/src/lib/notion-api.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nextjs-notion/lib/notion.ts" beforeDir="false" afterPath="$PROJECT_DIR$/nextjs-notion/src/lib/notion.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nextjs-notion/lib/oembed.ts" beforeDir="false" afterPath="$PROJECT_DIR$/nextjs-notion/src/lib/oembed.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nextjs-notion/lib/preview-images.ts" beforeDir="false" afterPath="$PROJECT_DIR$/nextjs-notion/src/lib/preview-images.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nextjs-notion/lib/resolve-notion-page.ts" beforeDir="false" afterPath="$PROJECT_DIR$/nextjs-notion/src/lib/resolve-notion-page.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nextjs-notion/lib/search-notion.ts" beforeDir="false" afterPath="$PROJECT_DIR$/nextjs-notion/src/lib/search-notion.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nextjs-notion/lib/site-config.ts" beforeDir="false" afterPath="$PROJECT_DIR$/nextjs-notion/src/lib/site-config.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nextjs-notion/lib/types.ts" beforeDir="false" afterPath="$PROJECT_DIR$/nextjs-notion/src/lib/types.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nextjs-notion/lib/use-dark-mode.ts" beforeDir="false" afterPath="$PROJECT_DIR$/nextjs-notion/src/lib/use-dark-mode.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nextjs-notion/pages/[pageId].tsx" beforeDir="false" afterPath="$PROJECT_DIR$/nextjs-notion/pages/[pageId].tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nextjs-notion/pages/_app.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/nextjs-notion/pages/_app.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nextjs-notion/pages/api/notion-page-info.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/nextjs-notion/pages/api/notion-page-info.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nextjs-notion/pages/api/search-notion.ts" beforeDir="false" afterPath="$PROJECT_DIR$/nextjs-notion/pages/api/search-notion.ts" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/nextjs-notion/pages/api/social-image.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/nextjs-notion/pages/api/social-image.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nextjs-notion/styles/notion.css" beforeDir="false" afterPath="$PROJECT_DIR$/nextjs-notion/styles/notion.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nextjs-notion/pages/feed.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/nextjs-notion/pages/feed.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nextjs-notion/pages/index.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/nextjs-notion/pages/index.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nextjs-notion/pages/robots.txt.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/nextjs-notion/pages/robots.txt.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nextjs-notion/pages/sitemap.xml.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/nextjs-notion/pages/sitemap.xml.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nextjs-notion/public/fonts/Inter-Regular.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/nextjs-notion/src/fonts/Inter-Regular.ttf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nextjs-notion/public/fonts/Inter-SemiBold.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/nextjs-notion/src/fonts/Inter-SemiBold.ttf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nextjs-notion/public/fonts/roboto/Roboto-Black.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/nextjs-notion/src/fonts/roboto/Roboto-Black.ttf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nextjs-notion/public/fonts/roboto/Roboto-BlackItalic.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/nextjs-notion/src/fonts/roboto/Roboto-BlackItalic.ttf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nextjs-notion/public/fonts/roboto/Roboto-Bold.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/nextjs-notion/src/fonts/roboto/Roboto-Bold.ttf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nextjs-notion/public/fonts/roboto/Roboto-BoldItalic.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/nextjs-notion/src/fonts/roboto/Roboto-BoldItalic.ttf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nextjs-notion/public/fonts/roboto/Roboto-Italic.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/nextjs-notion/src/fonts/roboto/Roboto-Italic.ttf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nextjs-notion/public/fonts/roboto/Roboto-Light.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/nextjs-notion/src/fonts/roboto/Roboto-Light.ttf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nextjs-notion/public/fonts/roboto/Roboto-LightItalic.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/nextjs-notion/src/fonts/roboto/Roboto-LightItalic.ttf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nextjs-notion/public/fonts/roboto/Roboto-Medium.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/nextjs-notion/src/fonts/roboto/Roboto-Medium.ttf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nextjs-notion/public/fonts/roboto/Roboto-MediumItalic.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/nextjs-notion/src/fonts/roboto/Roboto-MediumItalic.ttf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nextjs-notion/public/fonts/roboto/Roboto-Regular.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/nextjs-notion/src/fonts/roboto/Roboto-Regular.ttf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nextjs-notion/public/fonts/roboto/Roboto-Thin.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/nextjs-notion/src/fonts/roboto/Roboto-Thin.ttf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nextjs-notion/public/fonts/roboto/Roboto-ThinItalic.ttf" beforeDir="false" afterPath="$PROJECT_DIR$/nextjs-notion/src/fonts/roboto/Roboto-ThinItalic.ttf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nextjs-notion/site.config.ts" beforeDir="false" afterPath="$PROJECT_DIR$/nextjs-notion/site.config.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nextjs-notion/styles/global.css" beforeDir="false" afterPath="$PROJECT_DIR$/nextjs-notion/src/styles/global.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nextjs-notion/styles/notion.css" beforeDir="false" afterPath="$PROJECT_DIR$/nextjs-notion/src/styles/notion.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nextjs-notion/styles/prism-theme.css" beforeDir="false" afterPath="$PROJECT_DIR$/nextjs-notion/src/styles/prism-theme.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -88,7 +123,7 @@
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
     "jdk.selected.JAVA_MODULE": "openjdk-19",
-    "last_opened_file_path": "C:/Projects/Lege/nextjs-notion/public/fonts",
+    "last_opened_file_path": "C:/Projects/Lege/nextjs-notion/styles",
     "node.js.detected.package.eslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "nodejs_interpreter_path": "node",
@@ -103,18 +138,18 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Projects\Lege\nextjs-notion\styles" />
       <recent name="C:\Projects\Lege\nextjs-notion\public\fonts" />
       <recent name="C:\Projects\Lege\nextjs-notion-starter-kit" />
       <recent name="C:\Projects\Lege\app-nextjs\src\pages" />
       <recent name="C:\Projects\Lege\app-nextjs\src\assets" />
-      <recent name="C:\Projects\Lege\app-nextjs\public" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="C:\Projects\Lege\nextjs-notion\src" />
+      <recent name="C:\Projects\Lege\nextjs-notion" />
       <recent name="C:\Projects\Lege\app-nextjs\src\pages\blog" />
       <recent name="C:\Projects\Lege\app-nextjs\src\assets" />
       <recent name="C:\Projects\Lege\app-nextjs\src\components\ThemeToggleButton" />
-      <recent name="C:\Projects\Lege\app-nextjs\src\components\Header" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -236,14 +271,7 @@
       <workItem from="1675696883523" duration="1553000" />
       <workItem from="1675700016337" duration="655000" />
       <workItem from="1675705102185" duration="226000" />
-      <workItem from="1675705366902" duration="28545000" />
-    </task>
-    <task id="LOCAL-00015" summary="Changed grid from HTML tables to CSS Grid">
-      <created>1674036227847</created>
-      <option name="number" value="00015" />
-      <option name="presentableId" value="LOCAL-00015" />
-      <option name="project" value="LOCAL" />
-      <updated>1674036227847</updated>
+      <workItem from="1675705366902" duration="30001000" />
     </task>
     <task id="LOCAL-00016" summary="removed obsolete components">
       <created>1674045504712</created>
@@ -581,7 +609,14 @@
       <option name="project" value="LOCAL" />
       <updated>1675725409321</updated>
     </task>
-    <option name="localTasksCounter" value="64" />
+    <task id="LOCAL-00064" summary="Improved footer responsiveness">
+      <created>1675782378127</created>
+      <option name="number" value="00064" />
+      <option name="presentableId" value="LOCAL-00064" />
+      <option name="project" value="LOCAL" />
+      <updated>1675782378127</updated>
+    </task>
+    <option name="localTasksCounter" value="65" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -684,7 +719,6 @@
       <path value="$PROJECT_DIR$/lege" />
       <path value="$PROJECT_DIR$/../nonogram" />
     </ignored-roots>
-    <MESSAGE value="update project workspace" />
     <MESSAGE value="updated firebase.json file" />
     <MESSAGE value="mobile first design" />
     <MESSAGE value="changed folder to build" />
@@ -709,7 +743,8 @@
     <MESSAGE value="Added animinated dark mode button" />
     <MESSAGE value="Added GitHub Actions for Vercel deployment" />
     <MESSAGE value="Fixed type errors and darkmode SVG circles" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixed type errors and darkmode SVG circles" />
+    <MESSAGE value="Improved footer responsiveness" />
+    <option name="LAST_COMMIT_MESSAGE" value="Improved footer responsiveness" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="XDebuggerManager">

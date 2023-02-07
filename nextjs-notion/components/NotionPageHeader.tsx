@@ -4,7 +4,7 @@ import * as types from 'notion-types'
 import cs from 'classnames'
 import { Header, Search, useNotionContext } from 'react-notion-x'
 
-import { isSearchEnabled, navigationLinks, navigationStyle } from '@/lib/config'
+import { isSearchEnabled, navigationLinks, navigationStyle } from '../src/lib/config'
 
 import styles from './styles.module.css'
 import { ToggleThemeButton } from '@/components/ToggleThemeButton/ToggleThemeButton'
