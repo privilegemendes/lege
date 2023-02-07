@@ -7,11 +7,11 @@ import { api, apiHost, rootNotionPageId } from '../../src/lib/config'
 import { NotionPageInfo } from '../../src/lib/types'
 
 const interRegularFontP = fetch(
-  new URL('../../public/fonts/roboto/Roboto-Regular.ttf', import.meta.url).toString()
+  new URL('../../src/fonts/robooto/Roboto-Regular.tff', import.meta.url).toString()
 ).then((res) => res.arrayBuffer())
 
 const interBoldFontP = fetch(
-  new URL('../../public/fonts/roboto/Roboto-Bold.ttf', import.meta.url).toString()
+  new URL('../../src/fonts/roboto/Roboto-Bold.ttf', import.meta.url).toString()
 ).then((res) => res.arrayBuffer())
 
 export const config = {
