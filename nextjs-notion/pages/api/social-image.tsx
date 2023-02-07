@@ -7,7 +7,7 @@ import { api, apiHost, rootNotionPageId } from '../../src/lib/config'
 import { NotionPageInfo } from '../../src/lib/types'
 
 const interRegularFontP = fetch(
-  new URL('../../src/fonts/robooto/Roboto-Regular.tff', import.meta.url).toString()
+  new URL('../../src/fonts/roboto/Roboto-Regular.tff', import.meta.url).toString()
 ).then((res) => res.arrayBuffer())
 
 const interBoldFontP = fetch(
