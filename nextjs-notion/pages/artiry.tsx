@@ -5,8 +5,8 @@ const Artiry = () => {
   const router = useRouter();
 
   useEffect(() => {
-    router.push('https://artiry.com');
-  }, []);
+    router.push('https://artiry.com').then(r => console.log(r));
+  }, [router]);
 
   return <div>You are being redirected...</div>;
 };

@@ -27,8 +27,7 @@ export default function ASCIIArtGenerator() {
     setOutput(combineLetters(input));
   }, [input]);
 
-  return (
-    <Container>
+  return <Container>
       <AppBar>
         <LogoHeader/>
       </AppBar>
@@ -57,8 +56,7 @@ export default function ASCIIArtGenerator() {
         {/*</CopyRow>*/}
       </Main>
       <Footer darkMode={false}/>
-    </Container>
-  )
+    </Container>;
 }
 
 function combineLetters(input) {

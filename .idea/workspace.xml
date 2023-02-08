@@ -4,17 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6d79a399-8924-4f24-b973-cee3210ac519" name="Changes" comment="Added nextjs eslint configs">
-      <change afterPath="$PROJECT_DIR$/nextjs-notion/pages/artiry.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nextjs-notion/pages/ascii-art-generator.tsx" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/nextjs-notion/pages/projects/ASCII Art Generator/ASCII_Art_Generator.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nextjs-notion/components/Footer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/nextjs-notion/components/Footer.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nextjs-notion/components/NotionPage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/nextjs-notion/components/NotionPage.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nextjs-notion/site.config.ts" beforeDir="false" afterPath="$PROJECT_DIR$/nextjs-notion/site.config.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nextjs-notion/src/lib/bootstrap-client.ts" beforeDir="false" afterPath="$PROJECT_DIR$/nextjs-notion/src/lib/bootstrap-client.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nextjs-notion/src/lib/notion-api.ts" beforeDir="false" afterPath="$PROJECT_DIR$/nextjs-notion/src/lib/notion-api.ts" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nextjs-notion/src/styles/SharedStyles.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/nextjs-notion/src/styles/SharedStyles.tsx" afterDir="false" />
+    <list default="true" id="6d79a399-8924-4f24-b973-cee3210ac519" name="Changes" comment="Ascii art generator first version">
+      <change beforePath="$PROJECT_DIR$/nextjs-notion/pages/artiry.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/nextjs-notion/pages/artiry.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nextjs-notion/pages/projects/ASCII Art Generator/ASCII_Art_Generator.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/nextjs-notion/pages/projects/ASCII Art Generator/ASCII_Art_Generator.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -224,14 +216,7 @@
       <workItem from="1675696883523" duration="1553000" />
       <workItem from="1675700016337" duration="655000" />
       <workItem from="1675705102185" duration="226000" />
-      <workItem from="1675705366902" duration="56439000" />
-    </task>
-    <task id="LOCAL-00021" summary="Renamed component">
-      <created>1674132417663</created>
-      <option name="number" value="00021" />
-      <option name="presentableId" value="LOCAL-00021" />
-      <option name="project" value="LOCAL" />
-      <updated>1674132417663</updated>
+      <workItem from="1675705366902" duration="57195000" />
     </task>
     <task id="LOCAL-00022" summary="Added row and col unit grid layers">
       <created>1674149966137</created>
@@ -569,7 +554,14 @@
       <option name="project" value="LOCAL" />
       <updated>1675798776683</updated>
     </task>
-    <option name="localTasksCounter" value="70" />
+    <task id="LOCAL-00070" summary="Ascii art generator first version">
+      <created>1675815108426</created>
+      <option name="number" value="00070" />
+      <option name="presentableId" value="LOCAL-00070" />
+      <option name="project" value="LOCAL" />
+      <updated>1675815108426</updated>
+    </task>
+    <option name="localTasksCounter" value="71" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -672,7 +664,6 @@
       <path value="$PROJECT_DIR$/lege" />
       <path value="$PROJECT_DIR$/../nonogram" />
     </ignored-roots>
-    <MESSAGE value="More deployment issues fixes" />
     <MESSAGE value="Even more deployment issues fixes" />
     <MESSAGE value="Removed PR deployment" />
     <MESSAGE value="Working on appbar" />
@@ -697,7 +688,8 @@
     <MESSAGE value="Adding projects directory" />
     <MESSAGE value="removed array print" />
     <MESSAGE value="Added nextjs eslint configs" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added nextjs eslint configs" />
+    <MESSAGE value="Ascii art generator first version" />
+    <option name="LAST_COMMIT_MESSAGE" value="Ascii art generator first version" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="XDebuggerManager">

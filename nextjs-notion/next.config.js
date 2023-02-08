@@ -23,9 +23,13 @@ module.exports = withBundleAnalyzer({
     contentSecurityPolicy: "default-src 'self'; script-src 'none'; sandbox;",
     extends: [
       'plugin:@next/next/recommended',
+      'next',
+      'prettier'
     ],
     rules: {
       "no-unused-vars": "off",
+      "react/no-unescaped-entities": "off",
+      "@next/next/no-page-custom-font": "off",
     }
   }
 })
