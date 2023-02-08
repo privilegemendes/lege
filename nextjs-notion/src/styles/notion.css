@@ -385,3 +385,7 @@
 .notion-row {
   display: none;
 }
+
+.notion-header .button {
+  padding: 16px;
+}

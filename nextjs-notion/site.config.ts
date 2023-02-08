@@ -58,7 +58,25 @@ export default siteConfig({
     },
     {
       title: 'Projects',
-      pageId: 'Projects-5ff4f692594049d0a9451c9c276c39c6'
+      pageId: '26c1ec8826fd48dd8f7f523fc214c859?v=d3c013e8abae43499ccab929346f3d0f'
+    },
+    {
+      title: 'Contact',
+      pageId: 'Contact-99d705dcf8b64fd6a9cc16e175270c9f'
+    }
+  ],
+  navigationModalLinks: [
+    {
+      title: 'Blogs',
+      pageId: '0bb7856ba4ca43319a86cd46d06bfcea?v=e9f7e96aa38242c383033312794403df'
+    },
+    {
+      title: 'Projects',
+      pageId: '26c1ec8826fd48dd8f7f523fc214c859?v=d3c013e8abae43499ccab929346f3d0f'
+    },
+    {
+      title: 'About',
+      pageId: 'About-ed4f8075dffe462d8e498e15d33df0b2'
     },
     {
       title: 'Contact',

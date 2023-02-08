@@ -33,6 +33,7 @@ export interface SiteConfig {
 
   navigationStyle?: types.NavigationStyle
   navigationLinks?: Array<NavigationLink>
+  navigationModalLinks?: Array<NavigationLink>
 }
 
 export interface NavigationLink {

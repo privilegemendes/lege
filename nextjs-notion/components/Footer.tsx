@@ -45,7 +45,7 @@ export const FooterImpl: React.FC<Props> = ({ darkMode}) => {
 
         {darkMode ?
           <div className={styles.settings}>
-            <ToggleThemeButton />
+            <ToggleThemeButton buttonSize={32}/>
           </div>
           :
           ''

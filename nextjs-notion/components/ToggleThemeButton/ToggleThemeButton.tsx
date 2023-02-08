@@ -52,7 +52,11 @@ export interface Props extends SVGProps {
   sunColor?: string;
 }
 
-export const ToggleThemeButton:FC = () => {
+interface ThemeButtonProps {
+  buttonSize?: number | string;
+}
+
+export const ToggleThemeButton:FC<ThemeButtonProps> = () => {
   const [hasMounted, setHasMounted] = React.useState(false)
   const { isDarkMode, toggleDarkMode } = useDarkMode()
 
@@ -79,7 +83,7 @@ const ThemeToggleSVG: React.FC<Props> =
   ({
      onChange,
      checked = false,
-     size = 24,
+     size = 16,
      animationProperties = defaultProperties,
      moonColor = 'white',
      sunColor = 'black',

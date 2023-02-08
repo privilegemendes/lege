@@ -104,6 +104,11 @@ export const navigationLinks: Array<NavigationLink | null> = getSiteConfig(
   null
 )
 
+export const navigationModalLinks: Array<NavigationLink | null> = getSiteConfig(
+  'navigationModalLinks',
+  null
+)
+
 // Optional site search
 export const isSearchEnabled: boolean = getSiteConfig('isSearchEnabled', true)
 

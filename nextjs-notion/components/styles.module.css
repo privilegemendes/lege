@@ -230,6 +230,17 @@
   background: #e5f2e8;
 }
 
+.navModalMenu {
+  display: block;
+  position: relative;
+  padding: 16px 16px 16px 32px;
+  text-decoration: none;
+  color: hsl(0deg, 0%, 100%);
+  font-weight: 500;
+  font-size: 28px;
+}
+
+
 @media (max-width: 1360px) {
   .githubCorner {
     display: none;

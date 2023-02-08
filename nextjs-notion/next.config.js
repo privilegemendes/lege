@@ -16,7 +16,8 @@ module.exports = withBundleAnalyzer({
       'pbs.twimg.com',
       'abs.twimg.com',
       's3.us-west-2.amazonaws.com',
-      'transitivebullsh.it'
+      'transitivebullsh.it',
+      'legemendes.com',
     ],
     formats: ['image/avif', 'image/webp'],
     dangerouslyAllowSVG: true,
@@ -29,7 +30,7 @@ module.exports = withBundleAnalyzer({
     rules: {
       "no-unused-vars": "off",
       "react/no-unescaped-entities": "off",
-      "@next/next/no-page-custom-font": "off",
+      // "@next/next/no-page-custom-font": "off",
     }
   }
 })
