@@ -4,9 +4,9 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6d79a399-8924-4f24-b973-cee3210ac519" name="Changes" comment="Ascii art generator first version">
-      <change beforePath="$PROJECT_DIR$/nextjs-notion/pages/artiry.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/nextjs-notion/pages/artiry.tsx" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nextjs-notion/pages/projects/ASCII Art Generator/ASCII_Art_Generator.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/nextjs-notion/pages/projects/ASCII Art Generator/ASCII_Art_Generator.tsx" afterDir="false" />
+    <list default="true" id="6d79a399-8924-4f24-b973-cee3210ac519" name="Changes" comment="Added react import">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nextjs-notion/pages/api/social-image.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/nextjs-notion/pages/api/social-image.tsx" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -68,7 +68,7 @@
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
     "jdk.selected.JAVA_MODULE": "openjdk-19",
-    "last_opened_file_path": "C:/Projects/Lege/nextjs-notion/src/styles",
+    "last_opened_file_path": "C:/Projects/Lege",
     "node.js.detected.package.eslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
     "nodejs_interpreter_path": "node",
@@ -216,21 +216,8 @@
       <workItem from="1675696883523" duration="1553000" />
       <workItem from="1675700016337" duration="655000" />
       <workItem from="1675705102185" duration="226000" />
-      <workItem from="1675705366902" duration="57195000" />
-    </task>
-    <task id="LOCAL-00022" summary="Added row and col unit grid layers">
-      <created>1674149966137</created>
-      <option name="number" value="00022" />
-      <option name="presentableId" value="LOCAL-00022" />
-      <option name="project" value="LOCAL" />
-      <updated>1674149966137</updated>
-    </task>
-    <task id="LOCAL-00023" summary="wip - Improved responsiveness to the nonogram">
-      <created>1674221760323</created>
-      <option name="number" value="00023" />
-      <option name="presentableId" value="LOCAL-00023" />
-      <option name="project" value="LOCAL" />
-      <updated>1674221760323</updated>
+      <workItem from="1675705366902" duration="59314000" />
+      <workItem from="1675817793155" duration="759000" />
     </task>
     <task id="LOCAL-00024" summary="wip - Algo v2 and improved responsiveness">
       <created>1674263540849</created>
@@ -561,7 +548,21 @@
       <option name="project" value="LOCAL" />
       <updated>1675815108426</updated>
     </task>
-    <option name="localTasksCounter" value="71" />
+    <task id="LOCAL-00071" summary="Added prettier to ESLint">
+      <created>1675815831935</created>
+      <option name="number" value="00071" />
+      <option name="presentableId" value="LOCAL-00071" />
+      <option name="project" value="LOCAL" />
+      <updated>1675815831935</updated>
+    </task>
+    <task id="LOCAL-00072" summary="Added react import">
+      <created>1675816520036</created>
+      <option name="number" value="00072" />
+      <option name="presentableId" value="LOCAL-00072" />
+      <option name="project" value="LOCAL" />
+      <updated>1675816520036</updated>
+    </task>
+    <option name="localTasksCounter" value="73" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -664,8 +665,6 @@
       <path value="$PROJECT_DIR$/lege" />
       <path value="$PROJECT_DIR$/../nonogram" />
     </ignored-roots>
-    <MESSAGE value="Even more deployment issues fixes" />
-    <MESSAGE value="Removed PR deployment" />
     <MESSAGE value="Working on appbar" />
     <MESSAGE value="removed &lt;br&gt;&lt;br/&gt;" />
     <MESSAGE value="profile page" />
@@ -689,7 +688,9 @@
     <MESSAGE value="removed array print" />
     <MESSAGE value="Added nextjs eslint configs" />
     <MESSAGE value="Ascii art generator first version" />
-    <option name="LAST_COMMIT_MESSAGE" value="Ascii art generator first version" />
+    <MESSAGE value="Added prettier to ESLint" />
+    <MESSAGE value="Added react import" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added react import" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="XDebuggerManager">

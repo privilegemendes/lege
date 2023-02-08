@@ -6,12 +6,12 @@ import { ImageResponse } from '@vercel/og'
 import { api, apiHost, rootNotionPageId } from '../../src/lib/config'
 import { NotionPageInfo } from '../../src/lib/types'
 
-const interRegularFontP = fetch( new URL('https://fonts.googleapis.com/css2?family=Roboto&display=swap', import.meta.url).toString()
-).then((res) => res.arrayBuffer())
-
-const interBoldFontP = fetch(
-  new URL('https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap', import.meta.url).toString()
-).then((res) => res.arrayBuffer())
+// const interRegularFontP = fetch( new URL('https://fonts.googleapis.com/css2?family=Roboto&display=swap', import.meta.url).toString()
+// ).then((res) => res.arrayBuffer())
+//
+// const interBoldFontP = fetch(
+//   new URL('https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap', import.meta.url).toString()
+// ).then((res) => res.arrayBuffer())
 
 export const config = {
   runtime: 'experimental-edge'
@@ -37,10 +37,10 @@ export default async function OGImage(req: NextRequest) {
   const pageInfo: NotionPageInfo = await pageInfoRes.json()
   console.log(pageInfo)
 
-  const [interRegularFont, interBoldFont] = await Promise.all([
-    interRegularFontP,
-    interBoldFontP
-  ])
+  // const [interRegularFont, interBoldFont] = await Promise.all([
+  //   interRegularFontP,
+  //   interBoldFontP
+  // ])
 
   return new ImageResponse(
     (
@@ -161,20 +161,6 @@ export default async function OGImage(req: NextRequest) {
     {
       width: 1200,
       height: 630,
-      fonts: [
-        {
-          name: 'Inter',
-          data: interRegularFont,
-          style: 'normal',
-          weight: 400
-        },
-        {
-          name: 'Inter',
-          data: interBoldFont,
-          style: 'normal',
-          weight: 700
-        }
-      ]
     }
   )
 }
