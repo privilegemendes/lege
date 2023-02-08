@@ -6,12 +6,11 @@ import { ImageResponse } from '@vercel/og'
 import { api, apiHost, rootNotionPageId } from '../../src/lib/config'
 import { NotionPageInfo } from '../../src/lib/types'
 
-const interRegularFontP = fetch(
-  new URL('../../src/fonts/roboto/Roboto-Regular.tff', import.meta.url).toString()
+const interRegularFontP = fetch( new URL('https://fonts.googleapis.com/css2?family=Roboto&display=swap', import.meta.url).toString()
 ).then((res) => res.arrayBuffer())
 
 const interBoldFontP = fetch(
-  new URL('../../src/fonts/roboto/Roboto-Bold.ttf', import.meta.url).toString()
+  new URL('https://fonts.googleapis.com/css2?family=Roboto:wght@700&display=swap', import.meta.url).toString()
 ).then((res) => res.arrayBuffer())
 
 export const config = {
