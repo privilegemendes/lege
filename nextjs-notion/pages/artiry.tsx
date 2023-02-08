@@ -1,7 +1,7 @@
 import React, { useEffect } from 'react'
 import { useRouter } from 'next/router'
 
-const Artiry_com = () => {
+const Artiry = () => {
   const router = useRouter();
 
   useEffect(() => {
@@ -11,4 +11,4 @@ const Artiry_com = () => {
   return <div>You are being redirected...</div>;
 };
 
-export default Artiry_com;
+export default Artiry;

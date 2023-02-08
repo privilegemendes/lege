@@ -43,8 +43,8 @@ export default siteConfig({
   // example:
   //
   pageUrlOverrides: {
-    '/artiry': `/artiry--art-prints-digital-marketplace-722d6c8c9b244847881ca2a4e7bb0b8a`,
-    '/ascii-art-generator': `ascii-art-generator-770244cd7e71401b8ed7a4885452b050`,
+    // '/artiry': `/artiry--art-prints-digital-marketplace-722d6c8c9b244847881ca2a4e7bb0b8a`,
+    // '/ascii-art-generator': `ascii-art-generator-770244cd7e71401b8ed7a4885452b050`,
   },
   // pageUrlOverrides: null,
   // whether to use the default notion navigation style or a custom one with links to
