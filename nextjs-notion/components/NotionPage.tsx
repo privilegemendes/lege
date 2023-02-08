@@ -199,7 +199,7 @@ export const NotionPage: React.FC<types.PageProps> = ({
     [block, recordMap, isBlogPost]
   )
 
-  const footer = React.useMemo(() => <Footer />, [])
+  const footer = React.useMemo(() => <Footer darkMode={true} />, [])
 
   if (router.isFallback) {
     return <Loading />

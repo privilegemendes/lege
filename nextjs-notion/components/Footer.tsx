@@ -15,7 +15,11 @@ import { LogoFooter } from '@/components/Logo/Logo'
 
 // TODO: merge the data and icons from PageSocial with the social links in Footer
 
-export const FooterImpl: React.FC = () => {
+type Props = {
+  darkMode: boolean
+}
+
+export const FooterImpl: React.FC<Props> = ({ darkMode}) => {
   // const [hasMounted, setHasMounted] = React.useState(false)
   // const { isDarkMode, toggleDarkMode } = useDarkMode()
   //
@@ -39,10 +43,13 @@ export const FooterImpl: React.FC = () => {
           <div className={styles.copyright}>© 2023-present {config.author}. All rights reserved.</div>
         </div>
 
-        <div className={styles.settings}>
-          <ToggleThemeButton />
-        </div>
-
+        {darkMode ?
+          <div className={styles.settings}>
+            <ToggleThemeButton />
+          </div>
+          :
+          ''
+        }
         <div className={styles.social}>
           {config.twitter && (
             <a

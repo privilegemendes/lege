@@ -88,56 +88,188 @@ export const Z_INDICES = {
   header: 100,
 };
 
+const AppBar = styled.header`
+  --color-primary: hsl(53deg,100%,50%);
+  display: flex;
+  -moz-box-pack: justify;
+  justify-content: space-between;
+  -moz-box-align: baseline;
+  align-items: baseline;
+  padding: 16px;
+  border-bottom: 1px solid hsl(210deg, 15%, 20%);
+`;
 
 const Container = styled.div`
-  padding: 0 0.5rem;
-  display: flex;
-  flex-flow: column nowrap;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
+  border-radius: 0px;
+  position: relative;
   min-height: 100vh;
+  height: 100%;
+  isolation: isolate;
+  background: hsl(210deg, 30%, 8%);
+  color: #fff;
 `
-const Main = styled.main`
-  padding: 5rem 0;
-  flex: 1;
+const Main = styled.div`
+  display: grid;
+  gap: 64px 48px;
+  grid-template-columns: 1fr minmax(350px, 1fr);
+  grid-template-areas:
+  "header demo  "
+  "controls demo"
+  "code demo  ";
+  max-width: 1200px;
+  margin: 0px auto;
+  padding: 32px 32px 128px;
+  isolation: isolate;
+`
+
+const Demo = styled.div`
+  grid-area: demo;
+  position: sticky;
+  z-index: 3;
+  top: 32px;
+  align-self: start;
+  display: flex;
+  -moz-box-pack: center;
+  justify-content: center;
+  height: 100%;
+  max-height: min(860px, -64px + 100vh);
+  background-color: "white";
+  filter: drop-shadow(0px 0px 16px hsl(210deg, 30%, 8%));
+`
+const DemoContainer = styled.div`
+  flex: 1 1 0%;
+  width: 100%;
+  border: 8px solid white;
+  border-radius: 16px;
+  color: #fff;
+  padding: 16px;
+`
+
+const Header = styled.header`
+  position: relative;
+  z-index: 3;
+  grid-area: header;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  -moz-box-align: center;
   align-items: center;
+  text-align: center;
+  padding-top: 32px;
+  isolation: isolate;
 `
 
 const Title = styled.h1`
-  margin: 0;
-  line-height: 1.15;
-  font-size: 4rem;
-  text-align: center;
-  text-decoration: none;
-  a {
-    color: var(--color-secondary);
-    text-decoration: none;
-    &:hover,
-    :focus,
-    :active {
-      text-decoration: underline;
-    }
-  }
+    position: relative;
+    z-index: 2;
+    font-size: 2rem;
+    font-weight: 600;
+    line-height: 1.2;
+    color: initial;
+    background-color: rgb(255, 178, 62);
+    background-image: radial-gradient(rgb(255, 230, 128), rgba(255, 230, 128, 0) 40%), conic-gradient(from 90deg, rgb(255, 198, 26), rgb(255, 238, 128), rgb(255, 198, 26), rgb(255, 238, 128), rgb(255, 198, 26), rgb(255, 252, 230), rgb(255, 198, 26));
+    background-size: 100%;
+    background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin-top: 16px;
+    filter: drop-shadow(0px 0px 2px hsl((210deg 30% 8%) / 0.5)) drop-shadow(0px 0px 4px hsl((210deg 30% 8%) / 0.5)) drop-shadow(0px 0px 8px hsl((210deg 30% 8%) / 0.5)) drop-shadow(0px 0px 16px hsl((210deg 30% 8%) / 0.5)) drop-shadow(0px 0px 32px hsl((210deg 30% 8%) / 0.5)) drop-shadow(0px 0px 64px hsl((210deg 30% 8%) / 0.5));
 `
 
 const Description = styled.p`
+  position: relative;
+  z-index: 3;
+  font-size: 1.25rem;
   text-align: center;
-  line-height: 1.5;
-  font-size: 1.5rem;
+  max-width: 400px;
+  margin: 8px auto 0px;
+  color: hsl(210deg, 14%, 66%);
 `
-const CodeTag = styled.code`
-  background: #fafafa;
-  border-radius: 5px;
-  margin: 0 0.75rem;
-  padding: 0.75rem;
-  font-size: 1.1rem;
-  font-family: Menlo, Monaco, Lucida Console, Liberation Mono, DejaVu Sans Mono,
-    Bitstream Vera Sans Mono, Courier New, monospace;
+
+const Controls = styled.div`
+  grid-area: controls;
+  position: relative;
+  z-index: 4;
+  filter: drop-shadow(0px 0px 16px hsl(210deg, 30%, 8%));
+ `;
+
+const Code = styled.code`
+  grid-area: code;
+  position: relative;
+  z-index: 1;
+  min-width: 0px;
 `
+
+const CodeTitle = styled.div`
+  display: flex;
+  -moz-box-pack: justify;
+  justify-content: space-between;
+  -moz-box-align: baseline;
+  align-items: baseline;
+  margin-bottom: 8px;
+  user-select: none;
+  font-weight: 500;
+  color: hsl(0deg,0%,100%);
+`;
+
+const CodeContainer = styled.input`
+  position: relative;
+  text-align: left;
+  box-sizing: border-box;
+  overflow: visible !important;
+  white-space: pre;
+  // font-family: 'League Mono' 'Fira Mono', monospace;
+  color: #fff;
+  background-color: hsl(210deg, 30%, 12%);
+  font-size: 1rem;
+  padding: 8px 16px;
+  overflow: auto;
+  border: none;
+  width: 100%;
+  height: 100%;
+`;
+const CodeType = styled.div`
+  position: absolute;
+  z-index: 2;
+  top: 0px;
+  right: 14px;
+  transform: translateY(-100%);
+  font-size: 18px;
+  padding: 2px 12px 0px;
+  background: hsl(210deg, 30%, 12%);
+  border-radius: 8px 8px 0px 0px;
+  text-transform: uppercase;
+  color: hsl(210deg, 14%, 66%);
+  font-weight: 500;
+  // font-family: 'League Mono' 'Fira Mono', monospace;
+  pointer-events: none;
+  user-select: none;
+`;
+
+const CopyRow = styled.div`
+  display: flex;
+  -moz-box-pack: end;
+  justify-content: flex-end;
+  gap: 16px;
+  position: absolute;
+  left: 0px;
+  right: 0px;
+  bottom: 0px;
+  transform: translateY(calc(100% + 16px));
+`;
+
+const CopyRowButton = styled.button`
+  display: flex;
+  -moz-box-align: center;
+  align-items: center;
+  -moz-box-pack: center;
+  justify-content: center;
+  gap: 12px;
+  padding: 8px 12px;
+  font-size: 0.875rem;
+  border: 2px solid hsl(210deg, 15%, 20%);
+  border-radius: 4px;
+  color: white;
+`;
+
 
 const DesktopOnly = styled.div`
 @media ${BREAKPOINTS.md} {
@@ -151,5 +283,5 @@ const MobileOnly = styled.div`
     }
 `;
 
-export { Container, Main, Title, Description, CodeTag, DesktopOnly }
+export {AppBar, Header, Container, Main, Demo, DemoContainer, Title, Description, Code, CodeType, CodeTitle, CodeContainer, CopyRowButton, CopyRow, Controls, DesktopOnly, MobileOnly};
 

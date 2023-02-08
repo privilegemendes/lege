@@ -42,12 +42,11 @@ export default siteConfig({
   // any pages defined here will override their default URL paths
   // example:
   //
-  // pageUrlOverrides: {
-  //   '/foo': '067dd719a912471ea9a3ac10710e7fdf',
-  //   '/bar': '0be6efce9daf42688f65c76b89f8eb27'
-  // }
-  pageUrlOverrides: null,
-
+  pageUrlOverrides: {
+    '/artiry': `/artiry--art-prints-digital-marketplace-722d6c8c9b244847881ca2a4e7bb0b8a`,
+    '/ascii-art-generator': `ascii-art-generator-770244cd7e71401b8ed7a4885452b050`,
+  },
+  // pageUrlOverrides: null,
   // whether to use the default notion navigation style or a custom one with links to
   // important pages
   //navigationStyle: 'default',
