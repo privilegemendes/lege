@@ -12,7 +12,6 @@
   "scripts": {
     "dev": "next dev",
     "build": "next build",
-    "postbuild": "node scripts/postbuild.js",
     "start": "next start",
     "deploy": "vercel deploy",
     "deps": "run-s deps:*",
