@@ -52,13 +52,14 @@ export default siteConfig({
   //navigationStyle: 'default',
   navigationStyle: 'custom',
   navigationLinks: [
+
+    {
+      title: 'Projects',
+      pageId: 'Projects-d2dfdbbff4264ea6b26db5b0ba590576'
+    },
     {
       title: 'About',
       pageId: 'About-ed4f8075dffe462d8e498e15d33df0b2'
-    },
-    {
-      title: 'Projects',
-      pageId: 'projects-26c1ec8826fd48dd8f7f523fc214c859'
     },
     {
       title: 'Contact',
@@ -67,12 +68,8 @@ export default siteConfig({
   ],
   navigationModalLinks: [
     {
-      title: 'Blogs',
-      pageId: '0bb7856ba4ca43319a86cd46d06bfcea?v=e9f7e96aa38242c383033312794403df'
-    },
-    {
       title: 'Projects',
-      pageId: '26c1ec8826fd48dd8f7f523fc214c859?v=d3c013e8abae43499ccab929346f3d0f'
+      pageId: 'Projects-d2dfdbbff4264ea6b26db5b0ba590576'
     },
     {
       title: 'About',
