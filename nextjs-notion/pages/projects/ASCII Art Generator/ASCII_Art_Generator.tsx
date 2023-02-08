@@ -1,3 +1,5 @@
+import * as React from 'react'
+import { useEffect, useState } from 'react'
 import Link from 'next/link'
 import {
   AppBar,
@@ -14,7 +16,6 @@ import {
   Main,
   Title
 } from '../../../src/styles/SharedStyles'
-import { useEffect, useState } from 'react'
 import { Footer } from '@/components/Footer'
 import { LogoHeader } from '@/components/Logo/Logo'
 
