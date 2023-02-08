@@ -42,11 +42,11 @@ export default siteConfig({
   // any pages defined here will override their default URL paths
   // example:
   //
-  // pageUrlOverrides: {
-  //   '/artiry-project': `artiry-9f9bfc8a67c0499bb9c1e654982d3169`,
-  //   '/ascii-art-generator-project': `ascii-art-generator-4943f3c1d7904e4dbe800fd235ad7c31`,
-  // },
-  pageUrlOverrides: null,
+  pageUrlOverrides: {
+    '/artiry-project': `artiry-9f9bfc8a67c0499bb9c1e654982d3169`,
+    '/ascii-art-generator-project': `ascii-art-generator-4943f3c1d7904e4dbe800fd235ad7c31`,
+  },
+  // pageUrlOverrides: null,
   // whether to use the default notion navigation style or a custom one with links to
   // important pages
   //navigationStyle: 'default',
