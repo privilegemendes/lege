@@ -26,6 +26,8 @@ import { Page404 } from './Page404'
 import { PageAside } from './PageAside'
 import { PageHead } from './PageHead'
 import styles from './styles.module.css'
+import Artiry from '../pages/artiry'
+import AsciiArtGenerator from '../pages/ascii-art-generator'
 
 // -----------------------------------------------------------------------------
 // dynamic imports for optional components
@@ -209,15 +211,28 @@ export const NotionPage: React.FC<types.PageProps> = ({
     return <Page404 site={site} pageId={pageId} error={error} />
   }
 
+  if (pageId === '9f9bfc8a-67c0-499b-b9c1-e654982d3169') {
+    return <Artiry />
+  }
+
+  if (pageId === '4943f3c1-d790-4e4d-be80-0fd235ad7c31') {
+    return <AsciiArtGenerator />
+  }
+
+  // if (pageId === '0712a647-c31d-4c7a-83aa-d5a31511dc8b') {
+  //   return <Nono />
+  // }
+
   const title = getBlockTitle(block, recordMap) || site.name
 
-  // console.log('notion page', {
-  //   isDev: config.isDev,
-  //   title,
-  //   pageId,
-  //   rootNotionPageId: site.rootNotionPageId,
-  //   recordMap
-  // })
+  console.log('notion page', {
+    isDev: config.isDev,
+    site,
+    title,
+    pageId,
+    rootNotionPageId: site.rootNotionPageId,
+    recordMap
+  })
 
   if (!config.isServer) {
     // add important objects to the window global for easy debugging

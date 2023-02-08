@@ -42,11 +42,11 @@ export default siteConfig({
   // any pages defined here will override their default URL paths
   // example:
   //
-  pageUrlOverrides: {
-    // '/artiry': `/artiry--art-prints-digital-marketplace-722d6c8c9b244847881ca2a4e7bb0b8a`,
-    // '/ascii-art-generator': `ascii-art-generator-770244cd7e71401b8ed7a4885452b050`,
-  },
-  // pageUrlOverrides: null,
+  // pageUrlOverrides: {
+  //   '/artiry-project': `artiry-9f9bfc8a67c0499bb9c1e654982d3169`,
+  //   '/ascii-art-generator-project': `ascii-art-generator-4943f3c1d7904e4dbe800fd235ad7c31`,
+  // },
+  pageUrlOverrides: null,
   // whether to use the default notion navigation style or a custom one with links to
   // important pages
   //navigationStyle: 'default',
@@ -58,7 +58,7 @@ export default siteConfig({
     },
     {
       title: 'Projects',
-      pageId: '26c1ec8826fd48dd8f7f523fc214c859?v=d3c013e8abae43499ccab929346f3d0f'
+      pageId: 'projects-26c1ec8826fd48dd8f7f523fc214c859'
     },
     {
       title: 'Contact',

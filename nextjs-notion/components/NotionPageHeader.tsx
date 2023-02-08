@@ -17,12 +17,11 @@ export const NotionPageHeader: React.FC<{
   block: types.CollectionViewPageBlock | types.PageBlock
 }> = ({ block }) => {
   const { components, mapPageUrl } = useNotionContext()
+  const [showMenuModal, setShowMenuModal] = React.useState(false);
 
   if (navigationStyle === 'default') {
     return <Header block={block} />
   }
-
-  const [showMenuModal, setShowMenuModal] = React.useState(false);
 
   return (
     <header className='notion-header'>
