@@ -18,6 +18,26 @@ const MenuModal:FC<Props> =
   }
 ) => {
   const [isBrowser, setIsBrowser] = useState(false);
+  const [scrollable, setScrollable] = useState(true);
+
+  useEffect(() => {
+    if (show) {
+      setScrollable(false);
+    }
+    return () => {
+      setScrollable(true);
+      document.body.style.overflow = 'auto';
+    }
+  }, []);
+
+  useEffect(() => {
+    if (scrollable) {
+      document.body.style.overflow = 'auto';
+    } else {
+      document.body.style.overflow = 'hidden';
+    }
+  }, [scrollable]);
+
 
   useEffect(() => {
     setIsBrowser(true);
@@ -25,6 +45,7 @@ const MenuModal:FC<Props> =
 
   const handleCloseClick = (e) => {
     e.preventDefault();
+    setScrollable(true);
     onClose();
   };
 

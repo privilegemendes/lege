@@ -4,9 +4,40 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6d79a399-8924-4f24-b973-cee3210ac519" name="Changes" comment="removed sitemap">
+    <list default="true" id="6d79a399-8924-4f24-b973-cee3210ac519" name="Changes" comment="fixed not found pages">
+      <change afterPath="$PROJECT_DIR$/nextjs-notion/components/Button/Button.module.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/nextjs-notion/components/Button/Button.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/nextjs-notion/components/Toast/Toast.module.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/nextjs-notion/components/Toast/Toast.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/nextjs-notion/components/VisuallyHidden/VisuallyHidden.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/nextjs-notion/pages/projects/Robofriends/Robofriends.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/nextjs-notion/pages/robofriends.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/nextjs-notion/public/artiry-white.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/nextjs-notion/public/favicon-192x192.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/nextjs-notion/public/favicon-512x512.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/nextjs-notion/src/assets/privilege.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/nextjs-notion/src/fonts/Schoolbell-Regular.ttf" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/nextjs-notion/site.config.ts" beforeDir="false" afterPath="$PROJECT_DIR$/nextjs-notion/site.config.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nextjs-notion/components/Footer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/nextjs-notion/components/Footer.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nextjs-notion/components/GitHubShareButton.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/nextjs-notion/components/GitHubShareButton.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nextjs-notion/components/Logo/Logo.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/nextjs-notion/components/Logo/Logo.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nextjs-notion/components/MenuModal/MenuModal.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/nextjs-notion/components/MenuModal/MenuModal.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nextjs-notion/components/NotionPage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/nextjs-notion/components/NotionPage.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nextjs-notion/components/styles.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/nextjs-notion/components/styles.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nextjs-notion/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/nextjs-notion/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nextjs-notion/pages/artiry.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/nextjs-notion/pages/artiry.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nextjs-notion/pages/projects/ASCII Art Generator/ASCII_Art_Generator.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/nextjs-notion/pages/projects/ASCII Art Generator/ASCII_Art_Generator.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nextjs-notion/public/android-chrome-192x192.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/nextjs-notion/public/android-chrome-512x512.png" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/nextjs-notion/public/apple-touch-icon.png" beforeDir="false" afterPath="$PROJECT_DIR$/nextjs-notion/public/apple-touch-icon.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nextjs-notion/public/favicon-16x16.png" beforeDir="false" afterPath="$PROJECT_DIR$/nextjs-notion/public/favicon-16x16.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nextjs-notion/public/favicon-32x32.png" beforeDir="false" afterPath="$PROJECT_DIR$/nextjs-notion/public/favicon-32x32.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nextjs-notion/public/favicon.ico" beforeDir="false" afterPath="$PROJECT_DIR$/nextjs-notion/public/favicon.ico" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nextjs-notion/public/manifest.json" beforeDir="false" afterPath="$PROJECT_DIR$/nextjs-notion/public/manifest.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nextjs-notion/src/styles/SharedStyles.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/nextjs-notion/src/styles/SharedStyles.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nextjs-notion/src/styles/fonts.css" beforeDir="false" afterPath="$PROJECT_DIR$/nextjs-notion/src/styles/fonts.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nextjs-notion/src/styles/global.css" beforeDir="false" afterPath="$PROJECT_DIR$/nextjs-notion/src/styles/global.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nextjs-notion/src/styles/notion.css" beforeDir="false" afterPath="$PROJECT_DIR$/nextjs-notion/src/styles/notion.css" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -90,11 +121,11 @@
       <recent name="C:\Projects\Lege\app-nextjs\src\pages" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Projects\Lege\nextjs-notion\src\assets" />
       <recent name="C:\Projects\Lege\nextjs-notion" />
       <recent name="C:\Projects\Lege\nextjs-notion\src" />
       <recent name="C:\Projects\Lege\nextjs-notion\components" />
       <recent name="C:\Projects\Lege\app-nextjs\src\pages\blog" />
-      <recent name="C:\Projects\Lege\app-nextjs\src\assets" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -218,14 +249,8 @@
       <workItem from="1675705102185" duration="226000" />
       <workItem from="1675705366902" duration="59314000" />
       <workItem from="1675817793155" duration="24379000" />
-      <workItem from="1675873063616" duration="1255000" />
-    </task>
-    <task id="LOCAL-00032" summary="Changed to default exports">
-      <created>1674580479455</created>
-      <option name="number" value="00032" />
-      <option name="presentableId" value="LOCAL-00032" />
-      <option name="project" value="LOCAL" />
-      <updated>1674580479455</updated>
+      <workItem from="1675873063616" duration="13331000" />
+      <workItem from="1675948962860" duration="17651000" />
     </task>
     <task id="LOCAL-00033" summary="code style">
       <created>1674580505886</created>
@@ -563,7 +588,14 @@
       <option name="project" value="LOCAL" />
       <updated>1675873243615</updated>
     </task>
-    <option name="localTasksCounter" value="81" />
+    <task id="LOCAL-00081" summary="fixed not found pages">
+      <created>1675874407539</created>
+      <option name="number" value="00081" />
+      <option name="presentableId" value="LOCAL-00081" />
+      <option name="project" value="LOCAL" />
+      <updated>1675874407539</updated>
+    </task>
+    <option name="localTasksCounter" value="82" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -666,7 +698,6 @@
       <path value="$PROJECT_DIR$/lege" />
       <path value="$PROJECT_DIR$/../nonogram" />
     </ignored-roots>
-    <MESSAGE value="Added dark Mode" />
     <MESSAGE value="add nextjs-notion to master" />
     <MESSAGE value="fix nextjs-notion to master" />
     <MESSAGE value="Add nextjs-notion to master" />
@@ -691,7 +722,8 @@
     <MESSAGE value="redirects fixed!" />
     <MESSAGE value="redirects fixed version 2!" />
     <MESSAGE value="removed sitemap" />
-    <option name="LAST_COMMIT_MESSAGE" value="removed sitemap" />
+    <MESSAGE value="fixed not found pages" />
+    <option name="LAST_COMMIT_MESSAGE" value="fixed not found pages" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="XDebuggerManager">

@@ -42,3 +42,10 @@
     font-weight: 100;
     src: local('FiraSans'), url(../fonts/roboto/Roboto-Thin.ttf) format('truetype');
 }
+
+@font-face {
+  font-family: 'Schoolbell';
+  font-weight: 400;
+  src: local('Schoolbell'), url(../fonts/Schoolbell-Regular.ttf) format('truetype');
+}
+

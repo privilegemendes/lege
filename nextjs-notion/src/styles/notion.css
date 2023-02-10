@@ -337,7 +337,8 @@
   padding: 0;
   margin: 0;
   border-radius: 0;
-  background: none !important;
+  /*//background: none !important;*/
+  background: hsl(210deg, 30%, 8%);
 }
 
 /* if you don't want rounded page icon images, remove this */
@@ -364,7 +365,8 @@
 /* Workaround for Firefox not supporting backdrop-filter yet */
 @-moz-document url-prefix() {
   .dark-mode .notion-header {
-    background: hsla(203, 8%, 20%, 0.8);
+    /*//background: hsla(203, 8%, 20%, 0.8);*/
+    background: hsl(210deg, 30%, 8%, 0.6);
   }
 }
 

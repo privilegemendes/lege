@@ -91,15 +91,18 @@ export const Z_INDICES = {
 const AppBar = styled.header`
   --color-primary: hsl(53deg,100%,50%);
   display: flex;
+  flex-direction: column;
   -moz-box-pack: justify;
   justify-content: space-between;
   -moz-box-align: baseline;
   align-items: baseline;
-  padding: 16px;
-  border-bottom: 1px solid hsl(210deg, 15%, 20%);
+  padding: 18px;
+  // border-bottom: 1px solid hsl(210deg, 15%, 20%);
 `;
 
 const Container = styled.div`
+  display: flex;
+  flex-direction: column;
   border-radius: 0px;
   position: relative;
   min-height: 100vh;
@@ -109,17 +112,7 @@ const Container = styled.div`
   color: #fff;
 `
 const Main = styled.div`
-  display: grid;
-  gap: 64px 48px;
-  grid-template-columns: 1fr minmax(350px, 1fr);
-  grid-template-areas:
-  "header demo  "
-  "controls demo"
-  "code demo  ";
-  max-width: 1200px;
-  margin: 0px auto;
-  padding: 32px 32px 128px;
-  isolation: isolate;
+  flex: 1;
 `
 
 const Demo = styled.div`
@@ -139,10 +132,12 @@ const Demo = styled.div`
 const DemoContainer = styled.div`
   flex: 1 1 0%;
   width: 100%;
-  border: 8px solid white;
-  border-radius: 16px;
+  border: 2px solid hsl(210deg, 15%, 20%);
+  border-radius: 8px;
   color: #fff;
   padding: 16px;
+  overflow-x: auto;
+  height: 152px;
 `
 
 const Header = styled.header`
@@ -171,16 +166,18 @@ const Title = styled.h1`
     background-clip: text;
     -webkit-text-fill-color: transparent;
     margin-top: 16px;
+    margin-bottom: 0px;
     filter: drop-shadow(0px 0px 2px hsl((210deg 30% 8%) / 0.5)) drop-shadow(0px 0px 4px hsl((210deg 30% 8%) / 0.5)) drop-shadow(0px 0px 8px hsl((210deg 30% 8%) / 0.5)) drop-shadow(0px 0px 16px hsl((210deg 30% 8%) / 0.5)) drop-shadow(0px 0px 32px hsl((210deg 30% 8%) / 0.5)) drop-shadow(0px 0px 64px hsl((210deg 30% 8%) / 0.5));
 `
 
 const Description = styled.p`
   position: relative;
+  padding-top: 16px;
   z-index: 3;
   font-size: 1.25rem;
   text-align: center;
   max-width: 400px;
-  margin: 8px auto 0px;
+  margin: 0;
   color: hsl(210deg, 14%, 66%);
 `
 

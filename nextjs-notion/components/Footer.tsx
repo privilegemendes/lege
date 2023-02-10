@@ -40,7 +40,7 @@ export const FooterImpl: React.FC<Props> = ({ darkMode}) => {
       <div className={styles.footerContainer}>
         <div className={styles.footerHeader}>
           <LogoFooter/>
-          <div className={styles.copyright}>© 2023-present {config.author}. All rights reserved.</div>
+          <div className={styles.copyright}>© 2023-Present {config.author}. All rights reserved.</div>
         </div>
 
         {darkMode ?
@@ -135,7 +135,7 @@ export const FooterImpl: React.FC<Props> = ({ darkMode}) => {
           )}
         </div>
 
-        <div className={styles.copyrightBottom}>© 2023-present {config.author}. All rights reserved.</div>
+        <div className={styles.copyrightBottom}>© 2023-Present {config.author}. All rights reserved.</div>
       </div>
     </footer>
   )
