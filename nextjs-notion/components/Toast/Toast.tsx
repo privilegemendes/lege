@@ -1,4 +1,4 @@
-import React, { FC, useEffect } from 'react'
+import React, { FC } from 'react'
 import { Info, X } from 'react-feather'
 
 import VisuallyHidden from '../VisuallyHidden/VisuallyHidden'
@@ -25,10 +25,6 @@ type Props = {
 }
 
 export const ToastShelf: FC = () => {
-
-  useEffect(() => {
-
-  },[]);
 
   return <Wrapper>
     <Toast variant={'error'}/>

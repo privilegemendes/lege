@@ -28,7 +28,7 @@ const MenuModal:FC<Props> =
       setScrollable(true);
       document.body.style.overflow = 'auto';
     }
-  }, []);
+  }, [show]);
 
   useEffect(() => {
     if (scrollable) {

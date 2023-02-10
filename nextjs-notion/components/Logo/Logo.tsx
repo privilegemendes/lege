@@ -95,7 +95,7 @@ export const LogoFooter: FC = () => {
       <MyLogoFooter href="/">
         <Privi>Privi</Privi>
         <Lege>lege</Lege>
-        <Slogan>Yes, that's<SloganReally>&nbsp;really&nbsp;</SloganReally> my name</Slogan>
+        <Slogan>Yes, that&apos;s<SloganReally>&nbsp;really&nbsp;</SloganReally>my name</Slogan>
       </MyLogoFooter>
     </MyLogoContainer>
   )
