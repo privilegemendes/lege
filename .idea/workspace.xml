@@ -4,7 +4,7 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6d79a399-8924-4f24-b973-cee3210ac519" name="Changes" comment="Added a bunch of updates" />
+    <list default="true" id="6d79a399-8924-4f24-b973-cee3210ac519" name="Changes" comment="Fixes from ESlint suggestions" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -216,14 +216,7 @@
       <workItem from="1675705366902" duration="59314000" />
       <workItem from="1675817793155" duration="24379000" />
       <workItem from="1675873063616" duration="13331000" />
-      <workItem from="1675948962860" duration="18327000" />
-    </task>
-    <task id="LOCAL-00034" summary="update project workspace">
-      <created>1674580566226</created>
-      <option name="number" value="00034" />
-      <option name="presentableId" value="LOCAL-00034" />
-      <option name="project" value="LOCAL" />
-      <updated>1674580566226</updated>
+      <workItem from="1675948962860" duration="18668000" />
     </task>
     <task id="LOCAL-00035" summary="updated firebase.json file">
       <created>1674584225104</created>
@@ -561,7 +554,14 @@
       <option name="project" value="LOCAL" />
       <updated>1676027926244</updated>
     </task>
-    <option name="localTasksCounter" value="83" />
+    <task id="LOCAL-00083" summary="Fixes from ESlint suggestions">
+      <created>1676028264642</created>
+      <option name="number" value="00083" />
+      <option name="presentableId" value="LOCAL-00083" />
+      <option name="project" value="LOCAL" />
+      <updated>1676028264642</updated>
+    </task>
+    <option name="localTasksCounter" value="84" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -664,7 +664,6 @@
       <path value="$PROJECT_DIR$/lege" />
       <path value="$PROJECT_DIR$/../nonogram" />
     </ignored-roots>
-    <MESSAGE value="fix nextjs-notion to master" />
     <MESSAGE value="Add nextjs-notion to master" />
     <MESSAGE value="removed yarn.lock and applied some fixes" />
     <MESSAGE value="stringify font URLs" />
@@ -689,7 +688,8 @@
     <MESSAGE value="removed sitemap" />
     <MESSAGE value="fixed not found pages" />
     <MESSAGE value="Added a bunch of updates" />
-    <option name="LAST_COMMIT_MESSAGE" value="Added a bunch of updates" />
+    <MESSAGE value="Fixes from ESlint suggestions" />
+    <option name="LAST_COMMIT_MESSAGE" value="Fixes from ESlint suggestions" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="XDebuggerManager">
