@@ -137,7 +137,8 @@ const DemoContainer = styled.div`
   color: #fff;
   padding: 16px;
   overflow-x: auto;
-  height: 152px;
+  overflow-y: hidden;
+  height: auto;
 `
 
 const Header = styled.header`

@@ -121,8 +121,8 @@ const AnimatedMesh: FC<Props> = (
 	const scaleZ = scale;
 
 
-	let torusKnotGeometry = new THREE.TorusKnotGeometry(5, 1.8, 64, 5, 7, 5);
-	let geometry =  tessellateModifier( 8, torusKnotGeometry);
+	let torusKnotGeometry = new THREE.TorusKnotGeometry(5, 1.8, 81, 5, 7, 5);
+	let geometry =  tessellateModifier( 9, torusKnotGeometry);
 
 	const numFaces = geometry.attributes.position.count / 3;
 
@@ -152,7 +152,6 @@ const AnimatedMesh: FC<Props> = (
 
 	geometry.addAttribute('customColor', new THREE.BufferAttribute(colors, 3));
 	geometry.addAttribute('displacement', new THREE.BufferAttribute(displacement, 3));
-
 
 	//If your scene contains some React state that can change and thus trigger a re-render:
 	// do not forget to memoize your uniform object!
