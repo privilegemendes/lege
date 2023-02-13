@@ -4,7 +4,27 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6d79a399-8924-4f24-b973-cee3210ac519" name="Changes" comment="Fixes from ESlint suggestions" />
+    <list default="true" id="6d79a399-8924-4f24-b973-cee3210ac519" name="Changes" comment="favicon updates">
+      <change afterPath="$PROJECT_DIR$/nextjs-notion/components/PageCover.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/nextjs-notion/components/Roses/Roses.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/nextjs-notion/pages/css-grid-generator.tsx" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/nextjs-notion/pages/projects/CSS Grid Generator/CSSGridGenerator.modules.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/nextjs-notion/pages/projects/CSS Grid Generator/CSSGridGenerator.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/app/src/components/profile-page/Footer.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/app/src/components/profile-page/Footer.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nextjs-notion/.editorconfig" beforeDir="false" afterPath="$PROJECT_DIR$/nextjs-notion/.editorconfig" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nextjs-notion/components/Logo/Logo.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/nextjs-notion/components/Logo/Logo.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nextjs-notion/components/NotionPage.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/nextjs-notion/components/NotionPage.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nextjs-notion/components/NotionPageHeader.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/nextjs-notion/components/NotionPageHeader.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nextjs-notion/components/styles.module.css" beforeDir="false" afterPath="$PROJECT_DIR$/nextjs-notion/components/styles.module.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nextjs-notion/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/nextjs-notion/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nextjs-notion/pages/artiry.tsx" beforeDir="false" afterPath="$PROJECT_DIR$/nextjs-notion/pages/artiry.tsx" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nextjs-notion/site.config.ts" beforeDir="false" afterPath="$PROJECT_DIR$/nextjs-notion/site.config.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nextjs-notion/src/styles/fonts.css" beforeDir="false" afterPath="$PROJECT_DIR$/nextjs-notion/src/styles/fonts.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nextjs-notion/src/styles/global.css" beforeDir="false" afterPath="$PROJECT_DIR$/nextjs-notion/src/styles/global.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nextjs-notion/src/styles/notion.css" beforeDir="false" afterPath="$PROJECT_DIR$/nextjs-notion/src/styles/notion.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/nextjs-notion/tsconfig.json" beforeDir="false" afterPath="$PROJECT_DIR$/nextjs-notion/tsconfig.json" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -17,6 +37,7 @@
         <option value="package.json" />
         <option value="TypeScript File" />
         <option value="TypeScript JSX File" />
+        <option value="NextJS Component" />
       </list>
     </option>
   </component>
@@ -58,40 +79,40 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;openjdk-19&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Projects/Lege&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_interpreter_path&quot;: &quot;node&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15722656&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;project.propVCSSupport.DirectoryMappings&quot;,
-    &quot;spring.configuration.checksum&quot;: &quot;db974238714ca8de634a7ce1d083a14f&quot;,
-    &quot;ts.external.directory.path&quot;: &quot;C:\\Projects\\Artiry\\Webapp\\node_modules\\typescript\\lib&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "jdk.selected.JAVA_MODULE": "openjdk-19",
+    "last_opened_file_path": "C:/Projects/Lege/nextjs-notion/components/Roses",
+    "node.js.detected.package.eslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "nodejs_interpreter_path": "node",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.15722656",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "copyright.profiles",
+    "spring.configuration.checksum": "db974238714ca8de634a7ce1d083a14f",
+    "ts.external.directory.path": "C:\\Projects\\Artiry\\Webapp\\node_modules\\typescript\\lib"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="C:\Projects\Lege\nextjs-notion\components\Roses" />
+      <recent name="C:\Projects\Lege\nextjs-notion\pages" />
       <recent name="C:\Projects\Lege\nextjs-notion\src\styles" />
       <recent name="C:\Projects\Lege\nextjs-notion\styles" />
       <recent name="C:\Projects\Lege\nextjs-notion\public\fonts" />
-      <recent name="C:\Projects\Lege\nextjs-notion-starter-kit" />
-      <recent name="C:\Projects\Lege\app-nextjs\src\pages" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Projects\Lege\nextjs-notion\public" />
       <recent name="C:\Projects\Lege\nextjs-notion\src\assets" />
       <recent name="C:\Projects\Lege\nextjs-notion" />
       <recent name="C:\Projects\Lege\nextjs-notion\src" />
       <recent name="C:\Projects\Lege\nextjs-notion\components" />
-      <recent name="C:\Projects\Lege\app-nextjs\src\pages\blog" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -216,14 +237,8 @@
       <workItem from="1675705366902" duration="59314000" />
       <workItem from="1675817793155" duration="24379000" />
       <workItem from="1675873063616" duration="13331000" />
-      <workItem from="1675948962860" duration="18668000" />
-    </task>
-    <task id="LOCAL-00035" summary="updated firebase.json file">
-      <created>1674584225104</created>
-      <option name="number" value="00035" />
-      <option name="presentableId" value="LOCAL-00035" />
-      <option name="project" value="LOCAL" />
-      <updated>1674584225104</updated>
+      <workItem from="1675948962860" duration="19956000" />
+      <workItem from="1676110103486" duration="51957000" />
     </task>
     <task id="LOCAL-00036" summary="mobile first design">
       <created>1674597168019</created>
@@ -561,7 +576,14 @@
       <option name="project" value="LOCAL" />
       <updated>1676028264642</updated>
     </task>
-    <option name="localTasksCounter" value="84" />
+    <task id="LOCAL-00084" summary="favicon updates">
+      <created>1676030551478</created>
+      <option name="number" value="00084" />
+      <option name="presentableId" value="LOCAL-00084" />
+      <option name="project" value="LOCAL" />
+      <updated>1676030551478</updated>
+    </task>
+    <option name="localTasksCounter" value="85" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -664,7 +686,6 @@
       <path value="$PROJECT_DIR$/lege" />
       <path value="$PROJECT_DIR$/../nonogram" />
     </ignored-roots>
-    <MESSAGE value="Add nextjs-notion to master" />
     <MESSAGE value="removed yarn.lock and applied some fixes" />
     <MESSAGE value="stringify font URLs" />
     <MESSAGE value="Added animinated dark mode button" />
@@ -689,7 +710,8 @@
     <MESSAGE value="fixed not found pages" />
     <MESSAGE value="Added a bunch of updates" />
     <MESSAGE value="Fixes from ESlint suggestions" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fixes from ESlint suggestions" />
+    <MESSAGE value="favicon updates" />
+    <option name="LAST_COMMIT_MESSAGE" value="favicon updates" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="XDebuggerManager">
@@ -707,5 +729,9 @@
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
+  </component>
+  <component name="XSLT-Support.FileAssociations.UIState">
+    <expand />
+    <select />
   </component>
 </project>

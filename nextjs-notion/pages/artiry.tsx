@@ -10,8 +10,8 @@ const Artiry = () => {
 
   useEffect(() => {
     setTimeout(() => {
-      router.push('https://artiry.com').then(r => console.log(r));
-      }, 3000);
+      router.push('https://artiry.com?ea=U2Q2aC7d8n8Ilu9HbZ8x').then(r => console.log(r));
+      }, 2000);
 
   }, [router]);
 

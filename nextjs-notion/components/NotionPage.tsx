@@ -28,6 +28,8 @@ import { PageHead } from './PageHead'
 import styles from './styles.module.css'
 import Artiry from '../pages/artiry'
 import AsciiArtGenerator from '../pages/ascii-art-generator'
+import CSSGridGenerator from '../pages/projects/CSS Grid Generator/CSSGridGenerator'
+import { PageCover } from '@/components/PageCover'
 
 // -----------------------------------------------------------------------------
 // dynamic imports for optional components
@@ -203,6 +205,8 @@ export const NotionPage: React.FC<types.PageProps> = ({
 
   const footer = React.useMemo(() => <Footer darkMode={false} />, [])
 
+  const pageCover = React.useMemo( () =>  <PageCover />,[]);
+
   if (router.isFallback) {
     return <Loading />
   }
@@ -219,9 +223,9 @@ export const NotionPage: React.FC<types.PageProps> = ({
     return <AsciiArtGenerator />
   }
 
-  // if (pageId === '0712a647-c31d-4c7a-83aa-d5a31511dc8b') {
-  //   return <Nono />
-  // }
+  if (pageId === '06c443fc-5095-4cc6-930f-084e87edaa6b') {
+    return <CSSGridGenerator/>
+  }
 
   const title = getBlockTitle(block, recordMap) || site.name
 
@@ -275,7 +279,7 @@ export const NotionPage: React.FC<types.PageProps> = ({
           styles.notion,
           pageId === site.rootNotionPageId && 'index-page'
         )}
-        darkMode={isDarkMode}
+        darkMode={true}
         components={components}
         recordMap={recordMap}
         rootPageId={site.rootNotionPageId}
@@ -292,6 +296,7 @@ export const NotionPage: React.FC<types.PageProps> = ({
         mapImageUrl={mapImageUrl}
         searchNotion={config.isSearchEnabled ? searchNotion : null}
         pageAside={pageAside}
+        pageCover={ pageId === site.rootNotionPageId ? pageCover : null}
         footer={footer}
       />
     </>

@@ -4,14 +4,14 @@ import * as types from 'notion-types'
 import cs from 'classnames'
 import { Header, Search, useNotionContext } from 'react-notion-x'
 
-import { isSearchEnabled, navigationLinks, navigationModalLinks, navigationStyle } from '../src/lib/config'
+import { isSearchEnabled, navigationLinks, navigationStyle } from '../src/lib/config'
 import { DesktopOnly, MobileOnly } from '../src/styles/SharedStyles'
 import { AiOutlineMenu } from '@react-icons/all-files/ai/AiOutlineMenu'
 
 import styles from './styles.module.css'
-import { ToggleThemeButton } from '@/components/ToggleThemeButton/ToggleThemeButton'
 import { LogoHeader } from '@/components/Logo/Logo'
 import MenuModal from '@/components/MenuModal/MenuModal'
+import { useRouter } from 'next/router'
 
 export const NotionPageHeader: React.FC<{
   block: types.CollectionViewPageBlock | types.PageBlock
@@ -22,6 +22,8 @@ export const NotionPageHeader: React.FC<{
   if (navigationStyle === 'default') {
     return <Header block={block} />
   }
+
+  const router = useRouter();
 
   return (
     <header className='notion-header'>
@@ -41,7 +43,7 @@ export const NotionPageHeader: React.FC<{
                     <components.PageLink
                       href={mapPageUrl(link.pageId)}
                       key={index}
-                      className={cs(styles.navLink, 'breadcrumb', 'button')}
+                      className={cs(styles.navLink, 'breadcrumb', 'button', router.asPath === mapPageUrl(link.pageId) ? styles.activeNav : '')}
                     >
                       {link.title}
                     </components.PageLink>
@@ -51,7 +53,7 @@ export const NotionPageHeader: React.FC<{
                     <components.Link
                       href={link.url}
                       key={index}
-                      className={cs(styles.navLink, 'breadcrumb', 'button')}
+					  					className={cs(styles.navLink, 'breadcrumb', 'button', router.asPath === link.url ? styles.activeNav : '')}
                     >
                       {link.title}
                     </components.Link>
@@ -60,13 +62,13 @@ export const NotionPageHeader: React.FC<{
               })
               .filter(Boolean)}
 
-            <ToggleThemeButton />
+            {/*<ToggleThemeButton />*/}
 
             {isSearchEnabled && <Search block={block} title={null} />}
           </DesktopOnly>
           <MobileOnly>
             {isSearchEnabled && <Search block={block} title={null} />}
-            <ToggleThemeButton />
+            {/*<ToggleThemeButton />*/}
             <div
               className={cs('breadcrumb', 'button')}
               onClick={() => setShowMenuModal(true)}
@@ -77,7 +79,7 @@ export const NotionPageHeader: React.FC<{
                 onClose={() => setShowMenuModal(false)}
                 show={showMenuModal}
                 >
-                {navigationModalLinks
+                {navigationLinks
                   ?.map((link, index) => {
                     if (!link.pageId && !link.url) {
 
@@ -89,7 +91,7 @@ export const NotionPageHeader: React.FC<{
                         <components.PageLink
                           href={mapPageUrl(link.pageId)}
                           key={index}
-                          className={styles.navModalMenu}
+													className={cs(styles.navModalMenu, router.asPath === mapPageUrl(link.pageId) ? styles.activeNav : '')}
                         >
                           {link.title}
                         </components.PageLink>
@@ -114,3 +116,4 @@ export const NotionPageHeader: React.FC<{
     </header>
   )
 }
+

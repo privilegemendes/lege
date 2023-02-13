@@ -12,6 +12,7 @@ html {
   padding: 0;
   margin: 0;
 
+	background: hsl(210deg, 30%, 8%);
   --color-notice: hsl(235deg 100% 50%);
   --color-notice-bg: hsl(235deg 0% 100%);
   --color-warning: hsl(35deg 100% 46%);
@@ -52,6 +53,14 @@ body {
     'Droid Sans', 'Helvetica Neue', 'Noto Sans', sans-serif;
   font-family: var(--notion-font);
   overflow-x: hidden;
+	background: hsl(210deg, 30%, 8%);
+	color: var(--fg-color);
+	font-size: 16px;
+	line-height: 1.5;
+	font-weight: 400;
+	letter-spacing: 0.01em;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
 }
 
 .static-tweet blockquote {
@@ -70,4 +79,8 @@ body {
 .searchInput {
   color: var(--fg-color);
   caret-color: var(--fg-color);
+}
+
+.dark-mode {
+	--bg-color: hsl(210deg, 30%, 8%);
 }

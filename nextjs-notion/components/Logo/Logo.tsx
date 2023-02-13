@@ -20,7 +20,7 @@ const MyLogoContainer = styled.div`
 
 const MyLogoHeader = styled.a `
   display: flex;
-  font-size: 24px;
+  font-size: 2rem;
   letter-spacing: -1px;
   text-decoration: none;
   color: hsl(53deg,100%,50%);
@@ -28,8 +28,7 @@ const MyLogoHeader = styled.a `
 `
 
 const MyLogoFooter = styled.a `
-  font-size: 24px;
-  letter-spacing: -1px;
+  font-size: 1.5rem;
   text-decoration: none;
   color: hsl(230deg, 100%, 69%);
 
@@ -42,11 +41,14 @@ const MyLogoFooter = styled.a `
   }
 `
 const Privi = styled.span `
+ .dark-mode & {
+ 	color: #ffff;
+ }
+
   display: inline-flex;
   font-weight: 600;
-  color: hsl(210deg, 14%, 66%);
+  color: #0000;
   font-Family: 'Schoolbell', 'Roboto';
-  color: #fff;
   letter-spacing: 1px;
   align-items: center;
 
@@ -62,10 +64,13 @@ const Lege = styled.span `
 `;
 
 const Slogan = styled.span `
+ .dark-mode & {
+ 	color: #fff;
+ }
   display: flex;
-  font-weight: 600;
+  font-weight: 800;
   font-size: 14px;
-  color: white;
+  color: #0000;
   align-items: flex-end;
 `;
 
@@ -100,9 +105,3 @@ export const LogoFooter: FC = () => {
     </MyLogoContainer>
   )
 };
-
-// const PrivilegeSVG = () => {
-//   return<>
-//
-//   </>
-// }

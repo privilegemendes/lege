@@ -45,6 +45,7 @@ export default siteConfig({
   pageUrlOverrides: {
     '/artiry-project': `artiry-9f9bfc8a67c0499bb9c1e654982d3169`,
     '/ascii-art-generator-project': `ascii-art-generator-4943f3c1d7904e4dbe800fd235ad7c31`,
+    '/css-grid-generator': `css-grid-generator-06c443fc50954cc6930f084e87edaa6b`,
   },
   // pageUrlOverrides: null,
   // whether to use the default notion navigation style or a custom one with links to
@@ -52,19 +53,27 @@ export default siteConfig({
   //navigationStyle: 'default',
   navigationStyle: 'custom',
   navigationLinks: [
-
     {
-      title: 'Projects',
-      pageId: 'Projects-d2dfdbbff4264ea6b26db5b0ba590576'
+      title: 'Home',
+      pageId: 'legemendes-488679b9f99f4094a8d58928f44980cb'
     },
+	  {
+		  title: 'Blog',
+		  pageId: 'Blogs-f350622c4c7b452f880cb79dbf791742'
+
+	  },
+	{
+	  title: 'Projects',
+	  pageId: 'Projects-d2dfdbbff4264ea6b26db5b0ba590576'
+	},
     {
       title: 'About',
       pageId: 'About-ed4f8075dffe462d8e498e15d33df0b2'
     },
-    {
-      title: 'Contact',
-      pageId: 'Contact-99d705dcf8b64fd6a9cc16e175270c9f'
-    }
+    // {
+    //   title: 'Contact',
+    //   pageId: 'Contact-99d705dcf8b64fd6a9cc16e175270c9f'
+    // }
   ],
   navigationModalLinks: [
     {
@@ -75,9 +84,9 @@ export default siteConfig({
       title: 'About',
       pageId: 'About-ed4f8075dffe462d8e498e15d33df0b2'
     },
-    {
-      title: 'Contact',
-      pageId: 'Contact-99d705dcf8b64fd6a9cc16e175270c9f'
-    }
+    // {
+    //   title: 'Contact',
+    //   pageId: 'Contact-99d705dcf8b64fd6a9cc16e175270c9f'
+    // }
   ]
 })
