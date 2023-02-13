@@ -111,11 +111,14 @@ const AnimatedMesh: FC<Props> = (
 	const positionX = Math.random() * 30 - 15;
 	const positionY = Math.random() * 20 - 2;
 	const positionZ = Math.random() * 30 - 15;
+
 	const rotationX = Math.random() * 2 * Math.PI;
 	const rotationY = Math.random() * 2 * Math.PI;
-	const scaleX = Math.random() * 2.5 - 0.5;
-	const scaleY = Math.random() * 2.5 - 0.5;
-	const scaleZ = Math.random() * 2.5 - 0.5;
+
+	const scale = Math.random() * 2.5 - 0.5;
+	const scaleX = scale;
+	const scaleY = scale;
+	const scaleZ = scale;
 
 
 	let torusKnotGeometry = new THREE.TorusKnotGeometry(5, 1.8, 64, 5, 7, 5);
@@ -167,8 +170,8 @@ const AnimatedMesh: FC<Props> = (
 
 			});
 		} else {
-			gsap.to(uniforms.amplitude, 0.1,{
-				value: 0.1,
+			gsap.to(uniforms.amplitude, 0.15,{
+				value: 0,
 				ease: Sine.easeIn
 			});
 		}
@@ -182,7 +185,7 @@ const AnimatedMesh: FC<Props> = (
 				yoyo: true,
 			});
 		}
-	}, []);
+	}, [meshRef]);
 
 	return (
 		<mesh
