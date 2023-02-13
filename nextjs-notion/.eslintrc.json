@@ -1,12 +1,12 @@
 {
   "root": true,
   "parser": "@typescript-eslint/parser",
-//  "plugins": ["@typescript-eslint", "react", "react-hooks"],
+	"plugins": ["@typescript-eslint", "react", "react-hooks"],
   "extends": [
     "eslint:recommended",
-//    "plugin:@typescript-eslint/recommended",
-//    "plugin:react/recommended",
-//    "plugin:react-hooks/recommended",
+    "plugin:@typescript-eslint/recommended",
+    "plugin:react/recommended",
+    "plugin:react-hooks/recommended",
     "prettier"
   ],
   "settings": {
@@ -19,7 +19,10 @@
     "node": true
   },
   "rules": {
-    "@typescript-eslint/no-explicit-any": 0,
+//		"off" or 0 - turn the rule off
+//		"warn" or 1 - turn the rule on as a warning (doesn’t affect exit code)
+//		"error" or 2 - turn the rule on as an error (exit code is 1 when triggered)
+		"@typescript-eslint/no-explicit-any": 0,
     "@typescript-eslint/no-non-null-assertion": 0,
     "@typescript-eslint/no-unused-vars": 0,
     "react/prop-types": 0
