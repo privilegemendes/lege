@@ -25,7 +25,7 @@
   caret-color: rgb(55, 53, 47);
   font-family: 'Roboto-Bold',-apple-system, BlinkMacSystemFont, 'Segoe UI', Helvetica,
     'Apple Color Emoji', Arial, sans-serif, 'Segoe UI Emoji', 'Segoe UI Symbol';
-  background: hsl(210deg, 30%, 8%);
+  background: hsl(212, 32%, 8%);
 
 }
 
@@ -248,7 +248,32 @@
 }
 
 .navModalMenu:hover {
-	background: hsla(0, 2%, 38%, 0.6);
+	//background: hsla(210, 30%, 8%, 0.6);
+	background-image: linear-gradient(
+		90deg,
+		hsl(0deg 2% 38%) 0%,
+		hsl(356deg 2% 37%) 10%,
+		hsl(352deg 3% 35%) 19%,
+		hsl(348deg 3% 33%) 27%,
+		hsl(343deg 3% 32%) 34%,
+		hsl(338deg 3% 30%) 40%,
+		hsl(333deg 4% 29%) 46%,
+		hsl(327deg 4% 27%) 51%,
+		hsl(320deg 4% 26%) 56%,
+		hsl(312deg 4% 24%) 61%,
+		hsl(301deg 4% 23%) 64%,
+		hsl(290deg 4% 22%) 68%,
+		hsl(279deg 5% 20%) 72%,
+		hsl(269deg 6% 19%) 75%,
+		hsl(260deg 7% 18%) 78%,
+		hsl(251deg 8% 17%) 81%,
+		hsl(242deg 8% 15%) 84%,
+		hsl(234deg 11% 14%) 87%,
+		hsl(227deg 14% 12%) 90%,
+		hsl(222deg 18% 11%) 93%,
+		hsl(217deg 22% 10%) 97%,
+		hsl(212deg 32% 8%) 100%
+	);
 }
 
 
