@@ -13,33 +13,33 @@ const CanvasContainer = styled.div `
     z-index: 0;
 `
 type Props = {
-    isBroken: boolean
+	isBroken: boolean
 }
 
 export const Roses: FC<Props> =
-    ({
-         isBroken,
-     }) => {
+	({
+		 isBroken,
+	 }) => {
 
-        return <CanvasContainer>
-            <Canvas
+		return <CanvasContainer>
+			<Canvas
 				camera={{fov: 40, position: [0, 2.5, 80], near: 1, far: 10000}}
 			>
 				<Camera/>
-                <Lights/>
-                <Rose isBroken={isBroken}/>
-            </Canvas>
-        </CanvasContainer>
-    }
+				<Lights/>
+				<Rose isBroken={isBroken}/>
+			</Canvas>
+		</CanvasContainer>
+	}
 
 function Lights() {
-    return (
-        <>
-            <ambientLight intensity={1} />
-            <pointLight intensity={1}/>
-            <pointLight position={[-100, 0, 50]} intensity={1}/>
-        </>
-    )
+	return (
+		<>
+			<ambientLight intensity={1} />
+			<pointLight intensity={1}/>
+			<pointLight position={[-100, 0, 50]} intensity={1}/>
+		</>
+	)
 }
 
 function Camera () {
@@ -62,7 +62,7 @@ function Camera () {
 		return () => {
 			window.removeEventListener("resize", () => {});
 		}
-	}, [aspect]);
+	}, []);
 
 	return <perspectiveCamera
 		ref={cameraRef}
@@ -71,109 +71,108 @@ function Camera () {
 
 const Rose: FC<Props> = ({isBroken}) => {
 
-    const groupRef = useRef<THREE.Group>(null!);
+	const groupRef = useRef<THREE.Group>(null!);
 
 	const renderer = useThree();
 
 	useEffect(() => {
 		renderer.setSize(window.innerWidth, window.innerHeight);
 		renderer.gl.setPixelRatio(window.devicePixelRatio);
-	}, [renderer]);
+	}, []);
 
 
 	// Subscribe this component to the render-loop, rotate the mesh every frame
-    useFrame(() => {
-        if (groupRef.current) {
-            groupRef.current.rotation.x += 0.001;
-            groupRef.current.rotation.y -= 0.003;
-        }
+	useFrame(() => {
+		if (groupRef.current) {
+			groupRef.current.rotation.x += 0.001;
+			groupRef.current.rotation.y -= 0.003;
+		}
 
-    });
+	});
 
-    return <group ref={groupRef}
-    >
-        {[...Array(35)].map((_, i) => (
-            <AnimatedMesh
-                isBroken={isBroken}
-                key={i}
-            />
-        ))}
-    </group>
+	return <group ref={groupRef}
+	>
+		{[...Array(35)].map((_, i) => (
+			<AnimatedMesh
+				isBroken={isBroken}
+				key={i}
+			/>
+		))}
+	</group>
 }
 
 const AnimatedMesh: FC<Props> = (
-    {
-        isBroken,
-    }
+	{
+		isBroken,
+	}
 ) => {
-    const meshRef = useRef<THREE.Mesh>(null!);
+	const meshRef = useRef<THREE.Mesh>(null!);
 
-    const positionX = Math.random() * 30 - 15;
-    const positionY = Math.random() * 20 - 2;
-    const positionZ = Math.random() * 30 - 15;
-    const rotationX = Math.random() * 2 * Math.PI;
-    const rotationY = Math.random() * 2 * Math.PI;
-    const scaleX = Math.random() * 2.5 - 0.5;
-    const scaleY = Math.random() * 2.5 - 0.5;
-    const scaleZ = Math.random() * 2.5 - 0.5;
+	const positionX = Math.random() * 30 - 15;
+	const positionY = Math.random() * 20 - 2;
+	const positionZ = Math.random() * 30 - 15;
+	const rotationX = Math.random() * 2 * Math.PI;
+	const rotationY = Math.random() * 2 * Math.PI;
+	const scaleX = Math.random() * 2.5 - 0.5;
+	const scaleY = Math.random() * 2.5 - 0.5;
+	const scaleZ = Math.random() * 2.5 - 0.5;
 
 
-    const torusKnotGeometry = new THREE.TorusKnotGeometry(5, 1.8, 64, 5, 7, 5);
-		const geometry =  tessellateModifier( 8, torusKnotGeometry);
+	let torusKnotGeometry = new THREE.TorusKnotGeometry(5, 1.8, 64, 5, 7, 5);
+	let geometry =  tessellateModifier( 8, torusKnotGeometry);
 
-    const numFaces = geometry.attributes.position.count / 3;
+	const numFaces = geometry.attributes.position.count / 3;
 
-    // Create colors and displacement arrays
-    const [displacement, colors] = useMemo(() => {
-        const color = new THREE.Color();
-        const colors = new Float32Array(numFaces * 3 * 3);
-        const displacement = new Float32Array(numFaces * 3 * 3);
-        for (let f = 0; f < numFaces; f++) {
-						const index = 9 * f;
-						const h = 0.8;
-						const s = 0.5 + 0.1 * Math.random();
-						const l = 0.52;
-						const d = 10 * (0.5 - Math.random());
+	// Create colors and displacement arrays
+	const [displacement, colors] = useMemo(() => {
+		const color = new THREE.Color();
+		const colors = new Float32Array(numFaces * 3 * 3);
+		const displacement = new Float32Array(numFaces * 3 * 3);
+		for (let f = 0; f < numFaces; f++) {
+			let index = 9 * f;
+			let h = 0.8;
+			let s = 0.5 + 0.1 * Math.random();
+			let l = 0.52;
+			color.setHSL(h, s, l);
+			let d = 10 * (0.5 - Math.random());
 
-						color.setHSL(h, s, l);
-
-            for (let i = 0; i < 3; i++) {
-                colors[index + 5 * i] = color.r;
-                colors[index + 8 * i + 1] = color.g;
-                colors[index + 2 * i + 2.1] = color.b;
-                displacement[index + 3 * i] = d;
-                displacement[index + 3 * i + 1] = d;
-                displacement[index + 3 * i + 2] = d;
-            }
-        }
-        return [displacement, colors]}, [numFaces]);
+			for (let i = 0; i < 3; i++) {
+				colors[index + 5 * i] = color.r;
+				colors[index + 8 * i + 1] = color.g;
+				colors[index + 2 * i + 2.1] = color.b;
+				displacement[index + 3 * i] = d;
+				displacement[index + 3 * i + 1] = d;
+				displacement[index + 3 * i + 2] = d;
+			}
+		}
+		return [displacement, colors]}, []);
 
 	geometry.addAttribute('customColor', new THREE.BufferAttribute(colors, 3));
 	geometry.addAttribute('displacement', new THREE.BufferAttribute(displacement, 3));
 
 
-    //If your scene contains some React state that can change and thus trigger a re-render:
-    // do not forget to memoize your uniform object!
-    const uniforms = useMemo(() => ({
-        amplitude: {
-            value: 0.0
-        },
-    }), []);
+	//If your scene contains some React state that can change and thus trigger a re-render:
+	// do not forget to memoize your uniform object!
+	const uniforms = useMemo(() => ({
+		amplitude: {
+			value: 0.0
+		},
+	}), []);
 
-    useEffect(() => {
-        if (isBroken) {
-            gsap.to(uniforms.amplitude, 0.2,{
-                value: 3.5,
-                ease: Sine.easeOut
+	useEffect(() => {
+		if (isBroken) {
+			gsap.to(uniforms.amplitude, 0.2,{
+				value: 3.5,
+				ease: Sine.easeOut
 
-            });
-        } else {
-            gsap.to(uniforms.amplitude, 0.1,{
-                value: 0.1,
-                ease: Sine.easeIn
-            });
-        }
-    }, [isBroken, uniforms.amplitude]);
+			});
+		} else {
+			gsap.to(uniforms.amplitude, 0.1,{
+				value: 0.1,
+				ease: Sine.easeIn
+			});
+		}
+	}, [isBroken]);
 
 	useEffect(() => {
 		if (meshRef.current) {
@@ -185,22 +184,22 @@ const AnimatedMesh: FC<Props> = (
 		}
 	}, []);
 
-    return (
-            <mesh
-                ref={meshRef}
-                position={[positionX, positionY, positionZ]}
-                rotation={[rotationX, rotationY, 0]}
-                scale={[scaleX, scaleY, scaleZ]}
-            >
-                <bufferGeometry attach="geometry" {...geometry}/>
-                <shaderMaterial
-                    fragmentShader={fragmentShader}
-                    vertexShader={vertexShader}
-                    uniforms={uniforms}
-					key={uuid()}
-                />
-            </mesh>
-    );
+	return (
+		<mesh
+			ref={meshRef}
+			position={[positionX, positionY, positionZ]}
+			rotation={[rotationX, rotationY, 0]}
+			scale={[scaleX, scaleY, scaleZ]}
+		>
+			<bufferGeometry attach="geometry" {...geometry}/>
+			<shaderMaterial
+				fragmentShader={fragmentShader}
+				vertexShader={vertexShader}
+				uniforms={uniforms}
+				key={uuid()}
+			/>
+		</mesh>
+	);
 }
 
 // set the color of each visible pixel of a geometry.
@@ -256,14 +255,14 @@ const fragmentShader =  `
 //     Push the newly created faces and face vertex UVs to the faces and faceVertexUvs arrays.
 */
 
-function tessellateModifier(maxEdgeLength, geometry: any) {
-    let edge: number = 0;
-    const faces: any[] = [];
-    const faceVertexUvs: any[] = [];
-    const maxEdgeLengthSquared = maxEdgeLength * maxEdgeLength;
-		const maxIterations = 6;
-		let iteration = 0;
-		let tessellating = true
+function tessellateModifier(maxEdgeLength: number, geometry: any) {
+	let edge: number = 0;
+	const faces: any[] = [];
+	const faceVertexUvs: any[] = [];
+	const maxEdgeLengthSquared: number = maxEdgeLength * maxEdgeLength;
+	const maxIterations: number = 6;
+	let iteration: number = 0;
+	let tessellating = true
 
 	while ( tessellating && iteration < maxIterations) {
 		iteration++;
@@ -274,29 +273,29 @@ function tessellateModifier(maxEdgeLength, geometry: any) {
 		}
 
 		for (let i = 0, il = geometry.faces.length; i < il; i++) {
-			const face = geometry.faces[i];
+			let face = geometry.faces[i];
 			if (face instanceof THREE.Face3) {
-				const a = face.a;
-				const b = face.b;
-				const c = face.c;
-				const va = geometry.vertices[a];
-				const vb = geometry.vertices[b];
-				const vc = geometry.vertices[c];
-				const dab = va.distanceToSquared(vb);
-				const dbc = vb.distanceToSquared(vc);
-				const dac = va.distanceToSquared(vc);
+				let a = face.a;
+				let b = face.b;
+				let c = face.c;
+				let va = geometry.vertices[a];
+				let vb = geometry.vertices[b];
+				let vc = geometry.vertices[c];
+				let dab = va.distanceToSquared(vb);
+				let dbc = vb.distanceToSquared(vc);
+				let dac = va.distanceToSquared(vc);
 				if (
 					dab > maxEdgeLengthSquared ||
 					dbc > maxEdgeLengthSquared ||
 					dac > maxEdgeLengthSquared
 				) {
 					tessellating = true;
-					const m = geometry.vertices.length;
-					const triA = face.clone();
-					const triB = face.clone();
-					const vm = Vector3;
+					let m = geometry.vertices.length;
+					let triA = face.clone();
+					let triB = face.clone();
+					let vm = Vector3;
 					if (dab >= dbc && dab >= dac) {
-						const vm = va.clone();
+						let vm = va.clone();
 						vm.lerp(vb, 0.5);
 						triA.a = a;
 						triA.b = m;
@@ -305,20 +304,20 @@ function tessellateModifier(maxEdgeLength, geometry: any) {
 						triB.b = b;
 						triB.c = c;
 						if (face.vertexNormals.length === 3) {
-							const vnm = face.vertexNormals[0].clone();
+							let vnm = face.vertexNormals[0].clone();
 							vnm.lerp(face.vertexNormals[1], 0.5);
 							triA.vertexNormals[1].copy(vnm);
 							triB.vertexNormals[0].copy(vnm);
 						}
 						if (face.vertexColors.length === 3) {
-							const vcm = face.vertexColors[0].clone();
+							let vcm = face.vertexColors[0].clone();
 							vcm.lerp(face.vertexColors[1], 0.5);
 							triA.vertexColors[1].copy(vcm);
 							triB.vertexColors[0].copy(vcm);
 						}
 						edge = 0;
 					} else if (dbc >= dab && dbc >= dac) {
-						const vm = vb.clone();
+						let vm = vb.clone();
 						vm.lerp(vc, 0.5);
 						triA.a = a;
 						triA.b = b;
@@ -327,7 +326,7 @@ function tessellateModifier(maxEdgeLength, geometry: any) {
 						triB.b = c;
 						triB.c = a;
 						if (face.vertexNormals.length === 3) {
-							const vnm = face.vertexNormals[1].clone();
+							let vnm = face.vertexNormals[1].clone();
 							vnm.lerp(face.vertexNormals[2], 0.5);
 							triA.vertexNormals[2].copy(vnm);
 							triB.vertexNormals[0].copy(vnm);
@@ -335,7 +334,7 @@ function tessellateModifier(maxEdgeLength, geometry: any) {
 							triB.vertexNormals[2].copy(face.vertexNormals[0]);
 						}
 						if (face.vertexColors.length === 3) {
-							const vcm = face.vertexColors[1].clone();
+							let vcm = face.vertexColors[1].clone();
 							vcm.lerp(face.vertexColors[2], 0.5);
 							triA.vertexColors[2].copy(vcm);
 							triB.vertexColors[0].copy(vcm);
@@ -344,7 +343,7 @@ function tessellateModifier(maxEdgeLength, geometry: any) {
 						}
 						edge = 1;
 					} else {
-						const vm = va.clone();
+						let vm = va.clone();
 						vm.lerp(vc, 0.5);
 						triA.a = a;
 						triA.b = b;
@@ -353,13 +352,13 @@ function tessellateModifier(maxEdgeLength, geometry: any) {
 						triB.b = b;
 						triB.c = c;
 						if (face.vertexNormals.length === 3) {
-							const vnm = face.vertexNormals[0].clone();
+							let vnm = face.vertexNormals[0].clone();
 							vnm.lerp(face.vertexNormals[2], 0.5);
 							triA.vertexNormals[2].copy(vnm);
 							triB.vertexNormals[0].copy(vnm);
 						}
 						if (face.vertexColors.length === 3) {
-							const vcm = face.vertexColors[0].clone();
+							let vcm = face.vertexColors[0].clone();
 							vcm.lerp(face.vertexColors[2], 0.5);
 							triA.vertexColors[2].copy(vcm);
 							triB.vertexColors[0].copy(vcm);
@@ -372,22 +371,22 @@ function tessellateModifier(maxEdgeLength, geometry: any) {
 						let uvsTriA = [];
 						let uvsTriB = [];
 						if (geometry.faceVertexUvs[j].length) {
-							const uvs = geometry.faceVertexUvs[j][i];
-							const uvA = uvs[0];
-							const uvB = uvs[1];
-							const uvC = uvs[2];
+							let uvs = geometry.faceVertexUvs[j][i];
+							let uvA = uvs[0];
+							let uvB = uvs[1];
+							let uvC = uvs[2];
 							if (edge === 0) {
-								const uvM = uvA.clone();
+								let uvM = uvA.clone();
 								uvM.lerp(uvB, 0.5);
 								uvsTriA = [uvA.clone(), uvM.clone(), uvC.clone()];
 								uvsTriB = [uvM.clone(), uvB.clone(), uvC.clone()];
 							} else if (edge === 1) {
-								const uvM = uvB.clone();
+								let uvM = uvB.clone();
 								uvM.lerp(uvC, 0.5);
 								uvsTriA = [uvA.clone(), uvB.clone(), uvM.clone()];
 								uvsTriB = [uvM.clone(), uvC.clone(), uvA.clone()];
 							} else {
-								const uvM = uvA.clone();
+								let uvM = uvA.clone();
 								uvM.lerp(uvC, 0.5);
 								uvsTriA = [uvA.clone(), uvB.clone(), uvM.clone()];
 								uvsTriB = [uvM.clone(), uvB.clone(), uvC.clone()];
