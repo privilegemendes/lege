@@ -62,7 +62,7 @@ function Camera () {
 		return () => {
 			window.removeEventListener("resize", () => {});
 		}
-	}, []);
+	}, [aspect]);
 
 	return <perspectiveCamera
 		ref={cameraRef}
@@ -78,7 +78,7 @@ const Rose: FC<Props> = ({isBroken}) => {
 	useEffect(() => {
 		renderer.setSize(window.innerWidth, window.innerHeight);
 		renderer.gl.setPixelRatio(window.devicePixelRatio);
-	}, []);
+	}, [renderer]);
 
 
 	// Subscribe this component to the render-loop, rotate the mesh every frame
@@ -118,8 +118,8 @@ const AnimatedMesh: FC<Props> = (
     const scaleZ = Math.random() * 2.5 - 0.5;
 
 
-    let torusKnotGeometry = new THREE.TorusKnotGeometry(5, 1.8, 64, 5, 7, 5);
-	let geometry =  tessellateModifier( 8, torusKnotGeometry);
+    const torusKnotGeometry = new THREE.TorusKnotGeometry(5, 1.8, 64, 5, 7, 5);
+		const geometry =  tessellateModifier( 8, torusKnotGeometry);
 
     const numFaces = geometry.attributes.position.count / 3;
 
@@ -129,12 +129,13 @@ const AnimatedMesh: FC<Props> = (
         const colors = new Float32Array(numFaces * 3 * 3);
         const displacement = new Float32Array(numFaces * 3 * 3);
         for (let f = 0; f < numFaces; f++) {
-            let index = 9 * f;
-            let h = 0.8;
-            let s = 0.5 + 0.1 * Math.random();
-            let l = 0.52;
-            color.setHSL(h, s, l);
-            let d = 10 * (0.5 - Math.random());
+						const index = 9 * f;
+						const h = 0.8;
+						const s = 0.5 + 0.1 * Math.random();
+						const l = 0.52;
+						const d = 10 * (0.5 - Math.random());
+
+						color.setHSL(h, s, l);
 
             for (let i = 0; i < 3; i++) {
                 colors[index + 5 * i] = color.r;
@@ -145,7 +146,7 @@ const AnimatedMesh: FC<Props> = (
                 displacement[index + 3 * i + 2] = d;
             }
         }
-        return [displacement, colors]}, []);
+        return [displacement, colors]}, [numFaces]);
 
 	geometry.addAttribute('customColor', new THREE.BufferAttribute(colors, 3));
 	geometry.addAttribute('displacement', new THREE.BufferAttribute(displacement, 3));
@@ -172,7 +173,7 @@ const AnimatedMesh: FC<Props> = (
                 ease: Sine.easeIn
             });
         }
-    }, [isBroken]);
+    }, [isBroken, uniforms.amplitude]);
 
 	useEffect(() => {
 		if (meshRef.current) {
@@ -255,14 +256,14 @@ const fragmentShader =  `
 //     Push the newly created faces and face vertex UVs to the faces and faceVertexUvs arrays.
 */
 
-function tessellateModifier(maxEdgeLength: number, geometry: any) {
+function tessellateModifier(maxEdgeLength, geometry: any) {
     let edge: number = 0;
     const faces: any[] = [];
     const faceVertexUvs: any[] = [];
-    const maxEdgeLengthSquared: number = maxEdgeLength * maxEdgeLength;
-	const maxIterations: number = 6;
-	let iteration: number = 0;
-	let tessellating = true
+    const maxEdgeLengthSquared = maxEdgeLength * maxEdgeLength;
+		const maxIterations = 6;
+		let iteration = 0;
+		let tessellating = true
 
 	while ( tessellating && iteration < maxIterations) {
 		iteration++;
@@ -273,29 +274,29 @@ function tessellateModifier(maxEdgeLength: number, geometry: any) {
 		}
 
 		for (let i = 0, il = geometry.faces.length; i < il; i++) {
-			let face = geometry.faces[i];
+			const face = geometry.faces[i];
 			if (face instanceof THREE.Face3) {
-				let a = face.a;
-				let b = face.b;
-				let c = face.c;
-				let va = geometry.vertices[a];
-				let vb = geometry.vertices[b];
-				let vc = geometry.vertices[c];
-				let dab = va.distanceToSquared(vb);
-				let dbc = vb.distanceToSquared(vc);
-				let dac = va.distanceToSquared(vc);
+				const a = face.a;
+				const b = face.b;
+				const c = face.c;
+				const va = geometry.vertices[a];
+				const vb = geometry.vertices[b];
+				const vc = geometry.vertices[c];
+				const dab = va.distanceToSquared(vb);
+				const dbc = vb.distanceToSquared(vc);
+				const dac = va.distanceToSquared(vc);
 				if (
 					dab > maxEdgeLengthSquared ||
 					dbc > maxEdgeLengthSquared ||
 					dac > maxEdgeLengthSquared
 				) {
 					tessellating = true;
-					let m = geometry.vertices.length;
-					let triA = face.clone();
-					let triB = face.clone();
-					let vm = Vector3;
+					const m = geometry.vertices.length;
+					const triA = face.clone();
+					const triB = face.clone();
+					const vm = Vector3;
 					if (dab >= dbc && dab >= dac) {
-						let vm = va.clone();
+						const vm = va.clone();
 						vm.lerp(vb, 0.5);
 						triA.a = a;
 						triA.b = m;
@@ -304,20 +305,20 @@ function tessellateModifier(maxEdgeLength: number, geometry: any) {
 						triB.b = b;
 						triB.c = c;
 						if (face.vertexNormals.length === 3) {
-							let vnm = face.vertexNormals[0].clone();
+							const vnm = face.vertexNormals[0].clone();
 							vnm.lerp(face.vertexNormals[1], 0.5);
 							triA.vertexNormals[1].copy(vnm);
 							triB.vertexNormals[0].copy(vnm);
 						}
 						if (face.vertexColors.length === 3) {
-							let vcm = face.vertexColors[0].clone();
+							const vcm = face.vertexColors[0].clone();
 							vcm.lerp(face.vertexColors[1], 0.5);
 							triA.vertexColors[1].copy(vcm);
 							triB.vertexColors[0].copy(vcm);
 						}
 						edge = 0;
 					} else if (dbc >= dab && dbc >= dac) {
-						let vm = vb.clone();
+						const vm = vb.clone();
 						vm.lerp(vc, 0.5);
 						triA.a = a;
 						triA.b = b;
@@ -326,7 +327,7 @@ function tessellateModifier(maxEdgeLength: number, geometry: any) {
 						triB.b = c;
 						triB.c = a;
 						if (face.vertexNormals.length === 3) {
-							let vnm = face.vertexNormals[1].clone();
+							const vnm = face.vertexNormals[1].clone();
 							vnm.lerp(face.vertexNormals[2], 0.5);
 							triA.vertexNormals[2].copy(vnm);
 							triB.vertexNormals[0].copy(vnm);
@@ -334,7 +335,7 @@ function tessellateModifier(maxEdgeLength: number, geometry: any) {
 							triB.vertexNormals[2].copy(face.vertexNormals[0]);
 						}
 						if (face.vertexColors.length === 3) {
-							let vcm = face.vertexColors[1].clone();
+							const vcm = face.vertexColors[1].clone();
 							vcm.lerp(face.vertexColors[2], 0.5);
 							triA.vertexColors[2].copy(vcm);
 							triB.vertexColors[0].copy(vcm);
@@ -343,7 +344,7 @@ function tessellateModifier(maxEdgeLength: number, geometry: any) {
 						}
 						edge = 1;
 					} else {
-						let vm = va.clone();
+						const vm = va.clone();
 						vm.lerp(vc, 0.5);
 						triA.a = a;
 						triA.b = b;
@@ -352,13 +353,13 @@ function tessellateModifier(maxEdgeLength: number, geometry: any) {
 						triB.b = b;
 						triB.c = c;
 						if (face.vertexNormals.length === 3) {
-							let vnm = face.vertexNormals[0].clone();
+							const vnm = face.vertexNormals[0].clone();
 							vnm.lerp(face.vertexNormals[2], 0.5);
 							triA.vertexNormals[2].copy(vnm);
 							triB.vertexNormals[0].copy(vnm);
 						}
 						if (face.vertexColors.length === 3) {
-							let vcm = face.vertexColors[0].clone();
+							const vcm = face.vertexColors[0].clone();
 							vcm.lerp(face.vertexColors[2], 0.5);
 							triA.vertexColors[2].copy(vcm);
 							triB.vertexColors[0].copy(vcm);
@@ -371,22 +372,22 @@ function tessellateModifier(maxEdgeLength: number, geometry: any) {
 						let uvsTriA = [];
 						let uvsTriB = [];
 						if (geometry.faceVertexUvs[j].length) {
-							let uvs = geometry.faceVertexUvs[j][i];
-							let uvA = uvs[0];
-							let uvB = uvs[1];
-							let uvC = uvs[2];
+							const uvs = geometry.faceVertexUvs[j][i];
+							const uvA = uvs[0];
+							const uvB = uvs[1];
+							const uvC = uvs[2];
 							if (edge === 0) {
-								let uvM = uvA.clone();
+								const uvM = uvA.clone();
 								uvM.lerp(uvB, 0.5);
 								uvsTriA = [uvA.clone(), uvM.clone(), uvC.clone()];
 								uvsTriB = [uvM.clone(), uvB.clone(), uvC.clone()];
 							} else if (edge === 1) {
-								let uvM = uvB.clone();
+								const uvM = uvB.clone();
 								uvM.lerp(uvC, 0.5);
 								uvsTriA = [uvA.clone(), uvB.clone(), uvM.clone()];
 								uvsTriB = [uvM.clone(), uvC.clone(), uvA.clone()];
 							} else {
-								let uvM = uvA.clone();
+								const uvM = uvA.clone();
 								uvM.lerp(uvC, 0.5);
 								uvsTriA = [uvA.clone(), uvB.clone(), uvM.clone()];
 								uvsTriB = [uvM.clone(), uvB.clone(), uvC.clone()];

@@ -1,4 +1,5 @@
 import * as React from 'react'
+import { useMemo } from 'react'
 import * as types from 'notion-types'
 
 import cs from 'classnames'
@@ -24,6 +25,7 @@ export const NotionPageHeader: React.FC<{
   }
 
   const router = useRouter();
+	const linkRef = useMemo(() => router.asPath, [router]);
 
   return (
     <header className='notion-header'>
@@ -43,7 +45,7 @@ export const NotionPageHeader: React.FC<{
                     <components.PageLink
                       href={mapPageUrl(link.pageId)}
                       key={index}
-                      className={cs(styles.navLink, 'breadcrumb', 'button', router.asPath === mapPageUrl(link.pageId) ? styles.activeNav : '')}
+                      className={cs(styles.navLink, 'breadcrumb', 'button', linkRef === mapPageUrl(link.pageId) ? styles.activeNav : '')}
                     >
                       {link.title}
                     </components.PageLink>
@@ -53,7 +55,7 @@ export const NotionPageHeader: React.FC<{
                     <components.Link
                       href={link.url}
                       key={index}
-					  					className={cs(styles.navLink, 'breadcrumb', 'button', router.asPath === link.url ? styles.activeNav : '')}
+					  					className={cs(styles.navLink, 'breadcrumb', 'button', linkRef === link.url ? styles.activeNav : '')}
                     >
                       {link.title}
                     </components.Link>
@@ -91,7 +93,7 @@ export const NotionPageHeader: React.FC<{
                         <components.PageLink
                           href={mapPageUrl(link.pageId)}
                           key={index}
-													className={cs(styles.navModalMenu, router.asPath === mapPageUrl(link.pageId) ? styles.activeNav : '')}
+													className={cs(styles.navModalMenu, linkRef === mapPageUrl(link.pageId) ? styles.activeNav : '')}
                         >
                           {link.title}
                         </components.PageLink>
