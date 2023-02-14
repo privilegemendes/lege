@@ -134,6 +134,7 @@ const propertyDateValue = (
   return defaultFn()
 }
 
+
 const propertyTextValue = (
   { schema, pageHeader },
   defaultFn: () => React.ReactNode
@@ -229,7 +230,7 @@ export const NotionPage: React.FC<types.PageProps> = ({
 
   const title = getBlockTitle(block, recordMap) || site.name
 
-  console.log('notion page', {
+  console.log(`Notion page: ${title}`, {
     isDev: config.isDev,
     site,
     title,

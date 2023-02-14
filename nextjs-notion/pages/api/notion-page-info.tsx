@@ -41,8 +41,9 @@ export default async (req: NextApiRequest, res: NextApiResponse) => {
   }
 
   const isBlogPost =
-    block.type === 'page' && block.parent_table === 'collection'
+		block.type === 'page' && block.parent_table === 'collection'
   const title = getBlockTitle(block, recordMap) || libConfig.name
+
 
   const imageCoverPosition =
     (block as PageBlock).format?.page_cover_position ??

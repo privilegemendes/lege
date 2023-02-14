@@ -2,7 +2,7 @@ import { siteConfig } from './src/lib/site-config'
 
 export default siteConfig({
   // the site's root Notion page (required)
-  rootNotionPageId: 'legemendes-488679b9f99f4094a8d58928f44980cb',
+  rootNotionPageId: 'Exploding-roses-caught-your-attention-488679b9f99f4094a8d58928f44980cb',
 
   // if you want to restrict pages to a single notion workspace (optional)
   // (this should be a Notion ID; see the docs for how to extract this)
@@ -10,7 +10,7 @@ export default siteConfig({
 
   // basic site info (required)
   name: 'Privilege Portfolio',
-  domain: 'legemendes',
+  domain: 'legedev',
   author: 'Privilege Mendes',
 
   // open graph metadata (optional)
@@ -55,11 +55,11 @@ export default siteConfig({
   navigationLinks: [
     {
       title: 'Home',
-      pageId: 'legemendes-488679b9f99f4094a8d58928f44980cb'
+      pageId: 'Exploding-roses-caught-your-attention-488679b9f99f4094a8d58928f44980cb'
     },
 	  {
 		  title: 'Blog',
-		  pageId: 'Blogs-f350622c4c7b452f880cb79dbf791742'
+		  pageId: '4822d5de7eda43708503dfbe0b313116?v=82b6b1a21aeb459fafaa1b2ff15aefa1'
 
 	  },
 	{

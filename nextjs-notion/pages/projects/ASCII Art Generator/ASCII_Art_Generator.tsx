@@ -22,7 +22,7 @@ export default function ASCIIArtGenerator() {
 
 	const onClickToCopy = useCallback(
 		(e: React.MouseEvent) => {
-			const value = (e.target as HTMLElement).innerText.trim();
+			const value = (e.target as HTMLPreElement).innerText.trim();
 			navigator.clipboard.writeText(value);
 		},
 		[],
@@ -52,7 +52,7 @@ export default function ASCIIArtGenerator() {
           <CodeContainer type="text" value={input} onChange={(e) => setInput(e.target.value)}/>
         </GridInput>
         <GridControls>
-          <Button onClick={()=> (onClickToCopy)}>Copy Art</Button>
+          <Button onClick={(e)=> (onClickToCopy(e))}>Copy Art</Button>
           <Description>
             What does this project do?
           </Description>
@@ -74,6 +74,9 @@ const Grid = styled.div`
   grid-column-gap: 16px;
   grid-row-gap: 16px;
   padding: 16px;
+  max-width: 850px;
+  margin-left: auto;
+  margin-right: auto;
 
   @media screen and (max-width: 700px) {
     grid-template-columns: 1fr;
