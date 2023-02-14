@@ -17,10 +17,14 @@ export const PageCover: FC = () =>
 		setIsBroken(false);
 	}
 
+const onTextClick = () => {
+ isBroken === true ? setIsBroken(false): setIsBroken(true)
+}
 
 	return <PageCoverWrapper
 		onMouseEnter={event => handleMouseEnter(event)}
 		onMouseLeave={event => handleMouseLeave(event)}
+  onClick={()=> onTextClick()}
 	>
 		<GlitchSection>
 			<Header
