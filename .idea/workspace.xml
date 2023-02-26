@@ -223,6 +223,7 @@
       <workItem from="1676737512837" duration="323000" />
       <workItem from="1676737848686" duration="2076000" />
       <workItem from="1677448150105" duration="23000" />
+      <workItem from="1677451573467" duration="16000" />
     </task>
     <task id="LOCAL-00036" summary="mobile first design">
       <created>1674597168019</created>
@@ -532,67 +533,46 @@
       <option name="project" value="LOCAL" />
       <updated>1675872793752</updated>
     </task>
-    <task id="LOCAL-00080" summary="removed sitemap">
-      <created>1675873243615</created>
-      <option name="number" value="00080" />
-      <option name="presentableId" value="LOCAL-00080" />
+    <task id="LOCAL-00001" summary="Initial commit">
+      <created>1673277632598</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
       <option name="project" value="LOCAL" />
-      <updated>1675873243615</updated>
+      <updated>1673277632598</updated>
     </task>
-    <task id="LOCAL-00081" summary="fixed not found pages">
-      <created>1675874407539</created>
-      <option name="number" value="00081" />
-      <option name="presentableId" value="LOCAL-00081" />
+    <task id="LOCAL-00002" summary="Added missing files">
+      <created>1673278714343</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
       <option name="project" value="LOCAL" />
-      <updated>1675874407539</updated>
+      <updated>1673278714343</updated>
     </task>
-    <task id="LOCAL-00082" summary="Added a bunch of updates">
-      <created>1676027926243</created>
-      <option name="number" value="00082" />
-      <option name="presentableId" value="LOCAL-00082" />
+    <task id="LOCAL-00003" summary="created canvas for nonogram creation">
+      <created>1673305132117</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
       <option name="project" value="LOCAL" />
-      <updated>1676027926244</updated>
+      <updated>1673305132117</updated>
     </task>
-    <task id="LOCAL-00083" summary="Fixes from ESlint suggestions">
-      <created>1676028264642</created>
-      <option name="number" value="00083" />
-      <option name="presentableId" value="LOCAL-00083" />
+    <task id="LOCAL-00004" summary="Added picking tiles functionality - yet to optimise">
+      <created>1673393414268</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
       <option name="project" value="LOCAL" />
-      <updated>1676028264642</updated>
+      <updated>1673393414268</updated>
     </task>
-    <task id="LOCAL-00084" summary="favicon updates">
-      <created>1676030551478</created>
-      <option name="number" value="00084" />
-      <option name="presentableId" value="LOCAL-00084" />
+    <task id="LOCAL-00005" summary="Added draw/erase functionality">
+      <created>1673542265018</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
       <option name="project" value="LOCAL" />
-      <updated>1676030551478</updated>
+      <updated>1673542265018</updated>
     </task>
-    <option name="localTasksCounter" value="85" />
+    <option name="localTasksCounter" value="6" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
-    <option name="exactExcludedFiles">
-      <list>
-        <option value="$PROJECT_DIR$/app/src/reportWebVitals.d.ts" />
-        <option value="$PROJECT_DIR$/app/src/env-vars.d.ts.map" />
-        <option value="$PROJECT_DIR$/app/src/App.test.d.ts" />
-        <option value="$PROJECT_DIR$/app/src/App.d.ts.map" />
-        <option value="$PROJECT_DIR$/app/src/setupTests.d.ts.map" />
-        <option value="$PROJECT_DIR$/app/src/env-vars.d.ts" />
-        <option value="$PROJECT_DIR$/app/src/reportWebVitals.d.ts.map" />
-        <option value="$PROJECT_DIR$/app/src/index.d.ts.map" />
-        <option value="$PROJECT_DIR$/app/src/App.test.d.ts.map" />
-        <option value="$PROJECT_DIR$/app/src/setupTests.d.ts" />
-        <option value="$PROJECT_DIR$/app/src/App.d.ts" />
-        <option value="$PROJECT_DIR$/app/src/index.d.ts" />
-        <option value="$PROJECT_DIR$/app/src/assets/gridBackground.d.ts" />
-        <option value="$PROJECT_DIR$/app/src/assets/gridBackground.d.ts.map" />
-      </list>
-    </option>
-  </component>
-  <component name="UnknownFeatures">
-    <option featureType="com.intellij.fileTypeFactory" implementationName="next.config.js" />
   </component>
   <component name="Vcs.Log.Tabs.Properties">
     <option name="TAB_STATES">
@@ -602,100 +582,16 @@
             <State />
           </value>
         </entry>
-        <entry key="c4890832-76ef-4191-aea0-80d60266791f">
-          <value>
-            <State>
-              <option name="SHOW_ONLY_AFFECTED_CHANGES" value="true" />
-              <option name="FILTERS">
-                <map>
-                  <entry key="branch">
-                    <value>
-                      <list>
-                        <option value="HEAD" />
-                      </list>
-                    </value>
-                  </entry>
-                  <entry key="structure">
-                    <value>
-                      <list>
-                        <option value="dir:C:/Projects/Lege/nextjs-notion" />
-                      </list>
-                    </value>
-                  </entry>
-                </map>
-              </option>
-            </State>
-          </value>
-        </entry>
-      </map>
-    </option>
-    <option name="OPEN_GENERIC_TABS">
-      <map>
-        <entry key="c4890832-76ef-4191-aea0-80d60266791f" value="TOOL_WINDOW" />
-      </map>
-    </option>
-    <option name="RECENT_FILTERS">
-      <map>
-        <entry key="Branch">
-          <value>
-            <list>
-              <RecentGroup>
-                <option name="FILTER_VALUES">
-                  <option value="HEAD" />
-                </option>
-              </RecentGroup>
-              <RecentGroup>
-                <option name="FILTER_VALUES">
-                  <option value="master" />
-                </option>
-              </RecentGroup>
-              <RecentGroup>
-                <option name="FILTER_VALUES">
-                  <option value="nonogram" />
-                </option>
-              </RecentGroup>
-              <RecentGroup>
-                <option name="FILTER_VALUES">
-                  <option value="origin/master" />
-                </option>
-              </RecentGroup>
-            </list>
-          </value>
-        </entry>
       </map>
     </option>
   </component>
   <component name="VcsManagerConfiguration">
-    <ignored-roots>
-      <path value="$PROJECT_DIR$/lege" />
-      <path value="$PROJECT_DIR$/../nonogram" />
-    </ignored-roots>
-    <MESSAGE value="removed yarn.lock and applied some fixes" />
-    <MESSAGE value="stringify font URLs" />
-    <MESSAGE value="Added animinated dark mode button" />
-    <MESSAGE value="Added GitHub Actions for Vercel deployment" />
-    <MESSAGE value="Fixed type errors and darkmode SVG circles" />
-    <MESSAGE value="Improved footer responsiveness" />
-    <MESSAGE value="Changed website font" />
-    <MESSAGE value="fixed module not found error found in workflow build" />
-    <MESSAGE value="Adding projects directory" />
-    <MESSAGE value="removed array print" />
-    <MESSAGE value="Added nextjs eslint configs" />
-    <MESSAGE value="Ascii art generator first version" />
-    <MESSAGE value="Added prettier to ESLint" />
-    <MESSAGE value="Added react import" />
-    <MESSAGE value="stupid font import" />
-    <MESSAGE value="SSG path conflict" />
-    <MESSAGE value="SSG path conflict challenge" />
-    <MESSAGE value="Added menu tray modal" />
-    <MESSAGE value="redirects fixed!" />
-    <MESSAGE value="redirects fixed version 2!" />
-    <MESSAGE value="removed sitemap" />
-    <MESSAGE value="fixed not found pages" />
-    <MESSAGE value="Added a bunch of updates" />
-    <MESSAGE value="Fixes from ESlint suggestions" />
-    <MESSAGE value="favicon updates" />
-    <option name="LAST_COMMIT_MESSAGE" value="favicon updates" />
+    <MESSAGE value="Initial commit" />
+    <MESSAGE value="Added missing files" />
+    <MESSAGE value="created canvas for nonogram creation" />
+    <MESSAGE value="Added picking tiles functionality - yet to optimise" />
+    <MESSAGE value="Added draw/erase functionality" />
+    <option name="LAST_COMMIT_MESSAGE" value="Added draw/erase functionality" />
     <option name="OPTIMIZE_IMPORTS_BEFORE_PROJECT_COMMIT" value="true" />
   </component>
   <component name="XDebuggerManager">
@@ -706,16 +602,7 @@
           <line>224</line>
           <option name="timeStamp" value="2" />
         </line-breakpoint>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/../Artiry/factloader/src/contexts/authentication/authentication-context.tsx</url>
-          <line>614</line>
-          <option name="timeStamp" value="4" />
-        </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
-  </component>
-  <component name="XSLT-Support.FileAssociations.UIState">
-    <expand />
-    <select />
   </component>
 </project>
