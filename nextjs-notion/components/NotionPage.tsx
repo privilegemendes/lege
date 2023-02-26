@@ -1,35 +1,36 @@
-import * as React from 'react'
-import dynamic from 'next/dynamic'
-import Image from 'next/image'
-import Link from 'next/link'
-import { useRouter } from 'next/router'
+import * as React from "react";
+import dynamic from "next/dynamic";
+import Image from "next/image";
+import Link from "next/link";
+import { useRouter } from "next/router";
 
-import cs from 'classnames'
-import { PageBlock } from 'notion-types'
-import { formatDate, getBlockTitle, getPageProperty } from 'notion-utils'
-import BodyClassName from 'react-body-classname'
-import { NotionRenderer } from 'react-notion-x'
-import TweetEmbed from 'react-tweet-embed'
-import { useSearchParam } from 'react-use'
+import cs from "classnames";
+import { PageBlock } from "notion-types";
+import { formatDate, getBlockTitle, getPageProperty } from "notion-utils";
+import BodyClassName from "react-body-classname";
+import { NotionRenderer } from "react-notion-x";
+import TweetEmbed from "react-tweet-embed";
+import { useSearchParam } from "react-use";
 
-import * as config from '../src/lib/config'
-import * as types from '../src/lib/types'
-import { mapImageUrl } from '../src/lib/map-image-url'
-import { getCanonicalPageUrl, mapPageUrl } from '../src/lib/map-page-url'
-import { searchNotion } from '../src/lib/search-notion'
-import { useDarkMode } from '../src/lib/use-dark-mode'
+import * as config from "../src/lib/config";
+import * as types from "../src/lib/types";
+import { mapImageUrl } from "../src/lib/map-image-url";
+import { getCanonicalPageUrl, mapPageUrl } from "../src/lib/map-page-url";
+import { searchNotion } from "../src/lib/search-notion";
+import { useDarkMode } from "../src/lib/use-dark-mode";
 
-import { Footer } from './Footer'
-import { Loading } from './Loading'
-import { NotionPageHeader } from './NotionPageHeader'
-import { Page404 } from './Page404'
-import { PageAside } from './PageAside'
-import { PageHead } from './PageHead'
-import styles from './styles.module.css'
-import Artiry from '../pages/artiry'
-import AsciiArtGenerator from '../pages/ascii-art-generator'
-import CSSGridGenerator from '../pages/projects/CSS Grid Generator/CSSGridGenerator'
-import { PageCover } from '@/components/PageCover'
+import { Footer } from "./Footer";
+import { Loading } from "./Loading";
+import { NotionPageHeader } from "./NotionPageHeader";
+import { Page404 } from "./Page404";
+import { PageAside } from "./PageAside";
+import { PageHead } from "./PageHead";
+import styles from "./styles.module.css";
+import Artiry from "../pages/artiry";
+import Resume from "../pages/resume";
+import AsciiArtGenerator from "../pages/ascii-art-generator";
+import CSSGridGenerator from "../pages/projects/CSS Grid Generator/CSSGridGenerator";
+import { PageCover } from "@/components/PageCover";
 
 // -----------------------------------------------------------------------------
 // dynamic imports for optional components
@@ -215,6 +216,10 @@ export const NotionPage: React.FC<types.PageProps> = ({
   if (error || !site || !block) {
     return <Page404 site={site} pageId={pageId} error={error} />
   }
+
+	if (pageId === 'eab24699-a630-496f-8e0e-a93c868407d1') {
+		return <Resume/>
+	}
 
   if (pageId === '9f9bfc8a-67c0-499b-b9c1-e654982d3169') {
     return <Artiry />
