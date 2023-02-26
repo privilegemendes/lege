@@ -46,7 +46,7 @@ export default siteConfig({
     '/artiry-project': `artiry-9f9bfc8a67c0499bb9c1e654982d3169`,
     '/ascii-art-generator-project': `ascii-art-generator-4943f3c1d7904e4dbe800fd235ad7c31`,
     '/css-grid-generator-project': `css-grid-generator-06c443fc50954cc6930f084e87edaa6b`,
-		'/resume': `Resume-eab24699a630496f8e0ea93c868407d1`,
+		'/resume-project': `Resume-eab24699a630496f8e0ea93c868407d1`,
   },
   // pageUrlOverrides: null,
   // whether to use the default notion navigation style or a custom one with links to
