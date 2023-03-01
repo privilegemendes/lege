@@ -4,7 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="6d79a399-8924-4f24-b973-cee3210ac519" name="Changes" comment="favicon updates" />
+    <list default="true" id="6d79a399-8924-4f24-b973-cee3210ac519" name="Changes" comment="favicon updates">
+      <change afterPath="$PROJECT_DIR$/.idea/codestream.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/lege.iml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -44,6 +48,9 @@
       </RepoCoordinatesHolder>
     </option>
   </component>
+  <component name="KubernetesApiPersistence">
+    <option name="context" value="docker-desktop" />
+  </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
@@ -56,43 +63,43 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;RunOnceActivity.OpenProjectViewOnStart&quot;: &quot;true&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;SHARE_PROJECT_CONFIGURATION_FILES&quot;: &quot;true&quot;,
-    &quot;WebServerToolWindowFactoryState&quot;: &quot;false&quot;,
-    &quot;jdk.selected.JAVA_MODULE&quot;: &quot;openjdk-19&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Projects/Lege/nextjs-notion/components/Roses&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_interpreter_path&quot;: &quot;node&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;project.structure.last.edited&quot;: &quot;Modules&quot;,
-    &quot;project.structure.proportion&quot;: &quot;0.15722656&quot;,
-    &quot;project.structure.side.proportion&quot;: &quot;0.2&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;advanced.settings&quot;,
-    &quot;spring.configuration.checksum&quot;: &quot;db974238714ca8de634a7ce1d083a14f&quot;,
-    &quot;ts.external.directory.path&quot;: &quot;C:\\Projects\\Artiry\\Webapp\\node_modules\\typescript\\lib&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "WebServerToolWindowFactoryState": "false",
+    "jdk.selected.JAVA_MODULE": "openjdk-19",
+    "last_opened_file_path": "/Users/privilege/IdeaProjects/ExplodingRoses/src/components",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_interpreter_path": "node",
+    "nodejs_package_manager_path": "npm",
+    "project.structure.last.edited": "Modules",
+    "project.structure.proportion": "0.15722656",
+    "project.structure.side.proportion": "0.2",
+    "settings.editor.selected.configurable": "advanced.settings",
+    "spring.configuration.checksum": "db974238714ca8de634a7ce1d083a14f",
+    "ts.external.directory.path": "/Users/privilege/IdeaProjects/lege/nextjs-notion/node_modules/typescript/lib",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/../ExplodingRoses/src/components" />
+      <recent name="$PROJECT_DIR$/../ExplodingRoses/src/components/Root" />
+      <recent name="$PROJECT_DIR$/../ExplodingRoses/src" />
       <recent name="C:\Projects\Lege\nextjs-notion\components\Roses" />
       <recent name="C:\Projects\Lege\nextjs-notion\pages" />
-      <recent name="C:\Projects\Lege\nextjs-notion\src\styles" />
-      <recent name="C:\Projects\Lege\nextjs-notion\styles" />
-      <recent name="C:\Projects\Lege\nextjs-notion\public\fonts" />
     </key>
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/../ExplodingRoses" />
+      <recent name="$PROJECT_DIR$/../ExplodingRoses/src/components" />
       <recent name="C:\Projects\Lege\nextjs-notion\public" />
       <recent name="C:\Projects\Lege\nextjs-notion\src\assets" />
       <recent name="C:\Projects\Lege\nextjs-notion" />
-      <recent name="C:\Projects\Lege\nextjs-notion\src" />
-      <recent name="C:\Projects\Lege\nextjs-notion\components" />
     </key>
   </component>
   <component name="RunDashboard">
@@ -224,6 +231,7 @@
       <workItem from="1676737848686" duration="2076000" />
       <workItem from="1677448150105" duration="23000" />
       <workItem from="1677451573467" duration="16000" />
+      <workItem from="1677511060483" duration="2436000" />
     </task>
     <task id="LOCAL-00036" summary="mobile first design">
       <created>1674597168019</created>
